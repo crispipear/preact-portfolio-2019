@@ -1,0 +1,21 @@
+{
+  "name": "Su Li Portfolio — UX & Software Engineer",
+  "short_name": "Su Li Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#FFF14B",
+  "description": "Su Li is a software engineer based in the Greater Seattle Area specialized in front-end development and ui/ux design.",
+  "icons": [
+    {
+      "src": "/assets/icons/android-chrome-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/icons/android-chrome-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

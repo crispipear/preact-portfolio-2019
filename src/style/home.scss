@@ -1,0 +1,74 @@
+.home{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    .content{
+        position: absolute;
+        bottom: 30%;
+        right: 15%;
+        width: 25%;
+        &:before{
+            content: '';
+            position: absolute;
+            left: -7.5%;
+            top: 0%;
+            width: 1px;
+            height: 250%;
+            background: $textLight;
+        }
+        @include laptop{
+            right: 10%;
+            width: 35%;
+        }
+        @include mobile{
+            position: unset;
+            width: 100%;
+            padding: 7.5%;
+        }
+    }
+    h1{
+        line-height: 4rem;
+        font-size: 5rem;
+        letter-spacing: 0.1rem;
+        margin-bottom: 5%;
+    }
+    p{
+        margin: 0% 0% 2.5% 0%;
+        font-size: 1.1rem;
+        line-height: 175%;
+        span{
+            font-size: 100%;
+            font-weight: 500;
+            color: $key2;
+        }
+    }
+    .links{
+        margin-top: 5%;
+        a{
+            color: $key2;
+            transition: all 0.2s;
+            margin-right: 1.5%;
+            &:hover{
+                opacity: 0.5;
+            }
+        }
+    }
+    @include laptop{
+        h1{
+            font-size: 4rem;
+        }
+        p{
+            font-size: 1rem;
+        }
+    }
+    @include mobile{
+        h1{
+            font-size: 3.5rem;
+        }
+        p{
+            font-size: 0.9rem;
+            line-height: 150%;
+        }
+    }
+}
