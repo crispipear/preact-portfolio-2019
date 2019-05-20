@@ -5,5 +5,5 @@ import smartcabin from './smartcabin';
 import unarchived from './unarchived';
 
 export default {
-    clinic, imd, journi, smartcabin, unarchived
+    smartcabin, imd, unarchived, journi, clinic,
 }

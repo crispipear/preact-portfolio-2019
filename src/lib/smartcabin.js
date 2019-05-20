@@ -4,7 +4,7 @@ export default {
     name: "Boeing Smart Cabin",
     year: "2017 - 2019",
     context: "Visionary Cabin Experience",
-    tools: "React, React Native, Node.js",
+    tools: "React, React Native, Node.js, C#",
     role: "Front-end Software Development, UI/UX Design",
     cover: COVER,
     overview: "Boeing Smart Cabin is a Crystal Cabin Award 2019 Visionary Concept Cabin finalist."+

@@ -1,0 +1,102 @@
+.about{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    width: 100%;
+    .container{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-content{
+        width: 50%;
+        margin-right: -10%;
+        padding: 1.5% 0%;
+        span{
+            font-weight: 400;
+            color: $key2;
+        }
+        a{
+            font-weight: 500;
+            color: $key2;
+        }
+        .about-content-block{
+           span{
+               margin-bottom: 0%;
+               line-height: 1.4rem;
+           }
+           a{
+            margin-bottom: 0%;
+           }
+           p{
+               
+            margin-bottom: 0.75%;
+           }
+           div{
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr 1fr;
+               grid-column-gap: 5%;
+           }
+        }
+    }
+    .about-intro{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5% 0%;
+        box-sizing: border-box;
+        padding-left: 7.5%;
+        h1{
+            font-size: 2.5rem;
+            line-height: 3.5rem;
+            letter-spacing: 0.075rem;
+            margin-bottom: 2.5%;
+            z-index: 2;
+            margin: 0% 0% -10% -10%;
+        }
+        .about-profile{
+            width: 32.5%;
+            padding-bottom: 32.5%;
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            margin-left: 5%;
+            z-index: 1;
+            opacity: 0.6;
+            transform-style: preserve-3d;
+            &::before, &::after{
+                transition: all 0.2s;
+                content: '';
+                width: 100%;
+                height: 100%;
+                transform: translateZ(-1px);
+                position: absolute;
+            }
+            &::before{
+                bottom: -7.5%;
+                right: -7.5%;
+                opacity: 0.5;
+                border-right: 2px $key3 solid;
+                border-bottom: 2px $key3 solid;
+            }
+            &::after{
+                top: -7.5%;
+                left: -7.5%;
+                border-left: 2px $key3 solid;
+                border-top: 2px $key3 solid;
+            }
+        }
+        &:hover .about-profile{
+            &:before{
+                bottom: -10%;
+                right: -10%;
+            }
+            &:after{
+                top: -10%;
+                left: -10%;
+            }
+        }
+    }
+}

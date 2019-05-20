@@ -1,0 +1,21 @@
+.footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;;
+    .container{
+        display: flex;
+        padding: 0%;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+    span{
+        font-size: 0.9rem;
+        margin: 0%;
+    }
+}

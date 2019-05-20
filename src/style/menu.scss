@@ -1,0 +1,36 @@
+.menu{
+    position: fixed;
+    z-index: 10;
+    top: 0%;
+    width: 100%;
+    height: 15vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0%;
+        .menu-logo{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            img{
+                width: 18px;
+            }
+            span{
+                margin-left: 15px;
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 0.1rem;
+            }
+        }
+    }
+    a{
+        cursor: pointer;
+        letter-spacing: 0.1rem;
+        font-weight: 400;
+    }
+}
