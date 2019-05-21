@@ -20,13 +20,15 @@ class Home extends Component{
 						)
 					}	
 				</div>
+				<div className='home-titles'>
 					{
 						Object.keys(Projects).map((proj, key) =>
-							<div key={key}>
+							<div className='home-title' key={key}>
 								<h1>{Projects[proj].name}</h1>
 							</div>
 						)
-					}		
+					}	
+				</div>	
 			</div>
 		</section>
 		)

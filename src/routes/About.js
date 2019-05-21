@@ -40,7 +40,7 @@ class About extends Component {
 							Currently at <span>iSoftStone North America</span>, working on applications development,
 							ui/ux design and IoT network visualization for <span>Boeing</span>.
 							I am also graduating in June from <span>University of Washington </span>
-							with a degree in <span>interactive media design</span>.
+							with a degree in <a href='https://uwbimd2019.com' target='_blank'>interactive media design</a>.
 						</p>
 						<p>
 							I am passionate about developing efficient, user-oriented products and engaging experiences.

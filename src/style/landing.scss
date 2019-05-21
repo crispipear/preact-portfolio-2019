@@ -3,6 +3,9 @@
     min-height: 100vh;
     display: flex;
     justify-content: center;
+    .container{
+        position: relative;
+    }
     .home-image{
         width: 40vw;
         height: 25vw;
@@ -13,5 +16,22 @@
         }
         position: fixed;
         z-index: -1;
+    }
+    .home-titles{
+        width: 60%;
+        position: absolute;
+        right: 0;
+        top: 40%;
+        padding-bottom: 7.5%;
+        cursor: pointer;
+        .home-title{
+            margin-bottom: 7.5%;
+            h1{
+                font-size: 5rem;
+                color: transparent;
+                -webkit-text-stroke-width: 1px;
+                -webkit-text-stroke-color: black;
+            }
+        }
     }
 }

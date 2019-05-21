@@ -9,7 +9,7 @@ class Menu extends Component {
 				<div className='container'>
 					<div className='menu-logo'>
 						<img src={LOGO} alt='logo image'/>
-						<span>su li</span>
+						<span><Link href='/'>su li</Link></span>
 					</div>
 					<div className='menu-links'>
 						{
