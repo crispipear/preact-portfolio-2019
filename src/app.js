@@ -4,6 +4,8 @@ import Menu from './components/Menu';
 import Footer from './components/Footer';
 import Home from './routes/Home';
 import About from './routes/About';
+import Projects from './routes/Projects';
+
 export default class App extends Component {
 	state={
 		currentUrl: "/"
@@ -26,7 +28,8 @@ export default class App extends Component {
 				<Menu currentUrl={this.state.currentUrl}/>
 				<Router onChange={this.handleRoute}>
 					<Home path='/' />
-					<About path='about' />
+					<About path='/about' />
+					<Projects path='/projects/:name' />
 				</Router>
 				<Footer/>
 			</div>

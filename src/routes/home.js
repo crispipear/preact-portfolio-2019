@@ -1,9 +1,13 @@
 import { Component } from 'preact';
 import Projects from '../lib';
+import { Link } from 'preact-router/match';
 
 class Home extends Component{
 	state={
 		curProj: 'smartcabin'
+	}
+	handleHover = () => {
+		
 	}
 	render(){
 		return(
@@ -23,9 +27,9 @@ class Home extends Component{
 				<div className='home-titles'>
 					{
 						Object.keys(Projects).map((proj, key) =>
-							<div className='home-title' key={key}>
+							<Link href={`/projects/${proj}`} className='home-title' key={key}>
 								<h1>{Projects[proj].name}</h1>
-							</div>
+							</Link>
 						)
 					}	
 				</div>	
