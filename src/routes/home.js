@@ -6,8 +6,10 @@ class Home extends Component{
 	state={
 		curProj: 'smartcabin'
 	}
-	handleHover = () => {
-		
+	handleHover = curProj => {
+		this.setState({
+			curProj
+		})
 	}
 	render(){
 		return(
@@ -27,7 +29,11 @@ class Home extends Component{
 				<div className='home-titles'>
 					{
 						Object.keys(Projects).map((proj, key) =>
-							<Link href={`/projects/${proj}`} className='home-title' key={key}>
+							<Link href={`/projects/${proj}`}
+								  className='home-title' key={key}
+								  onMouseEnter={() => this.handleHover(proj)}
+							>
+								<h3>0{key+1}</h3>
 								<h1>{Projects[proj].name}</h1>
 							</Link>
 						)

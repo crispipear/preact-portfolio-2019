@@ -8,12 +8,13 @@ $textDark: #202034;
 @import "./menu.scss";
 @import "./about.scss";
 @import "./footer.scss";
+@import "./proj.scss";
 
 body {
 	padding: 0;
 	margin: 0;
 	background: #fdfdfd;
-	font-family: 'Roboto', arial, sans-serif;
+	font-family: 'Roboto', Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $textDark;
@@ -34,7 +35,7 @@ body {
 }
 a{
 	text-decoration: none;
-	display: inline-block;
+	display:inline-block;
 	position: relative;
 	&:visited, &:active{
 		color: $textDark;
@@ -52,16 +53,35 @@ a{
 	}
 	&:hover:after{
 		opacity: 1;
-		bottom: 20%;
+		bottom: 18%;
+	}
+}
+.menu-links a, .menu-logo a{
+	transition: color 0.2s;
+	&:after{
+		height: 0px;
+	}
+	&:hover{
+		color: $key3
+	}
+}
+a.no-underline{
+	margin: 0%!important;
+	transition: opacity 0.2s;
+	&:after{
+		height: 0px;
+	}
+	&:hover{
+		opacity: 0.6;
 	}
 }
 
 p, a, span{
-	font-size: 0.9rem;
-	line-height: 1.75rem;
-	letter-spacing: 0.03rem;
+	font-size: 16px;
+	line-height: 26px;
+	letter-spacing: 0.25px;
 	font-weight: 300;
-	margin: 5% 0%;
+	margin: 24px 0%;
 }
 
 h1,h2,h3,h4{

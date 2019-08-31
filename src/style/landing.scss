@@ -7,12 +7,16 @@
         position: relative;
     }
     .home-image{
-        width: 40vw;
-        height: 25vw;
-        opacity: 0.75;
+        width: 45vw;
+        height: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       opacity: 0.6;
         img{
             position: absolute;
             width: 100%;
+            transition: all 0.2s;
         }
         position: fixed;
         z-index: -1;
@@ -22,23 +26,38 @@
         position: absolute;
         right: 0;
         top: 40%;
-        padding-bottom: 7.5%;
+        padding-bottom: 15%;
         cursor: pointer;
         .home-title{
-            margin-bottom: 7.5%;
+            transition: all 0.15s;
+            margin-bottom: 15%;
             display: block;
+            transform-origin: 0%;
             &:after{
                 display: none;
+            }
+            h3, h1{
+                transition: all 0.15s;
+            }
+            h3{
+                line-height: 1.25rem;
+                font-size: 1.25rem;
+                color: rgba($textDark, 0.5);
             }
             h1{
                 font-size: 5rem;
                 line-height: 5.5rem;
-                color: transparent;
                 -webkit-text-stroke-width: 1px;
-                -webkit-text-stroke-color: black;
-                transition: all 0.15s;
-                &:hover{
-                -webkit-text-stroke-color: $key3;;
+                color: rgba($key2, 0.75);
+            }
+            &:hover{
+                transform: scale(1.1);
+                h1{
+                    color: transparent;
+                    -webkit-text-stroke-color: $key3;
+                }
+                h3{
+                    color: $key3;
                 }
             }
         }

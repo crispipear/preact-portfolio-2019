@@ -39,12 +39,8 @@ class About extends Component {
 						<p>
 							Currently at <span>iSoftStone North America</span>, working on applications development,
 							ui/ux design and IoT network visualization for <span>Boeing</span>.
-							I am also graduating in June from <span>University of Washington </span>
-							with a degree in <a href='https://uwbimd2019.com' target='_blank'>interactive media design</a>.
-						</p>
-						<p>
-							I am passionate about developing efficient, user-oriented products and engaging experiences.
-							Technology is what inspired me to shift from visual design to ux design and development.
+							I recently graduated from <span>University of Washington </span>
+							with a degree in <a href='https://uwbimd2019.com' target='_blank'>Interactive Media Design</a>.
 						</p>
 						<div className='about-content-block'>
 							<p>Some technologies that I work with —</p>
@@ -54,6 +50,11 @@ class About extends Component {
 								}
 							</div>
 						</div>
+						<p>
+							I started out as a visual designer, but technology has inspired me to shift my focus
+							towards ux design and development. I am passionate about developing efficient, user-oriented products and engaging experiences.
+							My secondary skills include video production and graphic design.
+						</p>
 						<div className='about-content-block'>
 							<p>Find me on —</p>
 							<div>
@@ -67,8 +68,10 @@ class About extends Component {
 							</div>
 						</div>
 						<p>
-							Got more questions or wanna chat? Email me at <a href='mailto:lisuy97@gmai.com'>lisuy97@gmail.com</a>
+							Got more questions or wanna chat (ENG/中文)?
+							<br/>— <a href='mailto:lisuy97@gmai.com'>lisuy97@gmail.com</a>
 						</p>
+						
 					</div>
 				</div>
 			</section>

@@ -11,6 +11,7 @@ export default class App extends Component {
 		currentUrl: "/"
 	}
 	handleRoute = e => {
+		window.scrollTo({ top: 0, behavior: 'smooth' })
 		this.setState({
 			currentUrl: e.url
 		})
@@ -29,7 +30,8 @@ export default class App extends Component {
 				<Router onChange={this.handleRoute}>
 					<Home path='/' />
 					<About path='/about' />
-					<Projects path='/projects/:name' />
+					<Projects path='/projects/:name'/>
+					<Projects path='/projects/'/>
 				</Router>
 				<Footer/>
 			</div>

@@ -1,0 +1,88 @@
+.project{
+    .header{
+        width: 100%;
+        height: 500px;
+        position: relative;
+        .header-img{
+            background-position: 0% 0%;
+            background-size: contain;
+            width: 440px;
+            height: 500px;
+            position: absolute;
+            background-repeat: no-repeat;
+            top: 24px;
+        }
+        .header-info{
+            position: absolute;
+            bottom: 100px;
+            left: 500px;
+        }
+        .header-info-grid{
+            width: 400px;
+            display: grid;
+            grid-template-columns: 1fr 3.5fr;
+            grid-row-gap: 16px;
+        }
+        h3, h2{
+            font-size: 16px;
+            text-transform: lowercase;
+        }
+        h2{
+            color: $textLight;
+            font-weight: 400;
+        }
+        h3{
+            font-weight: 600;
+            color: $key2;
+        }
+        h1{
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+    }
+    .body{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .body-block, .body-block-center{
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        .body-block{
+            padding-right: 40%;
+        }
+        .body-block-center{
+            padding: 0% 25%;
+        }
+        h1{
+            font-size: 24px;
+        }
+        p{
+            margin: 12px 0px;
+            font-size: 16px;
+            b, a{
+                color: $key2;
+                font-weight: 500;
+                margin: 0% 5px;
+            }
+        }
+        img{
+            width: 100%;
+            margin-bottom: 32px;
+            -webkit-box-shadow: 0px 3px 10x 2px rgba(0,0,0,0.03); 
+            box-shadow: 0px 3px 10px 2px rgba(0,0,0,0.03);
+        }
+        .body-video{
+            padding-bottom: 56.25%;
+            margin-bottom: 40px;
+            position: relative;
+            iframe{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

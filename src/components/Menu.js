@@ -13,20 +13,20 @@ class Menu extends Component {
 					</div>
 					<div className='menu-links'>
 						{
+							this.props.currentUrl == "/about" &&
+							<Link href='/'>work</Link>
+						}
+						{
+							this.props.currentUrl.startsWith("/projects") &&
+							<Link href='/'>work</Link>
+						}
+						{
 							this.props.currentUrl == "/" &&
 							<Link href='/about'>about</Link>
 						}
 						{
-							this.props.currentUrl == "/about" &&
-							<Link href='/'>home</Link>
-						}
-						{
 							this.props.currentUrl.startsWith("/projects") &&
 							<Link href='/about'>about</Link>
-						}
-						{
-							this.props.currentUrl.startsWith("/projects") &&
-							<Link href='/'>home</Link>
 						}
 					</div>
 				</div>
