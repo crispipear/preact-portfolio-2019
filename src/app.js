@@ -11,7 +11,9 @@ export default class App extends Component {
 		currentUrl: "/"
 	}
 	handleRoute = e => {
-		window.scrollTo({ top: 0, behavior: 'smooth' })
+		if (typeof window !== 'undefined') {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+		}
 		this.setState({
 			currentUrl: e.url
 		})
