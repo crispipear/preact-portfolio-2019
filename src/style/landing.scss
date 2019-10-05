@@ -2,64 +2,75 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    .container{
+    .home-landing{
         position: relative;
-    }
-    .home-image{
-        width: 45vw;
-        height: 75%;
+        width: 100%;
+        height: 100vh;
         display: flex;
-        align-items: center;
-        justify-content: center;
-       opacity: 0.6;
-        img{
-            position: absolute;
-            width: 100%;
-            transition: all 0.2s;
+        flex-direction: row;
+        h1{
+            font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
+            font-size: 10rem;
+            letter-spacing: 0.75rem;
+            font-weight: 700;
         }
-        position: fixed;
+        p{
+            margin-top: 0%;
+            margin-bottom: 8px;
+            font-size: 20px;
+            &:first-of-type{
+                font-weight: 500;
+                color: $key2;
+            }
+        }
+    }
+
+    .home-landing-left, .home-landing-right{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .home-landing-left{
+        align-items: flex-end;
+        padding-bottom: 35vh;
+    }
+    .home-landing-right{
+        align-items: flex-start;
+        padding-bottom: 25vh;
+    }
+    .shape-left, .shape-right{
+        background-color: $key1;
+        position: absolute;
         z-index: -1;
     }
-    .home-titles{
-        width: 60%;
-        position: absolute;
+    .shape-left{
+        top: 0;
+        left: 0;
+        width: 35%;
+        height: 70vh;
+    }
+    .shape-right{
+        bottom: 0;
         right: 0;
-        top: 40%;
-        padding-bottom: 15%;
-        cursor: pointer;
-        .home-title{
-            transition: all 0.15s;
-            margin-bottom: 15%;
-            display: block;
-            transform-origin: 0%;
-            &:after{
-                display: none;
-            }
-            h3, h1{
-                transition: all 0.15s;
-            }
-            h3{
-                line-height: 1.25rem;
-                font-size: 1.25rem;
-                color: rgba($textDark, 0.5);
-            }
-            h1{
-                font-size: 5rem;
-                line-height: 5.5rem;
-                -webkit-text-stroke-width: 1px;
-                color: rgba($key2, 0.75);
-            }
-            &:hover{
-                transform: scale(1.1);
-                h1{
-                    color: transparent;
-                    -webkit-text-stroke-color: $key3;
-                }
-                h3{
-                    color: $key3;
-                }
-            }
+        width: 20%;
+        height: 70vh;
+    }
+    .scroll{
+        position: absolute;
+        left: 50%;
+        bottom: -10vh;
+        width: 1px;
+        height: 20vh;
+        background-color: $textLight;
+        display: flex;
+        justify-content: center;
+        span{
+            margin-top: -4vh;
+            letter-spacing: 3px;
+            line-height: 0%;
         }
     }
 }

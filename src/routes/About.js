@@ -55,6 +55,10 @@ class About extends Component {
 							towards ux design and development. I am passionate about developing efficient, user-oriented products and engaging experiences.
 							My secondary skills include video production and graphic design.
 						</p>
+						<p>
+							I am still experimenting with Preact for this website and working on the content. Feel free to checkout my old portfolio
+							at <a href="https://crispipear.github.io/portfolio2018/" target='_blank'>crispipear.github.io/portfolio2018</a> (cringe alert?)
+						</p>
 						<div className='about-content-block'>
 							<p>Find me on —</p>
 							<div>

@@ -1,6 +1,6 @@
 .footer{
     width: 100%;
-    position: fixed;
+    height: 100px;
     bottom: 0%;
     right: 0%;
     box-sizing: border-box;
@@ -10,7 +10,6 @@
     height: 10vh;;
     .container{
         display: flex;
-        padding: 0%;
         flex-direction: row;
         justify-content: flex-end;
     }

@@ -1,5 +1,5 @@
 $key1: #FFFA74;
-$key2: #403AD3;
+$key2: #4D35D3;
 $key3: #E5C952;
 $textLight: #63636F;
 $textDark: #202034;
@@ -9,12 +9,14 @@ $textDark: #202034;
 @import "./about.scss";
 @import "./footer.scss";
 @import "./proj.scss";
+@import "./work.scss";
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Roboto:300,400,500,700&display=swap');
 
 body {
 	padding: 0;
 	margin: 0;
 	background: #fdfdfd;
-	font-family: 'Roboto', Arial, sans-serif;
+	font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $textDark;
@@ -66,20 +68,20 @@ a{
 	}
 }
 a.no-underline{
-	margin: 0%!important;
+	margin: 0%;
 	transition: opacity 0.2s;
 	&:after{
 		height: 0px;
 	}
 	&:hover{
-		opacity: 0.6;
+        opacity: 1;
 	}
 }
 
 p, a, span{
 	font-size: 16px;
-	line-height: 26px;
-	letter-spacing: 0.25px;
+	line-height: 28px;
+	letter-spacing: 0.4px;
 	font-weight: 300;
 	margin: 24px 0%;
 }
@@ -91,8 +93,9 @@ h1,h2,h3,h4{
 }
 
 .container{
+	clear: both;
 	box-sizing: border-box;
-	padding: 7.5% 0%;
-	max-width: 960px;
 	width: 100%;
+	padding: 0 10vw;
+	flex: 1;
 }

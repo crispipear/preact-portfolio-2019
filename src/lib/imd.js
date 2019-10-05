@@ -12,7 +12,7 @@ import WEB8 from '../assets/imd/web_8.png';
 export default {
     name: "IMD 2019",
     year: "2019",
-    context: "Website",
+    context: "Class Design Portfolio Website",
     tools: "React, Contentful",
     role: "Web Design/Development",
     cover: COVER,

@@ -8,26 +8,11 @@ class Menu extends Component {
 			<div className='menu'>
 				<div className='container'>
 					<div className='menu-logo'>
-						<img src={LOGO} alt='logo image'/>
-						<span><Link href='/'>su li</Link></span>
+						<Link href='/'><img src={LOGO} alt='logo image'/></Link>
 					</div>
 					<div className='menu-links'>
-						{
-							this.props.currentUrl == "/about" &&
-							<Link href='/'>work</Link>
-						}
-						{
-							this.props.currentUrl.startsWith("/projects") &&
-							<Link href='/'>work</Link>
-						}
-						{
-							this.props.currentUrl == "/" &&
-							<Link href='/about'>about</Link>
-						}
-						{
-							this.props.currentUrl.startsWith("/projects") &&
-							<Link href='/about'>about</Link>
-						}
+						<Link href='/'>work</Link>
+						<Link href='/about'>about</Link>
 					</div>
 				</div>
 			</div>

@@ -8,7 +8,7 @@ import SM5 from '../assets/smartcabin/sm_5.png';
 export default {
     name: "Smart Cabin",
     year: "2017 - Present",
-    context: "Visionary Cabin Experience",
+    context: "Cabin In-Flight Experience",
     tools: "React, React Native, Node.js, C#",
     role: "Software Development, UI/UX Design",
     cover: COVER,
