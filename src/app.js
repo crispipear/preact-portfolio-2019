@@ -35,7 +35,10 @@ export default class App extends Component {
 					<Projects path='/projects/:name'/>
 					<Projects path='/projects/'/>
 				</Router>
-				<Footer/>
+				{
+					this.state.currentUrl !== '/about' &&
+					<Footer/>
+				}
 			</div>
 		);
 	}

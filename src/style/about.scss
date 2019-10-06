@@ -1,105 +1,72 @@
 .about{
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
     width: 100%;
-    .container{
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    min-height: 100vh;
+    position: relative;
+    .shape-left, .shape-right{
+        background-color: $key1;
+        position: fixed;
+        z-index: -1;
     }
-    .about-content{
+    .shape-left{
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 65vh;
+    }
+    .shape-right{
+        bottom: 0;
+        right: 0;
+        width: 20%;
+        height: 65vh;
+    }
+    .about-left, .about-right{
         width: 50%;
-        margin-right: -10%;
-        padding: 1.5% 0%;
-        span{
-            font-weight: 400;
-            color: $key2;
+        display: flex;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .about-left{
+        position: fixed;
+        align-items: flex-end;
+        padding-top: 16vh;
+        padding-right: 5vw;
+        img{
+            width: 20vw;
+            margin-bottom: 2.5%;
+        }
+        div{
+            width: 50%;
+            text-align: right;
         }
         a{
-            margin: 0%;
-            font-weight: 500;
-            color: $key2;
-        }
-        .about-content-block{
-           span{
-               margin-bottom: 0%;
-               line-height: 1.4rem;
-           }
-           a{
-            margin-bottom: 0%;
-           }
-           p{
-               
-            margin-bottom: 0.75%;
-           }
-           div{
-               display: grid;
-               grid-template-columns: 1fr 1fr 1fr 1fr;
-               grid-column-gap: 5%;
-               span{
-                    margin: 8px 0%;
-               }
-           }
+            text-transform: lowercase;
+            margin: 0% 0% 0% 2.5%;
+            font-size: 14px;
         }
     }
-    .about-intro{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 5% 0%;
-        box-sizing: border-box;
-        padding-left: 7.5%;
+    .about-right{
+        position: absolute;
+        right: 0;
+        padding-top: 35vh;
+        padding-right: 10vw;
+        padding-bottom: 15vh;
+        h1, h2{
+            font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
+            font-weight: 700;
+        }
         h1{
-            font-size: 2.5rem;
-            line-height: 3.5rem;
-            letter-spacing: 0.075rem;
-            margin-bottom: 2.5%;
-            z-index: 2;
-            margin: 0% 0% -10% -10%;
+            margin-bottom: 20px;
         }
-        .about-profile{
-            width: 32.5%;
-            padding-bottom: 32.5%;
-            position: relative;
-            background-position: center;
-            background-size: cover;
-            margin-left: 5%;
-            z-index: 1;
-            opacity: 0.6;
-            transform-style: preserve-3d;
-            &::before, &::after{
-                transition: all 0.2s;
-                content: '';
-                width: 100%;
-                height: 100%;
-                transform: translateZ(-1px);
-                position: absolute;
+        .skills{
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            h2{
+                font-size: 18px;
             }
-            &::before{
-                bottom: -7.5%;
-                right: -7.5%;
-                opacity: 0.5;
-                border-right: 2px $key3 solid;
-                border-bottom: 2px $key3 solid;
-            }
-            &::after{
-                top: -7.5%;
-                left: -7.5%;
-                border-left: 2px $key3 solid;
-                border-top: 2px $key3 solid;
-            }
-        }
-        &:hover .about-profile{
-            &:before{
-                bottom: -12.5%;
-                right: -12.5%;
-            }
-            &:after{
-                top: -12.5%;
-                left: -12.5%;
+            p{
+                font-size: 16px;
+                line-height: 20px;
             }
         }
     }

@@ -22,7 +22,6 @@
     "build/*"
   ],
   "devDependencies": {
-    "babel-plugin-module-resolver": "^3.2.0",
     "eslint": "^4.9.0",
     "eslint-config-synacor": "^2.0.2",
     "identity-obj-proxy": "^3.0.0",
@@ -36,9 +35,7 @@
   "dependencies": {
     "gh-pages": "^2.0.1",
     "preact": "^8.2.6",
-    "preact-compat": "^3.19.0",
-    "preact-router": "^2.5.7",
-    "react-reveal": "^1.2.2"
+    "preact-router": "^2.5.7"
   },
   "jest": {
     "verbose": true,

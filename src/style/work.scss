@@ -2,7 +2,7 @@
     h1{
         font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
         font-size: 20px;
-        margin-top: 20vh;
+        margin-top: 15vh;
         font-weight: 700;
     }
     .work-item{
@@ -47,9 +47,9 @@
             p{
                 text-transform: lowercase;
                 font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
+                font-weight: 700;
                 color: $textLight;
                 font-size: 2rem;
-                font-weight: 700;
                 letter-spacing: 0.25rem;
                 display: flex;
                 align-items: center;

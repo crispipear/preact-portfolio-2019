@@ -18,64 +18,57 @@ const links = [
 		href: 'https://github.com/crispipear'
 	}
 ]
-
-const skills = ['JavaScript', 'React', 'Redux', 'jQuery', 'HTML', 'CSS/SCSS', 'Express', 'Node.js']
-
+const skills=[
+	{
+		name: 'tech skills',
+		list: ['JavaScript', 'HTML/CSS (+SCSS)', 'React (+Native)', 'Redux', 'Node.js', 'Express', 'jQuery']
+	},
+	{
+		name: 'experience',
+		list: ['front-end/web development', 'mobile app development', 'ui/ux/web design', 'video production', 'motion design']
+	}
+]
 class About extends Component {
 	render() {
 		return (
 			<section className='about'>
-				<div className='container'>
-					<div className='about-intro'>
-						<div className='about-profile' style={{backgroundImage: `url(${PROFILE})`}}/>
-						<h1>Hi there!
-							<br />My name is Su Li (李素莹).
-						</h1>
+				<div className='shape-left'/>
+				<div className='shape-right'/>
+				<div className='about-left'>
+					<img src={PROFILE} alt='profile pic'/>
+					<a href='mailto:lisuy97@gmail.com'>lisuy97@gmail.com (ENG/中文)</a>
+					<div>
+						{
+							links.map((l, key) => 
+								<a href={l.href} target='_blank' key={key}>{l.name}</a>
+							)
+						}
 					</div>
-					<div className='about-content'>
-						<p>I am a <span>Software Engineer</span> based in the Greater Seattle Area specialized in
-							<span> front-end development</span> and <span>ux design</span>. I design and build things like 
-							websites and apps.</p>
-						<p>
-							Currently at <span>iSoftStone North America</span>, working on applications development,
-							ui/ux design and IoT network visualization for <span>Boeing</span>.
-							I recently graduated from <span>University of Washington </span>
-							with a degree in <a href='https://uwbimd2019.com' target='_blank'>Interactive Media Design</a>.
-						</p>
-						<div className='about-content-block'>
-							<p>Some technologies that I work with —</p>
-							<div>
-								{
-									skills.map((skill, key) => <span key={key}>{skill}</span>)
-								}
-							</div>
-						</div>
-						<p>
-							I started out as a visual designer, but technology has inspired me to shift my focus
-							towards ux design and development. I am passionate about developing efficient, user-oriented products and engaging experiences.
-							My secondary skills include video production and graphic design.
-						</p>
-						<p>
-							I am still experimenting with Preact for this website and working on the content. Feel free to checkout my old portfolio
-							at <a href="https://crispipear.github.io/portfolio2018/" target='_blank'>crispipear.github.io/portfolio2018</a> (cringe alert?)
-						</p>
-						<div className='about-content-block'>
-							<p>Find me on —</p>
-							<div>
-								{
-									links.map((link, key) => 
-									<div key={key}>
-										<a href={link.href} target='_blank'>{link.name}</a>
-									</div>
-									)
-								}
-							</div>
-						</div>
-						<p>
-							Got more questions or wanna chat (ENG/中文)?
-							<br/>— <a href='mailto:lisuy97@gmai.com'>lisuy97@gmail.com</a>
-						</p>
-						
+				</div>
+				<div className='about-right'>
+					<h1>Hello, I'm Su</h1>
+					<p>
+						I’m a <b>software engineer</b> based in the Greater Seattle Area specialize in <b>front-end development</b> and <b>ui/ux design</b>. 
+						I am passionate about developing efficient, user-oriented products and engaging experiences.
+					</p>
+					<p>
+						Currently at <b>iSoftStone North America</b>, working on app development, ui/ux design and IoT network visualization for <b>Boeing</b>.
+					</p>
+					<p>I am also a 2019 graduate from <b>University of Washington</b> in 
+					<a href='https://uwbimd2019.com' target='_blank'>interactive media design</a>.</p>
+					<div className='skills'>
+						{
+							skills.map((s, key) => 
+								<div key={key} className='skill-block'>
+									<h2>{s.name}</h2>
+									{
+										s.list.map((item, key) => 
+											<p key={key}>{item}</p>
+										)
+									}
+								</div>
+							)
+						}
 					</div>
 				</div>
 			</section>

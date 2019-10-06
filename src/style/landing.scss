@@ -20,7 +20,7 @@
             margin-top: 0%;
             margin-bottom: 8px;
             font-size: 20px;
-            &:first-of-type{
+            &:nth-child(2){
                 font-weight: 500;
                 color: $key2;
             }
@@ -35,7 +35,7 @@
     }
     .home-landing-left{
         align-items: flex-end;
-        padding-bottom: 35vh;
+        padding-bottom: 40vh;
     }
     .home-landing-right{
         align-items: flex-start;
@@ -49,14 +49,14 @@
     .shape-left{
         top: 0;
         left: 0;
-        width: 35%;
-        height: 70vh;
+        width: 40%;
+        height: 65vh;
     }
     .shape-right{
         bottom: 0;
         right: 0;
         width: 20%;
-        height: 70vh;
+        height: 65vh;
     }
     .scroll{
         position: absolute;

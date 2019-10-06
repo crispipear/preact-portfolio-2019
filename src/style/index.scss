@@ -39,6 +39,9 @@ a{
 	text-decoration: none;
 	display:inline-block;
 	position: relative;
+	color: $textDark;
+	font-weight: 400!important;
+	transition: all 0.2s;
 	&:visited, &:active{
 		color: $textDark;
 	}
@@ -47,15 +50,15 @@ a{
 		height: 1px;
 		width: 100%;
 		position: absolute;
-		bottom: 0%;
+		bottom: 20%;
 		left: 0%;
-		background: $key2;
-		transition: all 0.2s;
-		opacity: 0;
+		background: $textDark;
+	}
+	&:hover{
+		color: $key2;
 	}
 	&:hover:after{
-		opacity: 1;
-		bottom: 18%;
+		background: $key2;
 	}
 }
 .menu-links a, .menu-logo a{
@@ -83,7 +86,13 @@ p, a, span{
 	line-height: 28px;
 	letter-spacing: 0.4px;
 	font-weight: 300;
-	margin: 24px 0%;
+	margin: 12px 0%;;
+	b{
+		font-weight: 500;
+	}
+	a{
+		margin: 0%;
+	}
 }
 
 h1,h2,h3,h4{

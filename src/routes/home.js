@@ -7,9 +7,10 @@ class Home extends Component{
 		<section className='home'>
 			<div className='home-landing'>
 				<div className='home-landing-left'>
-					<h1>su li</h1>
+					<h1>syl</h1>
 				</div>
 				<div className='home-landing-right'>
+					<p>Hello, my name is Su Li</p>
 					<p>software engineer + ux designer + hobbyist videographer</p>
 					<p>I design and build things like apps and websites</p>
 				</div>
