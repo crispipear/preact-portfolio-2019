@@ -53,14 +53,17 @@ a{
 		bottom: 20%;
 		left: 0%;
 		background: $textDark;
+		transition: all 0.2s;
 	}
 	&:hover{
 		color: $key2;
 	}
 	&:hover:after{
+		width: 25%;
 		background: $key2;
 	}
 }
+
 .menu-links a, .menu-logo a{
 	transition: color 0.2s;
 	&:after{
@@ -107,4 +110,8 @@ h1,h2,h3,h4{
 	width: 100%;
 	padding: 0 10vw;
 	flex: 1;
+}
+
+.load-screen{
+	
 }

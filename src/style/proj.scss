@@ -62,9 +62,14 @@
             margin: 12px 0px;
             font-size: 16px;
             b, a{
-                color: $key2;
                 font-weight: 500;
                 margin: 0% 5px;
+            }
+            a{
+                // height: 20%;
+            }
+            b{
+                color: $key2;
             }
         }
         img{

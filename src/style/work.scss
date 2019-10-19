@@ -46,20 +46,17 @@
             }
             p{
                 text-transform: lowercase;
-                font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
-                font-weight: 700;
+                font-weight: 500;
                 color: $textLight;
                 font-size: 2rem;
-                letter-spacing: 0.25rem;
                 display: flex;
                 align-items: center;
                 width: 100%;
                 span{
                     color: lighten($textLight, 20%);
-                    letter-spacing: 0.05rem;
-                    font-size: 50%;
+                    font-size: 55%;
                     font-weight: 400;
-                    margin: 0% 2.5%;
+                    margin: 0% 1.5%;
                 }
             }
         }

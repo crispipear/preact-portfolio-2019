@@ -12,8 +12,8 @@
         flex-direction: row;
         h1{
             font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
-            font-size: 10rem;
-            letter-spacing: 0.75rem;
+            font-size: 8rem;
+            letter-spacing: 0.5rem;
             font-weight: 700;
         }
         p{
@@ -49,14 +49,14 @@
     .shape-left{
         top: 0;
         left: 0;
-        width: 40%;
-        height: 65vh;
+        width: 42.5%;
+        height: 62.5vh;
     }
     .shape-right{
         bottom: 0;
         right: 0;
         width: 20%;
-        height: 65vh;
+        height: 60vh;
     }
     .scroll{
         position: absolute;

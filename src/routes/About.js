@@ -21,7 +21,7 @@ const links = [
 const skills=[
 	{
 		name: 'tech skills',
-		list: ['JavaScript', 'HTML/CSS (+SCSS)', 'React (+Native)', 'Redux', 'Node.js', 'Express', 'jQuery']
+		list: ['JavaScript', 'HTML/CSS (+SCSS)', 'React (+Native)', 'Redux', 'Node.js', 'Vue']
 	},
 	{
 		name: 'experience',

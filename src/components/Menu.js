@@ -8,7 +8,8 @@ class Menu extends Component {
 			<div className='menu'>
 				<div className='container'>
 					<div className='menu-logo'>
-						<Link href='/'><img src={LOGO} alt='logo image'/></Link>
+						{/* <Link href='/'><img src={LOGO} alt='logo image'/></Link> */}
+						<Link href='/'>syl</Link>
 					</div>
 					<div className='menu-links'>
 						<Link href='/'>work</Link>
