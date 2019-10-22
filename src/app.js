@@ -32,16 +32,17 @@ export default class App extends Component {
 	render() {
 		return (
 			<div id='app'>
-				<Menu currentUrl={this.state.currentUrl}/>
-				<Router onChange={this.handleRoute}>
-					<AsyncRoute path="/" component={Home} loading={ () => LoadScreen}/>
+				{/* <Menu currentUrl={this.state.currentUrl}/> */}
+					<Home/>
+				{/* <Router onChange={this.handleRoute}> */}
+					{/* <AsyncRoute path="/" component={Home} loading={ () => LoadScreen}/>
 					<AsyncRoute path="/about" component={About} loading={ () => LoadScreen}/>
-					<AsyncRoute path="/projects/:name" component={Projects} loading={ () => LoadScreen}/>
+					<AsyncRoute path="/projects/:name" component={Projects} loading={ () => LoadScreen}/> */}
 					{/* <Projects path='/projects/:name' loading={ () => <div>loading...</div>}/> */}
-				</Router>
+				{/* </Router> */}
 				{
-					this.state.currentUrl !== '/about' &&
-					<Footer/>
+					// this.state.currentUrl !== '/about' &&
+					// <Footer/>
 				}
 			</div>
 		);

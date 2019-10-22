@@ -13,15 +13,15 @@ class Home extends Component{
 					<p>Hello, my name is Su Li</p>
 					<p>software engineer + ux designer + hobbyist videographer</p>
 					<p>I design and build things like apps and websites</p>
+					<p>my site is under construction right now, come back soon!</p>
 				</div>
-				<div className='shape-left'/>
-				<div className='shape-right'/>
-				<div className='scroll'>
+				{/* <div className='shape-left'/>
+				<div className='shape-right'/> */}
+				{/* <div className='scroll'>
 					<span>scroll</span>
-				</div>
+				</div> */}
 			</div>
-			<Work/>
-
+			{/* <Work/> */}
 		</section>
 		)
 	}
