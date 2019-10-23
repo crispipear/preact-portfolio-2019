@@ -1,4 +1,10 @@
 import './style';
 import App from './app';
+import { h, render } from 'preact';
 
-export default App;
+let root;
+function init() {
+	root = render(<App />, document.body, root);
+}
+
+init()
