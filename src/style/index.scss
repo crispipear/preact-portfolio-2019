@@ -41,7 +41,7 @@ a{
 	position: relative;
 	color: $textDark;
 	font-weight: 400!important;
-	transition: all 0.2s;
+	transition: all 0.25s;
 	&:visited, &:active{
 		color: $textDark;
 	}
@@ -53,13 +53,13 @@ a{
 		bottom: 20%;
 		left: 0%;
 		background: $textDark;
-		transition: all 0.2s;
+		transition: all 0.25s;
 	}
 	&:hover{
 		color: $key2;
 	}
 	&:hover:after{
-		width: 25%;
+		width: 40%;
 		background: $key2;
 	}
 }
@@ -89,7 +89,10 @@ p, a, span{
 	line-height: 28px;
 	letter-spacing: 0.4px;
 	font-weight: 300;
-	margin: 12px 0%;;
+	margin: 12px 0%;
+	@include mobile{
+		margin: 0px;
+	}
 	b{
 		font-weight: 500;
 	}

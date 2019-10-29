@@ -1,6 +1,25 @@
 import { Component } from 'preact';
 import Work from '../components/Work';
 
+const links = [
+	{
+		name: 'LinkedIn',
+		href: 'https://linkedin.com/in/suyingli/'
+	},
+	{
+		name: 'Dribbble',
+		href: 'https://dribbble.com/crispipear'
+	},
+	{
+		name: 'Codepen',
+		href: 'https://codepen.io/crispipear/'
+	},
+	{
+		name: 'Github',
+		href: 'https://github.com/crispipear'
+	}
+]
+
 class Home extends Component{
 	render(){
 		return(
@@ -14,9 +33,14 @@ class Home extends Component{
 					<p>software engineer + ux designer + hobbyist videographer</p>
 					<p>I design and build things like apps and websites</p>
 					<p>my site is under construction right now, come back soon!</p>
+					<div className='home-links'>
+					{
+						links.map((l, key) => 
+							<a style={{marginRight: 12}} href={l.href} target='_blank' key={key}>{l.name}</a>
+						)
+					}
+					</div>
 				</div>
-				{/* <div className='shape-left'/>
-				<div className='shape-right'/> */}
 				{/* <div className='scroll'>
 					<span>scroll</span>
 				</div> */}
