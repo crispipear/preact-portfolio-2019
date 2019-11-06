@@ -2,23 +2,6 @@
     width: 100%;
     min-height: 100vh;
     position: relative;
-    .shape-left, .shape-right{
-        background-color: $key1;
-        position: fixed;
-        z-index: -1;
-    }
-    .shape-left{
-        top: 0;
-        left: 0;
-        width: 40%;
-        height: 65vh;
-    }
-    .shape-right{
-        bottom: 0;
-        right: 0;
-        width: 20%;
-        height: 65vh;
-    }
     .about-left, .about-right{
         width: 50%;
         display: flex;
@@ -51,7 +34,7 @@
         padding-right: 10vw;
         padding-bottom: 15vh;
         h1, h2{
-            font-family: 'Noto Serif', Georgia, 'Times New Roman', Times, serif;
+            font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
             font-weight: 700;
         }
         h1{

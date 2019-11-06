@@ -8,47 +8,36 @@
     display: flex;
     justify-content: center;
     .container{
+        a{
+            cursor: pointer;
+            font-size: 1rem;
+            letter-spacing: 0.05rem;
+            color: $textDark;
+        }
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        &::before{
-            width: 8vw;
-            height: 1px;
-            content: '';
-            background-color: $textLight;
-            position: absolute;
-            right: 0;
-        }
         .menu-links{
             flex: 1;
             display: flex;
             justify-content: flex-end;
             a{
-                margin-left: 5%;
+                margin-left: 20px;
+                font-family: 'Playfair Display', Georgia, sans-serif;
+                font-weight: 700!important;
             }
         }
         .menu-logo{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            flex: 1;
-            justify-content: flex-start;
-            img{
-                width: 14px;
-            }
-            span{
-                margin-left: 12px;
-                font-size: 1rem;
-                font-weight: 400;
-                letter-spacing: 0.1rem;
+            a{
+                font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+                font-weight: 400!important;
+                b{
+                    font-family: 'Playfair Display', Georgia, sans-serif;
+                    font-weight: 700!important;
+                    letter-spacing: 0.075rem;
+                }
             }
         }
-    }
-    a{
-        cursor: pointer;
-        font-size: 1rem;
-        letter-spacing: 0.1rem;
-        font-weight: 400;
     }
 }

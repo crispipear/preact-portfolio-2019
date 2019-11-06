@@ -32,8 +32,6 @@ class About extends Component {
 	render() {
 		return (
 			<section className='about'>
-				<div className='shape-left'/>
-				<div className='shape-right'/>
 				<div className='about-left'>
 					<img src={PROFILE} alt='profile pic'/>
 					<a href='mailto:lisuy97@gmail.com'>lisuy97@gmail.com (ENG/中文)</a>

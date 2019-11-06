@@ -24,28 +24,23 @@ class Home extends Component{
 	render(){
 		return(
 		<section className='home'>
-			<div className='home-landing'>
-				<div className='home-landing-left'>
-					<h1>syl</h1>
+			<div className='home-landing container'>
+				<div><h1>syl</h1></div>
+				<div>
+					<p>Hello</p>
+					<p>My name is <span className='textBg'>Su Li</span> </p>
 				</div>
-				<div className='home-landing-right'>
-					<p>Hello, my name is Su Li</p>
-					<p>software engineer + ux designer + hobbyist videographer</p>
-					<p>I design and build things like apps and websites</p>
-					<p>my site is under construction right now, come back soon!</p>
-					<div className='home-links'>
-					{
-						links.map((l, key) => 
-							<a style={{marginRight: 12}} href={l.href} target='_blank' key={key}>{l.name}</a>
-						)
-					}
-					</div>
+				<div>
+					<p>
+						I am a <span className='textBg'>software engineer</span><span> + </span>
+						<span className='textBg'>ux designer</span>
+					</p>
+					<p>I design and build things like websites and apps</p>
 				</div>
-				{/* <div className='scroll'>
-					<span>scroll</span>
-				</div> */}
 			</div>
-			{/* <Work/> */}
+			<div className='scroll'>
+				scroll
+			</div>
 		</section>
 		)
 	}

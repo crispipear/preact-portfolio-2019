@@ -1,8 +1,8 @@
 $key1: #FFFA74;
 $key2: #4D35D3;
 $key3: #E5C952;
-$textLight: #63636F;
-$textDark: #202034;
+$textLight: #5E5E64;
+$textDark: #11102B;
 @import "./mixins.scss";
 @import "./landing.scss";
 @import "./menu.scss";
@@ -10,7 +10,7 @@ $textDark: #202034;
 @import "./footer.scss";
 @import "./proj.scss";
 @import "./work.scss";
-@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,700|Roboto:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,400,500&display=swap');
 
 body {
 	padding: 0;
@@ -45,6 +45,8 @@ a{
 	&:visited, &:active{
 		color: $textDark;
 	}
+}
+a.underline{
 	&::after{
 		content: '';
 		height: 1px;
@@ -64,23 +66,20 @@ a{
 	}
 }
 
-.menu-links a, .menu-logo a{
-	transition: color 0.2s;
-	&:after{
-		height: 0px;
+a.link-bg{
+	&::after{
+		content: '';
+		height: 50%;
+		position: absolute;
+		background: $key1;
+		transition: all 0.2s;
+		right: -10%;
+		bottom: -2.5%;
+		z-index: -1;
+		width: 0%;
 	}
-	&:hover{
-		color: $key3
-	}
-}
-a.no-underline{
-	margin: 0%;
-	transition: opacity 0.2s;
-	&:after{
-		height: 0px;
-	}
-	&:hover{
-        opacity: 1;
+	&:hover::after{
+		width: 100%;
 	}
 }
 
@@ -89,7 +88,8 @@ p, a, span{
 	line-height: 28px;
 	letter-spacing: 0.4px;
 	font-weight: 300;
-	margin: 12px 0%;
+	margin: 0%;
+	color: $textLight;
 	@include mobile{
 		margin: 0px;
 	}
@@ -103,7 +103,7 @@ p, a, span{
 
 h1,h2,h3,h4{
 	margin: 0%;
-	color: $key2;
+	color: $textDark;
 	font-weight: 500;
 }
 
@@ -115,6 +115,37 @@ h1,h2,h3,h4{
 	flex: 1;
 }
 
+.textBg{
+	font-size: 100%;
+	font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+	font-weight: 700;
+	color: $textDark;
+	position: relative;
+	margin: 0% 2px;
+	&:after{
+		content: '';
+		height: 60%;
+		position: absolute;
+		background: $key1;
+		transition: all 0.2s;
+		right: -4px;
+		bottom: -4px;
+		z-index: -1;
+		width: 90%;
+	}
+}
+
 .load-screen{
 	
+}
+
+.scroll{
+	font-weight: 300;
+	position: absolute;
+	bottom: 0;
+	right: 10%;
+	height: 16vh;
+	letter-spacing: 0.2rem;
+	border-left: 1px $textLight solid;
+	padding-left: 12px;
 }
