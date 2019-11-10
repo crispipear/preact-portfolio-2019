@@ -1,24 +1,6 @@
 import { Component } from 'preact';
-import Work from '../components/Work';
-
-const links = [
-	{
-		name: 'LinkedIn',
-		href: 'https://linkedin.com/in/suyingli/'
-	},
-	{
-		name: 'Dribbble',
-		href: 'https://dribbble.com/crispipear'
-	},
-	{
-		name: 'Codepen',
-		href: 'https://codepen.io/crispipear/'
-	},
-	{
-		name: 'Github',
-		href: 'https://github.com/crispipear'
-	}
-]
+import Projects from '../lib';
+import { Link } from 'preact-router/match';
 
 class Home extends Component{
 	render(){
@@ -40,6 +22,39 @@ class Home extends Component{
 			</div>
 			<div className='scroll'>
 				scroll
+			</div>
+			<div className='home-work container'>
+				<h1 className='textBg'>selected work</h1>
+				<div className='work-container'>
+					<div className='left'>
+					{
+						Object.keys(Projects).map((proj, key) =>
+							key % 2 == 0 &&
+							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
+								<div className='work-cover'>
+									<div style={{backgroundImage: `url(${Projects[proj].cover})`}}/>
+								</div>
+								<h1 className='textBg'>{Projects[proj].name}</h1>
+								<h2>{Projects[proj].context}</h2>
+							</Link>
+						)
+					}
+					</div>
+					<div className='right'>
+					{
+						Object.keys(Projects).map((proj, key) => 
+							key % 2 !== 0 &&
+							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
+								<div className='work-cover'>
+									<div style={{backgroundImage: `url(${Projects[proj].cover_v || Projects[proj].cover})`}}/>
+								</div>
+								<h1 className='textBg'>{Projects[proj].name}</h1>
+								<h2>{Projects[proj].context}</h2>
+							</Link>
+						)
+					}
+					</div>
+				</div>
 			</div>
 		</section>
 		)

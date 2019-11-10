@@ -1,4 +1,5 @@
 import COVER from '../assets/smartcabin/cover.png';
+import COVER_V from '../assets/smartcabin/cover_vert.png';
 import SM1 from '../assets/smartcabin/sm_1.png';
 import SM2 from '../assets/smartcabin/sm_2.png';
 import SM3 from '../assets/smartcabin/sm_3.png';
@@ -8,10 +9,11 @@ import SM5 from '../assets/smartcabin/sm_5.png';
 export default {
     name: "Smart Cabin",
     year: "2017 - Present",
-    context: "Cabin In-Flight Experience",
+    context: "in-flight cabin experience",
     tools: "React, React Native, Node.js, C#",
     role: "Software Development, UI/UX Design",
     cover: COVER,
+    cover_v: COVER_V,
     body: [
         <div className='body-block'>
             <h1>overview</h1>

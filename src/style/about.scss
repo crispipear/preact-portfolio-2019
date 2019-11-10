@@ -3,54 +3,68 @@
     min-height: 100vh;
     position: relative;
     .about-left, .about-right{
-        width: 50%;
         display: flex;
         box-sizing: border-box;
         flex-direction: column;
     }
     .about-left{
+        display: block;
+        width: 40%;
         position: fixed;
-        align-items: flex-end;
-        padding-top: 16vh;
-        padding-right: 5vw;
+        padding-top: 24vh;
+        padding-left: 10vw;
         img{
             width: 20vw;
-            margin-bottom: 2.5%;
-        }
-        div{
-            width: 50%;
-            text-align: right;
+            margin-bottom: 7.5%;
         }
         a{
             text-transform: lowercase;
-            margin: 0% 0% 0% 2.5%;
-            font-size: 14px;
+            margin: 2.5% 2.5% 0% 0%;
+            // font-size: 14px;
         }
     }
     .about-right{
         position: absolute;
         right: 0;
-        padding-top: 35vh;
-        padding-right: 10vw;
+        width: 60%;
+        padding-top: 30vh;
+        padding-right: 16vw;
         padding-bottom: 15vh;
         h1, h2{
             font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
             font-weight: 700;
         }
-        h1{
-            margin-bottom: 20px;
-        }
         .skills{
-            margin-top: 32px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            margin: 28px 0;
+            display: flex;
+            flex-direction: row;
             h2{
-                font-size: 18px;
+                line-height: 100%;
+                flex: 1;
+                font-size: 20px; 
             }
-            p{
-                font-size: 16px;
-                line-height: 20px;
+            div{
+                flex: 2;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 8px;
+                grid-row-gap: 12px;
+                h3{
+                    font-size: 16px;
+                    font-weight: 400;
+                }
             }
+        }
+        p{
+            margin-bottom: 8px;
+            b{
+                color: $textDark;
+            }
+        }
+        h1{
+            color: $textDark;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
     }
 }

@@ -9,7 +9,7 @@ import WEB6 from '../assets/unarchived/web_6.png';
 export default {
     name: "unARchived",
     year: "2018 - Present",
-    context: "AR Seattle History App, Website",
+    context: "community AR project + website ",
     tools: "React, Contentful",
     role: "UI/UX Design, Web Development",
     cover: COVER,

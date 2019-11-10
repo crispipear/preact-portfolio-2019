@@ -3,7 +3,7 @@ import MOCKUP from '../assets/journi/mockup.png';
 export default {
     name: "journi",
     year: "2019",
-    context: "Solo Travel Helper App",
+    context: "solo travel companion app",
     tools: "React Native",
     role: "Mobile Development, Web Design, Video Production, Exhibition Design",
     cover: COVER,
