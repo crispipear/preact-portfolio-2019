@@ -1,10 +1,9 @@
-import { Component } from 'preact';
-import Projects from '../lib';
+import { h } from 'preact';
+import { useEffect } from 'preact/hooks';
 import { Link } from 'preact-router/match';
 
-class Home extends Component{
-	render(){
-		return(
+export default function Home(props) {
+	return(
 		<section className='home'>
 			<div className='home-landing container'>
 				<div><h1>syl</h1></div>
@@ -28,28 +27,28 @@ class Home extends Component{
 				<div className='work-container'>
 					<div className='left'>
 					{
-						Object.keys(Projects).map((proj, key) =>
+						Object.keys(props.overview).map((proj, key) =>
 							key % 2 == 0 &&
 							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
 								<div className='work-cover'>
-									<div style={{backgroundImage: `url(${Projects[proj].cover})`}}/>
+									<div style={{backgroundImage: `url(${props.overview[proj].cover})`}}/>
 								</div>
-								<h1 className='textBg'>{Projects[proj].name}</h1>
-								<h2>{Projects[proj].context}</h2>
+								<h1 className='textBg'>{props.overview[proj].name}</h1>
+								<h2>{props.overview[proj].context}</h2>
 							</Link>
 						)
 					}
 					</div>
 					<div className='right'>
 					{
-						Object.keys(Projects).map((proj, key) => 
+						Object.keys(props.overview).map((proj, key) => 
 							key % 2 !== 0 &&
 							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
 								<div className='work-cover'>
-									<div style={{backgroundImage: `url(${Projects[proj].cover_v || Projects[proj].cover})`}}/>
+									<div style={{backgroundImage: `url(${props.overview[proj].cover_v || props.overview[proj].cover})`}}/>
 								</div>
-								<h1 className='textBg'>{Projects[proj].name}</h1>
-								<h2>{Projects[proj].context}</h2>
+								<h1 className='textBg'>{props.overview[proj].name}</h1>
+								<h2>{props.overview[proj].context}</h2>
 							</Link>
 						)
 					}
@@ -57,7 +56,5 @@ class Home extends Component{
 				</div>
 			</div>
 		</section>
-		)
-	}
+);
 }
-export default Home;

@@ -1,50 +1,45 @@
-import { h, Component } from 'preact';
+import { h } from 'preact';
+import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
-import AsyncRoute from 'preact-async-route';
 
-import Menu from './components/Menu';
-import Footer from './components/Footer';
-import Home from './routes/Home';
-import About from './routes/About';
-import Projects from './routes/Projects';
+import ProjectsData 	from './lib/project-overview';
+import ProjectContent   from './lib/project-content';
 
-const LoadScreen = () => <div>loading...</div>
+import Menu 		from './components/Menu';
+import LoadScreen	from './components/LoadScreen';
+import Home 		from './routes/Home';
+import Profile		from './routes/Profile';
+import Projects		from './routes/Projects';
 
-export default class App extends Component {
-	state={
-		currentUrl: "/"
-	}
-	handleRoute = e => {
-		if (typeof window !== 'undefined') {
-			window.scrollTo({ top: 0, behavior: 'smooth' })
-		}
-		this.setState({
-			currentUrl: e.url
+
+export default function App(){
+	const [currentUrl, setCurrentUrl] = useState("/")
+	const [projData, setProjectData] = useState({overview: [], content: {}})
+
+	useEffect(() => {
+		setCurrentUrl(window.location.pathname)
+		setProjectData({
+			overview: ProjectsData,
+			content: ProjectContent
 		})
-	};
+	}, [])
 
-	componentDidMount(){
-		this.setState({
-			currentUrl: window.location.pathname
-		})
+	function handleRoute(e){
+		typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' })
+		setCurrentUrl(e.url)
 	}
 
-	render() {
-		return (
-			<div id='app'>
-				<Menu currentUrl={this.state.currentUrl}/>
-					{/* <Home/> */}
-				<Router onChange={this.handleRoute}>
-					<AsyncRoute path="/" component={Home} loading={ () => LoadScreen}/>
-					<AsyncRoute path="/about" component={About} loading={ () => LoadScreen}/>
-					<AsyncRoute path="/projects/:name" component={Projects} loading={ () => LoadScreen}/>
-					<Projects path='/projects/:name' loading={ () => <div>loading...</div>}/>
-				</Router>
-				{
-					// this.state.currentUrl !== '/about' &&
-					// <Footer/>
-				}
-			</div>
-		);
-	}
+	return(
+		<div id="app">
+			{/* {
+				!loaded && <LoadScreen/>
+			} */}
+			<Menu currentUrl={currentUrl}/>
+			<Router onChange={handleRoute}>
+				<Home path="/" overview={projData.overview}/>
+				<Profile path="/profile"/>
+				<Projects path="/projects/:projectName" overview={projData.overview} content={projData.content}/>
+			</Router>
+		</div>
+	)
 }

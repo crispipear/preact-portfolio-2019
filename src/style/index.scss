@@ -1,7 +1,7 @@
 $key1: #FFFA74;
 $key2: #4D35D3;
 $key3: #E5C952;
-$textLight: #5E5E64;
+$textLight: #4d4d57;
 $textDark: #11102B;
 @import "./mixins.scss";
 @import "./landing.scss";
@@ -89,7 +89,6 @@ p, a, span{
 	letter-spacing: 0.4px;
 	font-weight: 300;
 	margin: 0%;
-	color: $textLight;
 	@include mobile{
 		margin: 0px;
 	}
@@ -99,6 +98,10 @@ p, a, span{
 	a{
 		margin: 0%;
 	}
+}
+
+p, span{
+	color: $textLight;
 }
 
 h1,h2,h3,h4{
@@ -136,7 +139,26 @@ h1,h2,h3,h4{
 }
 
 .load-screen{
-	
+	width: 100%;
+	height: 100vh;
+	z-index: 100;
+	background: white;
+	span{
+		position: absolute;
+		top: 50%;
+		right: 10vw;
+		letter-spacing: 0.1rem;
+		font-size: 1.2rem;
+		&:after{
+			content: '';
+			height: 1px;
+			background: $textDark;
+			width: 8vw;
+			position: absolute;
+			top: 50%;
+			right: -10vw;
+		}
+	}
 }
 
 .scroll{
