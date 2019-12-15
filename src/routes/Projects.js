@@ -1,21 +1,39 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
+import { Link } from 'preact-router/match';
 import { route } from 'preact-router';
 
 export default function Projects(props) {
     const [project, setProject] = useState({})
     const [content, setContent] = useState([])
+    const [next, setNext] = useState({})
+    const [nextRoute, setNextRoute] = useState("")
 
     useEffect(() => {
-        if(props.matches.projectName == "/"){
+        initProject()
+    }, [props.matches.projectName])
+
+    useEffect(() => {
+        initProject()
+    }, [])
+
+    function initProject(){
+        let projName = props.matches.projectName
+        if(projName == "/"){
             setTimeout(() => {
                 route('/')
             }, 1000)
         }else{
-            setProject(props.overview[props.matches.projectName])
-            setContent(props.content[props.matches.projectName])
+            setProject(props.overview[projName])
+            setContent(props.content[projName])
+            let keys = Object.keys(props.overview);
+            let nextIndex = keys.indexOf(projName) +1;
+            if(nextIndex >= keys.length) nextIndex = 0;
+            let nextItem = keys[nextIndex];
+            setNextRoute(nextItem);
+            setNext(props.overview[nextItem]);
         }
-    }, [])
+    }
 
     return (
         <div className='project container'>
@@ -42,6 +60,14 @@ export default function Projects(props) {
             <div className='body'>
                     {content}
             </div>
+            <Link className='proj-end' href={"/projects/" + nextRoute}>
+                <h2>next project</h2>
+                <div>
+                    <h3>{next.context}</h3>
+                    <h1>{next.name}</h1>
+                </div>
+               <div style={{backgroundImage: `url(${next.cover})`}}/>
+            </Link>
         </div>
     );
 }

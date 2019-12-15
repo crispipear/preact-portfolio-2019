@@ -7,13 +7,16 @@ import ProjectContent   from './lib/project-content';
 
 import Menu 		from './components/Menu';
 import LoadScreen	from './components/LoadScreen';
+import Footer 		from './components/Footer';
+
 import Home 		from './routes/Home';
 import Profile		from './routes/Profile';
 import Projects		from './routes/Projects';
 
 
 export default function App(){
-	const [currentUrl, setCurrentUrl] = useState("/")
+	const [menuOpacity, setMenuOpacity] = useState(1);
+	const [currentUrl, setCurrentUrl] = useState("/");
 	const [projData, setProjectData] = useState({overview: [], content: {}})
 
 	useEffect(() => {
@@ -25,8 +28,13 @@ export default function App(){
 	}, [])
 
 	function handleRoute(e){
+		scrollTop();
+		setCurrentUrl(e.url);
+	}
+
+	function scrollTop(){
 		typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' })
-		setCurrentUrl(e.url)
+		setMenuOpacity(1)
 	}
 
 	return(
@@ -34,12 +42,16 @@ export default function App(){
 			{/* {
 				!loaded && <LoadScreen/>
 			} */}
-			<Menu currentUrl={currentUrl}/>
+			<Menu currentUrl={currentUrl} menuOpacity={menuOpacity} setMenuOpacity={setMenuOpacity}/>
 			<Router onChange={handleRoute}>
 				<Home path="/" overview={projData.overview}/>
 				<Profile path="/profile"/>
 				<Projects path="/projects/:projectName" overview={projData.overview} content={projData.content}/>
 			</Router>
+			{
+				currentUrl !== '/profile' &&
+				<Footer scrollTop={scrollTop}/>
+			}
 		</div>
 	)
 }

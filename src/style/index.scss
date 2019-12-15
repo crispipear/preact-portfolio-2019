@@ -118,9 +118,13 @@ h1,h2,h3,h4{
 	flex: 1;
 }
 
-.textBg{
-	font-size: 100%;
+.serifFont{
 	font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+}
+
+.textBg{
+	@extend .serifFont;
+	font-size: 100%;
 	font-weight: 700;
 	color: $textDark;
 	position: relative;
