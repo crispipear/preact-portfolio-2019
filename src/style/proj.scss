@@ -81,7 +81,7 @@
         padding: 16vh 0 8vh 0;
         .right-full, .left-full, .block, .block-text, .block-right, .block-left, .block-images{
             display: grid;
-            margin-bottom: 16vh;
+            margin-bottom: 12vh;
             grid-template-columns: 1fr 1fr;
             column-gap: 8vw;
             box-sizing: border-box;
@@ -112,7 +112,7 @@
             margin-top: 1rem;
         }
         .full-text{
-            margin-bottom: 16vh;
+            margin: 20vh 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -133,13 +133,36 @@
             }
         }
         img{
+            margin-bottom: 4vh;
             width: 100%;
         }
-        .image-full{
-            margin-bottom: 16vh;
+        .image-hh{
+            width: unset;
+            margin: 0%;
+            height: 60vh;
+        }
+        .image-full, .block-center{
+            margin-bottom: 12vh;
             span{
                 color: $textLight;
                 font-size: 0.9rem;
+            }
+        }
+        .block-center{
+            padding: 0 20vw;
+            display: flex;
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                &:first-of-type{
+                    align-items: flex-start;
+                    margin-right: 4%;
+                }
+                &:last-of-type{
+                    align-items: center;
+                }
+                flex: 1
             }
         }
         .block-images{
@@ -179,7 +202,7 @@
         display: grid;
         grid-template-columns: 1fr 2fr 3fr;
         padding: 0 10vw;
-        margin: 5vh 0;
+        margin: 8vh 0;
         height: 40vh;
         h2{
             @extend .serifFont;
@@ -195,6 +218,7 @@
                 color: $textLight;
                 font-size: 0.9rem;
                 font-weight: 400;
+                margin-bottom: 2%;
             }
             h1{
                 @extend .serifFont;

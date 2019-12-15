@@ -35,7 +35,7 @@ export default [
         <img src={require('../../assets/journi/brainstorm.jpg')}/>
         <span>brain storming our scope</span>
     </div>,
-    <div className="block-right">
+    <div className="block">
         <div>
             <h1>background research</h1>
             <p>
@@ -49,7 +49,10 @@ export default [
             <img src={require('../../assets/journi/research_1.jpg')}/>
         </div>
     </div>,
-    <div className="block-right">
+    <div className="block">
+        <div>
+            <img src={require('../../assets/journi/research_2.jpg')}/>
+        </div>
         <div>
             <h1>user research</h1>
             <p>
@@ -59,11 +62,8 @@ export default [
             The findings in solo travelers concerns are summarized down to the keywords on the left.
             </p>
         </div>
-        <div>
-            <img src={require('../../assets/journi/research_2.jpg')}/>
-        </div>
     </div>,
-    <div className="block-right">
+    <div className="block">
         <div>
             <h1>the problem</h1>
             <p>
@@ -80,7 +80,10 @@ export default [
             <img src={require('../../assets/journi/research_3.jpg')}/>
         </div>
     </div>,
-    <div className="block-right">
+    <div className="block">
+        <div>
+            <img src={require('../../assets/journi/research_4.jpg')}/>
+        </div>
         <div>
             <h1>competitive analysis</h1>
             <p>
@@ -90,8 +93,77 @@ export default [
             We came to a conclusion that our opportunity window lies within a product that provides effective and proactive features.
             </p>
         </div>
+    </div>,
+    <div className="block-left">
         <div>
-            <img src={require('../../assets/journi/research_4.jpg')}/>
+            <h1>app prototype</h1>
+            <p>
+                We drafted the features corresponding to our problem statements to design our solution.
+                For the purpose of concept demonstration and user testing, I created a high fidelity mobile prototype with React Native.
+            </p>
         </div>
+        <div/>
+    </div>,
+    <div className="image-full">
+        <img src={require('../../assets/journi/wireframe.png')}/>
+        <img src={require('../../assets/journi/mockup.png')}/>
+    </div>,
+    <div className="block-center">
+        <div>
+            <h1>safety card</h1>
+            <p>
+                Home screen is a “pocket card” that provides accessible information regarding real time location, nearby resources, emergency contact, landmarks and safe areas.
+            </p>
+            </div>
+        <div>
+            <img className="image-hh" src={require('../../assets/journi/app_map.gif')}/>
+        </div>
+    </div>,
+    <div className="block-center">
+        <div>
+            <h1>safety check-in</h1>
+            <p>
+                Depending on user’s settings, journi will send a notification where user can confirm their safety. If user failed to confirm, their emergency contacts will be notified.            </p>
+            </div>
+        <div>
+            <img className="image-hh" src={require('../../assets/journi/app_checkin.gif')}/>
+        </div>
+    </div>,
+    <div className="block-center">
+        <div>
+            <h1>create trips</h1>
+            <p>
+                Home screen is a “pocket card” that provides accessible information regarding real time location, nearby resources, emergency contact, landmarks and safe areas.
+            </p>
+            </div>
+        <div>
+            <img className="image-hh" src={require('../../assets/journi/app_create.gif')}/>
+        </div>
+    </div>,
+    <div className="block-center">
+        <div>
+            <h1>travel info</h1>
+            <p>
+                journi provides concised city travel tips according to the destination of the trip.
+            </p>
+            </div>
+        <div>
+            <img className="image-hh" src={require('../../assets/journi/app_trip.gif')}/>
+        </div>
+    </div>,
+    <div className="left-full">
+        <div>
+        <img src={require('../../assets/journi/ideas.jpg')}/>
+        </div>
+    <div>
+        <h1>capstone exhibit</h1>
+        <p>
+        The two quarters long preparation led up to our final presentation. The senior capstone exhibit was held on June 4th, 2019. We designed and created all the artifacts that went on the 4ft by 8ft walls. We projected our product showcase video and ran the mobile prototype app on an iPhone mounted on the wall.
+        </p>
+    </div>
+    </div>,
+    <div className="image-full">
+        <img src={require('../../assets/journi/exhibit1.jpg')}/>
+        <img src={require('../../assets/journi/exhibit2.jpg')}/>
     </div>,
 ]

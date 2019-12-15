@@ -53,7 +53,7 @@ export default [
     <div className="image-full">
         <img src={require('../../assets/unarchived/userflow.jpg')}/>
     </div>,
-    <div className="block-text">
+    <div className="block-left">
         <div>
             <h1>iteration</h1>
             <p>
@@ -99,7 +99,7 @@ export default [
             <img src={require('../../assets/unarchived/app_ar.gif')}/>
         </div>
     </div>,
-    <div className="block">
+    <div className="block-left">
         <div>
             <h1>unARchived website</h1>
             <p>
