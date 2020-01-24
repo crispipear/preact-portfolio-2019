@@ -79,7 +79,7 @@
     .body{
         width: 100%;
         padding: 16vh 0 8vh 0;
-        .right-full, .left-full, .block, .block-text, .block-right, .block-left, .block-images{
+        .right-bleed, .left-bleed, .block, .block-text, .block-right, .block-left, .block-images{
             display: grid;
             margin-bottom: 12vh;
             grid-template-columns: 1fr 1fr;
@@ -169,12 +169,12 @@
             column-gap: 2vw;
             row-gap: 2vw;
         }
-        .right-full{
+        .right-bleed{
             div:first-of-type{
                 padding-left: 10vw;
             }
         }
-        .left-full{
+        .left-bleed{
             div:last-of-type{
                 padding-right: 10vw;
             }
@@ -221,8 +221,11 @@
                 margin-bottom: 2%;
             }
             h1{
+                a{
+                    font-size: 100%;
+                    font-weight: 700!important;
+                }
                 @extend .serifFont;
-                font-weight: 700;
                 font-size: 2.2rem;
             }
         }

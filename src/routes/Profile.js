@@ -53,7 +53,7 @@ export default () => {
 
                 <h1>what I do</h1>
                 <p>
-                    My primary focuses are <b>front-end development</b> (sometimes back-end too) and <b>ui/ux design</b>.
+                    My primary focuses are <b>Front-end development</b> (sometimes back-end too) and <b>UI/UX design</b>.
                     I am passionate about developing problem-solving, user-oriented products and engaging experiences.
                 </p>
                 <div className='skills'>

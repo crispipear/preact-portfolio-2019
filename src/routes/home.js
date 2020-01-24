@@ -1,8 +1,22 @@
 import { h } from 'preact';
-import { useEffect } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 import { Link } from 'preact-router/match';
+import Overview from '../lib/project-overview';
 
 export default function Home(props) {
+	const worksRef = useRef(null)
+	const [pos, setPos] = useState(0);
+
+	useEffect(() => {
+		setPos(
+			worksRef.current.getBoundingClientRect().y
+		)
+	}, [])
+
+	function scrollDown(){
+		typeof window !== 'undefined' && window.scrollTo({ top: pos, behavior: 'smooth' })
+		props.setMenuOpacity(0);
+	}
 	return(
 		<section className='home'>
 			<div className='home-landing container'>
@@ -19,36 +33,36 @@ export default function Home(props) {
 					<p>I design and build things like websites and apps</p>
 				</div>
 			</div>
-			<div className='scroll'>
+			<div className='scroll' onClick={scrollDown}>
 				scroll
 			</div>
-			<div className='home-work container'>
+			<div className='home-work container' ref={worksRef}>
 				<h1 className='textBg'>selected work</h1>
 				<div className='work-container'>
 					<div className='left'>
 					{
-						Object.keys(props.overview).map((proj, key) =>
+						Object.keys(Overview).map((proj, key) =>
 							key % 2 == 0 &&
 							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
 								<div className='work-cover'>
-									<div style={{backgroundImage: `url(${props.overview[proj].cover})`}}/>
+									<div style={{backgroundImage: `url(${Overview[proj].cover})`}}/>
 								</div>
-								<h1 className='textBg'>{props.overview[proj].name}</h1>
-								<h2>{props.overview[proj].context}</h2>
+								<h1 className='textBg'>{Overview[proj].name}</h1>
+								<h2>{Overview[proj].context}</h2>
 							</Link>
 						)
 					}
 					</div>
 					<div className='right'>
 					{
-						Object.keys(props.overview).map((proj, key) => 
+						Object.keys(Overview).map((proj, key) => 
 							key % 2 !== 0 &&
 							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
 								<div className='work-cover'>
-									<div style={{backgroundImage: `url(${props.overview[proj].cover_v || props.overview[proj].cover})`}}/>
+									<div style={{backgroundImage: `url(${Overview[proj].cover_v || Overview[proj].cover})`}}/>
 								</div>
-								<h1 className='textBg'>{props.overview[proj].name}</h1>
-								<h2>{props.overview[proj].context}</h2>
+								<h1 className='textBg'>{Overview[proj].name}</h1>
+								<h2>{Overview[proj].context}</h2>
 							</Link>
 						)
 					}

@@ -1,7 +1,7 @@
 $key1: #FFFA74;
 $key2: #4D35D3;
 $key3: #E5C952;
-$textLight: #4d4d57;
+$textLight: #373744;
 $textDark: #11102B;
 @import "./mixins.scss";
 @import "./landing.scss";
@@ -166,6 +166,7 @@ h1,h2,h3,h4{
 }
 
 .scroll{
+	cursor: pointer;
 	font-weight: 300;
 	position: absolute;
 	bottom: 0;
