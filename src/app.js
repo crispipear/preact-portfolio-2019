@@ -1,50 +1,34 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
-import { Router } from 'preact-router';
 
-import Menu 		from './components/Menu';
-import LoadScreen	from './components/LoadScreen';
-import Footer 		from './components/Footer';
-
-import Home 		from './routes/Home';
-import Profile		from './routes/Profile';
-import Journi		from './routes/projects/Journi';
-import Unarchived	from './routes/projects/Unarchived';
+const links = {
+	LinkedIn: 'https://www.linkedin.com/in/suyingli/',
+	Dribbble: 'https://dribbble.com/crispipear',
+	CodePen: 'https://codepen.io/crispipear/',
+	Github: 'https://github.com/crispipear'
+}
 
 export default function App(){
-	const [menuOpacity, setMenuOpacity] = useState(1);
-	const [currentUrl, setCurrentUrl] = useState("/");
-
-	useEffect(() => {
-		setCurrentUrl(window.location.pathname)
-	}, [])
-
-	function handleRoute(e){
-		scrollTop();
-		setCurrentUrl(e.url);
-	}
-
-	function scrollTop(){
-		typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' })
-		setMenuOpacity(1)
-	}
-
 	return(
 		<div id="app">
-			{/* {
-				!loaded && <LoadScreen/>
-			} */}
-			<Menu currentUrl={currentUrl} menuOpacity={menuOpacity} setMenuOpacity={setMenuOpacity}/>
-			<Router onChange={handleRoute}>
-				<Home path="/" setMenuOpacity={setMenuOpacity}/>
-				<Profile path="/profile"/>
-				<Journi path="/projects/journi"/>
-				<Unarchived path="/projects/unarchived"/>
-			</Router>
-			{
-				currentUrl !== '/profile' &&
-				<Footer scrollTop={scrollTop}/>
-			}
+			<h1>&#127959;</h1>
+			<p>Hello! This is Su, thanks for visiting.</p>
+			<p>My portfolio is currently under construction, please come back soon. &#128513;</p>
+			<p>
+				{
+					Object.keys(links).map((linkName, key) =>
+						<a 
+							className="underline"
+							style={{
+								marginLeft: key !== 0 ? '8px' : '0px'
+							}}
+							key={linkName}
+							href={links[linkName]}>
+								{linkName}
+						</a>	
+					)
+				}
+			</p>
 		</div>
 	)
 }

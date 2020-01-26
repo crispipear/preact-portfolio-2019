@@ -3,20 +3,13 @@ $key2: #4D35D3;
 $key3: #E5C952;
 $textLight: #373744;
 $textDark: #11102B;
-@import "./mixins.scss";
-@import "./landing.scss";
-@import "./menu.scss";
-@import "./about.scss";
-@import "./footer.scss";
-@import "./proj.scss";
-@import "./work.scss";
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,400,500&display=swap');
 
 body {
+	font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
 	padding: 0;
 	margin: 0;
 	background: #fdfdfd;
-	font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $textDark;
@@ -66,113 +59,11 @@ a.underline{
 	}
 }
 
-a.link-bg{
-	&::after{
-		content: '';
-		height: 50%;
-		position: absolute;
-		background: $key1;
-		transition: all 0.2s;
-		right: -10%;
-		bottom: -2.5%;
-		z-index: -1;
-		width: 0%;
-	}
-	&:hover::after{
-		width: 100%;
-	}
+h1{
+	font-size: 6rem;
+	margin: 0% 0% 20px 0%;
 }
-
-p, a, span{
-	font-size: 16px;
-	line-height: 28px;
-	letter-spacing: 0.4px;
-	font-weight: 300;
-	margin: 0%;
-	@include mobile{
-		margin: 0px;
-	}
-	b{
-		font-weight: 500;
-	}
-	a{
-		margin: 0%;
-	}
-}
-
-p, span{
-	color: $textLight;
-}
-
-h1,h2,h3,h4{
-	margin: 0%;
-	color: $textDark;
-	font-weight: 500;
-}
-
-.container{
-	clear: both;
-	box-sizing: border-box;
-	width: 100%;
-	padding: 0 10vw;
-	flex: 1;
-}
-
-.serifFont{
-	font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
-}
-
-.textBg{
-	@extend .serifFont;
-	font-size: 100%;
-	font-weight: 700;
-	color: $textDark;
-	position: relative;
-	margin: 0% 2px;
-	&:after{
-		content: '';
-		height: 60%;
-		position: absolute;
-		background: $key1;
-		transition: all 0.2s;
-		right: -4px;
-		bottom: -4px;
-		z-index: -1;
-		width: 90%;
-	}
-}
-
-.load-screen{
-	width: 100%;
-	height: 100vh;
-	z-index: 100;
-	background: white;
-	span{
-		position: absolute;
-		top: 50%;
-		right: 10vw;
-		letter-spacing: 0.1rem;
-		font-size: 1.2rem;
-		&:after{
-			content: '';
-			height: 1px;
-			background: $textDark;
-			width: 8vw;
-			position: absolute;
-			top: 50%;
-			right: -10vw;
-		}
-	}
-}
-
-.scroll{
-	cursor: pointer;
-	font-weight: 300;
-	position: absolute;
-	bottom: 0;
-	right: 10%;
-	height: 16vh;
-	letter-spacing: 0.2rem;
-	border-left: 1px $textLight solid;
-	padding-left: 12px;
+p{
+	font-size: 1rem;
+	margin: 0% 0% 12px 0%;
 }
