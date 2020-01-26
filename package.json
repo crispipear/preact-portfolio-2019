@@ -7,8 +7,7 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build",
-    "deploy": "preact build --no-prerender && cp ./src/CNAME build/ && gh-pages -d build",
+    "build": "preact build --no-prerender",
     "serve": "preact build && serve build --single",
     "dev": "preact watch",
     "lint": "eslint src",
@@ -21,6 +20,7 @@
     "build/*"
   ],
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-preact-pure": "^2.0.0",
     "eslint": "^6.0.1",
@@ -28,15 +28,17 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^24.9.0",
     "jest-preset-preact": "^1.0.0",
+    "node-sass": "^4.13.0",
     "per-env": "^1.0.2",
     "preact-cli": "^3.0.0-rc.6",
     "preact-render-spy": "^1.2.1",
+    "resolve-env-vars": "^1.0.0",
+    "sass-loader": "^7.3.1",
     "serve": "^11.1.0",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^7.3.1"
+    "webpack": "^4.41.5"
   },
   "dependencies": {
-    "gh-pages": "^2.0.1",
+    "contentful": "^7.13.1",
     "preact": "^10.0.1",
     "preact-render-to-string": "^5.1.0",
     "preact-router": "^3.0.0"

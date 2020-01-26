@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Overview from '../lib/project-overview';
+import Overview from '../lib/case-studies';
 
 export default function ProjIntro(props) {
     console.log(Overview)

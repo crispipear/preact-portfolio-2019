@@ -13,10 +13,10 @@ $textDark: #11102B;
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,400,500&display=swap');
 
 body {
+	font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
 	padding: 0;
 	margin: 0;
 	background: #fdfdfd;
-	font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $textDark;

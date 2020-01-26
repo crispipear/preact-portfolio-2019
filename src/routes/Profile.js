@@ -19,13 +19,10 @@ const links = [
 	}
 ]
 const tech = [
-	'JavaScript',
 	'React(+Native)',
-	'HTML/CSS(+SCSS)',
 	'Node.js(+Express)',
 	'Redux',
-	'Mocha(+Chai)',
-	'GCP + Firebase'
+	'Firebase'
 ]
 
 export default () => {
@@ -46,15 +43,15 @@ export default () => {
             <div className='about-right'>
                 <h1>oh hi there</h1>
                 <p>
-                    I’m Su Li, <b>UX + Software Engineer</b> based in the Greater Seattle Area.
+                    My name is <b>Su Li</b>. I'm a <b>Software Engineer</b> and <b>UX Designer</b> based in the Greater Seattle Area.
                 </p>
                 <p>Currently at <b>iSoftStone North America</b> as a <b>Boeing</b> supplier.</p>
                 <p>Graduated from <b>University of Washington</b> in spring 2019.</p>
 
                 <h1>what I do</h1>
                 <p>
-                    My primary focuses are <b>Front-end development</b> (sometimes back-end too) and <b>UI/UX design</b>.
-                    I am passionate about developing problem-solving, user-oriented products and engaging experiences.
+                    My primary focuses are <b>Front-end development</b> (+some back-end dev) and <b>UI/UX design</b>.
+                    I am passionate about developing problem-solving, user-oriented products and creating engaging experiences.
                 </p>
                 <div className='skills'>
                     <h2>recent stack</h2>
@@ -64,7 +61,15 @@ export default () => {
                         }
                     </div>
                 </div>
-                <p>Send me an email if you got more questions :)</p>
+
+                <h1>more?</h1>
+                <p>
+                    My favorite things to do off work includes: <br/>
+                    - Binge-reading in my bed. <br/>
+                    - Binge-watching in my bed. <br/>
+                    - Play games in my bed. <br/>
+                    - Experiment with new recipes when I done being in my bed. <br/>
+                </p>
             </div>
         </section>
     )

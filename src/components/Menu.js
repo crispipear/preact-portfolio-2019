@@ -22,7 +22,7 @@ export default function Menu(props) {
 		<div className='menu' style={{opacity: props.menuOpacity}}>
 			<div className='container'>
 				<div className='menu-logo'>
-					<Link href='/'><b>su li</b> | ux + software engineer</Link>
+					<Link href='/'><b>su li</b> | designer + engineer</Link>
 				</div>
 				<div className='menu-links'>
 					<Link className='link-bg' href='/'>work</Link>

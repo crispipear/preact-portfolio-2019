@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Overview from '../lib/project-overview';
+import Overview from '../lib/case-studies';
 import { Link } from 'preact-router/match';
 
 export default function ProjFooter(props) {

@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
-import { Link } from 'preact-router/match';
-import Overview from '../lib/project-overview';
+import CaseStudies from '../components/CaseStudies';
+import MoreProjects from '../components/MoreProjects';
 
 export default function Home(props) {
 	const worksRef = useRef(null)
@@ -28,7 +28,7 @@ export default function Home(props) {
 				<div>
 					<p>
 						I am a <span className='textBg'>software engineer</span><span> + </span>
-						<span className='textBg'>ux designer</span>
+						<span className='textBg'>ux designer</span> based in Seattle.
 					</p>
 					<p>I design and build things like websites and apps</p>
 				</div>
@@ -37,38 +37,13 @@ export default function Home(props) {
 				scroll
 			</div>
 			<div className='home-work container' ref={worksRef}>
-				<h1 className='textBg'>selected work</h1>
-				<div className='work-container'>
-					<div className='left'>
-					{
-						Object.keys(Overview).map((proj, key) =>
-							key % 2 == 0 &&
-							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
-								<div className='work-cover'>
-									<div style={{backgroundImage: `url(${Overview[proj].cover})`}}/>
-								</div>
-								<h1 className='textBg'>{Overview[proj].name}</h1>
-								<h2>{Overview[proj].context}</h2>
-							</Link>
-						)
-					}
-					</div>
-					<div className='right'>
-					{
-						Object.keys(Overview).map((proj, key) => 
-							key % 2 !== 0 &&
-							<Link key={proj} className='work-item' href={`/projects/${proj}`}>
-								<div className='work-cover'>
-									<div style={{backgroundImage: `url(${Overview[proj].cover_v || Overview[proj].cover})`}}/>
-								</div>
-								<h1 className='textBg'>{Overview[proj].name}</h1>
-								<h2>{Overview[proj].context}</h2>
-							</Link>
-						)
-					}
-					</div>
-				</div>
+				<h1 className='textBg'>case studies</h1>
+				<CaseStudies caseStudies={props.caseStudies}/>
 			</div>
+			<div className='home-work container' style={{marginTop: '0%'}}>
+				<h1 className='textBg'>more projects</h1>
+				<MoreProjects projects={props.projects}/>
+		    </div>
 		</section>
 );
 }

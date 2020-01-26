@@ -1,6 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
+import { fetchData } from './utils/ctf';
 
 import Menu 		from './components/Menu';
 import LoadScreen	from './components/LoadScreen';
@@ -8,38 +9,59 @@ import Footer 		from './components/Footer';
 
 import Home 		from './routes/Home';
 import Profile		from './routes/Profile';
-import Journi		from './routes/projects/Journi';
-import Unarchived	from './routes/projects/Unarchived';
+// import Journi		from './routes/projects/Journi';
+// import Unarchived	from './routes/projects/Unarchived';
 
 export default function App(){
 	const [menuOpacity, setMenuOpacity] = useState(1);
 	const [currentUrl, setCurrentUrl] = useState("/");
+	const [isLoading, setIsLoading] = useState(true);
+	const [caseStudies, setCaseStudies] = useState([]);
+	const [projects, setProjects] = useState([]);
 
 	useEffect(() => {
-		setCurrentUrl(window.location.pathname)
+		setCurrentUrl(window.location.pathname);
+		initData();
+		// setIsLoading(false);
 	}, [])
-
-	function handleRoute(e){
-		scrollTop();
-		setCurrentUrl(e.url);
+	
+	async function initData(){
+		const caseStudies = await fetchData('caseStudies');
+		setCaseStudies(caseStudies);
+		const projects = await fetchData('projects');
+		setProjects(projects);
 	}
 
-	function scrollTop(){
-		typeof window !== 'undefined' && window.scrollTo({ top: 0, behavior: 'smooth' })
+	function handleRoute(e){
+		scrollTop(false);
+		setCurrentUrl(e.url);
+		// setIsLoading(true);
+		// setTimeout(() => {
+		// 	setIsLoading(false);
+		// }, 1000)
+	}
+	function scrollTop(smooth = true){
+		if (typeof window !== 'undefined'){
+			smooth
+			?
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+			:
+			window.scrollTo({ top: 0 })
+		}
 		setMenuOpacity(1)
 	}
 
 	return(
 		<div id="app">
 			{/* {
-				!loaded && <LoadScreen/>
+				isLoading && <LoadScreen/>
 			} */}
 			<Menu currentUrl={currentUrl} menuOpacity={menuOpacity} setMenuOpacity={setMenuOpacity}/>
 			<Router onChange={handleRoute}>
-				<Home path="/" setMenuOpacity={setMenuOpacity}/>
+				<Home path="/" setMenuOpacity={setMenuOpacity} caseStudies={caseStudies} projects={projects}/>
 				<Profile path="/profile"/>
-				<Journi path="/projects/journi"/>
-				<Unarchived path="/projects/unarchived"/>
+				{/* <Journi path="/projects/journi"/>
+				<Unarchived path="/projects/unarchived"/> */}
 			</Router>
 			{
 				currentUrl !== '/profile' &&
