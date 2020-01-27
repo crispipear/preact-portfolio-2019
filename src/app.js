@@ -29,7 +29,14 @@ export default function App(){
 		const caseStudies = await fetchData('caseStudies');
 		setCaseStudies(caseStudies);
 		const projects = await fetchData('projects');
+		projects.sort(sortByNum)
 		setProjects(projects);
+	}
+
+	function sortByNum(itemA, itemB) {
+		let a = itemA.orderId || 100;
+		let b = itemB.orderId || 100;
+		return a > b ? 1 : b > a ? -1 : 0;
 	}
 
 	function handleRoute(e){

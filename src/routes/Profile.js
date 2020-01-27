@@ -43,14 +43,14 @@ export default () => {
             <div className='about-right'>
                 <h1>oh hi there</h1>
                 <p>
-                    My name is <b>Su Li</b>. I'm a <b>Software Engineer</b> and <b>UX Designer</b> based in the Greater Seattle Area.
+                    My name is <b>Su Li</b>, a (technology x experience) enthusiast based in the Greater Seattle Area.
                 </p>
-                <p>Currently at <b>iSoftStone North America</b> as a <b>Boeing</b> supplier.</p>
+                <p>I am currently working at <b>iSoftStone North America</b> as a <b>software engineer</b> and <b>designer</b>.</p>
                 <p>Graduated from <b>University of Washington</b> in spring 2019.</p>
 
                 <h1>what I do</h1>
                 <p>
-                    My primary focuses are <b>Front-end development</b> (+some back-end dev) and <b>UI/UX design</b>.
+                    My primary focuses are <b>front-end development</b> (+some back-end dev) and <b>ui/ux design</b>.
                     I am passionate about developing problem-solving, user-oriented products and creating engaging experiences.
                 </p>
                 <div className='skills'>

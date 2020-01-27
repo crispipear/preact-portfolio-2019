@@ -3,7 +3,7 @@ import { h } from 'preact';
 export default ({scrollTop}) => 
 <div className="footer container">
     <div>
-        <span>&copy; Su Li 2019</span>
+        <span>&copy; Su Li 2020</span>
     </div>
     <div>
         <b onClick={scrollTop}>back to top</b>
