@@ -53,16 +53,14 @@ a.underline{
 		height: 24%;
 		width: 100%;
 		position: absolute;
-		bottom: 5%;
+		bottom: 7%;
 		left: 0%;
 		background: $key1;
-		opacity: 0.6;
 		z-index: -1;
 		transition: all 0.25s;
 	}
 	&:hover:after{
 		height: 100%;
-		opacity: 1;
 	}
 }
 
@@ -84,7 +82,7 @@ a.link-bg{
 }
 
 p, a, span{
-	font-size: 16px;
+	font-size: 0.96rem;
 	line-height: 1.8;
 	letter-spacing: 0.4px;
 	font-weight: 300;
@@ -172,7 +170,60 @@ h1,h2,h3,h4{
 	bottom: 0;
 	right: 10%;
 	height: 16vh;
-	letter-spacing: 0.2rem;
+	letter-spacing: 0.05rem;
 	border-left: 1px $textLight solid;
 	padding-left: 12px;
+}
+
+.error{
+	.error-bg{
+		background-position: center;
+		background-size: contain;
+		width: 100%;
+		height: 64vh;
+		background-repeat: no-repeat;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 24px 0px;
+		h1{
+			cursor: default;
+			margin: 0%;
+			margin-top: -5rem;
+			font-size: 20rem;
+			line-height: 1;
+			@extend .serifFont;
+			font-weight: 700;
+			position: relative;
+			&:after{
+				content: attr(data-text);
+				position: absolute;
+				color: $key1;
+				left: 0.8rem;
+				top: 0.8rem;
+				z-index: -1;
+				transition: all 0.2s;
+			}
+			&:hover::after{
+				animation: shake 0.2s infinite ease-in;
+			}
+		}
+	}
+	p{
+		font-weight: 700;
+		font-size: 1.6rem;
+		text-align: center;
+	}
+}
+
+@keyframes shake{
+	0%{
+		transform: translateX(2rem);
+	}
+	50%{
+		transform: translateX(-4rem);
+	}
+	100%{
+		transform: translateX(2rem);
+	}
 }

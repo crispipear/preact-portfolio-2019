@@ -19,10 +19,10 @@ const links = [
 	}
 ]
 const tech = [
-	'React(+Native)',
-	'Node.js(+Express)',
-	'Redux',
-	'Firebase'
+	'React',
+    'Node.js(+Express)',
+    'Firebase',
+    'Vue.js'
 ]
 
 export default () => {
@@ -45,16 +45,14 @@ export default () => {
                 <p>
                     My name is <b>Su Li</b>, a (technology x experience) enthusiast based in the Greater Seattle Area.
                 </p>
-                <p>I am currently working at <b>iSoftStone North America</b> as a <b>software engineer</b> and <b>designer</b>.</p>
+                <p>I am currently working at <b>iSoftStone</b> as a <b>software engineer</b> and <b>designer</b>.</p>
                 <p>Graduated from <b>University of Washington</b> in spring 2019.</p>
-
-                <h1>what I do</h1>
                 <p>
-                    My primary focuses are <b>front-end development</b> (+some back-end dev) and <b>ui/ux design</b>.
-                    I am passionate about developing problem-solving, user-oriented products and creating engaging experiences.
+                    I am passionate about developing problem-solving, human-centered and engaging experiences.
+                    My work primarily focuses on <b>front-end development</b> and <b>ui/ux design</b>, I am also familiar with back-end development.
                 </p>
                 <div className='skills'>
-                    <h2>recent stack</h2>
+                    <h2>recent tech</h2>
                     <div>
                         {
                             tech.map((skill, key) => <h3 key={key}>{skill}</h3>)
@@ -64,11 +62,11 @@ export default () => {
 
                 <h1>more?</h1>
                 <p>
-                    My favorite things to do off work includes: <br/>
-                    - Binge-reading in my bed. <br/>
-                    - Binge-watching in my bed. <br/>
-                    - Play games in my bed. <br/>
-                    - Experiment with new recipes when I done being in my bed. <br/>
+                    "fun" facts: <br/>
+                    - 1st design software I used: Adobe Fireworks (elementary school)<br/>
+                    - 1st coding language: Java (high school year 2) <br/>
+                    - I really like KFC chicken wings<br/>
+                    - I do most of my work, gaming, reading in my bed<br/>
                 </p>
             </div>
         </section>

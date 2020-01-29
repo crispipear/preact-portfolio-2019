@@ -15,7 +15,7 @@ export default function Home(props) {
 
 	function scrollDown(){
 		typeof window !== 'undefined' && window.scrollTo({ top: pos, behavior: 'smooth' })
-		props.setMenuOpacity(0);
+		props.setHideMenu(true);
 	}
 	return(
 		<section className='home'>
@@ -27,14 +27,14 @@ export default function Home(props) {
 				</div>
 				<div>
 					<p>
-						I am a <span className='textBg'>software engineer</span><span> + </span>
+						I am a <span className='textBg'>front-end engineer</span><span> + </span>
 						<span className='textBg'>ux designer</span> based in Seattle.
 					</p>
 					<p>I design and build things like websites and apps</p>
 				</div>
 			</div>
 			<div className='scroll' onClick={scrollDown}>
-				scroll
+				see my work
 			</div>
 			<div className='home-work container' ref={worksRef}>
 				<h1 className='textBg'>case studies</h1>

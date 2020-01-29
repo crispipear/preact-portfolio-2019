@@ -7,14 +7,16 @@ import Menu 		from './components/Menu';
 import LoadScreen	from './components/LoadScreen';
 import Footer 		from './components/Footer';
 
+import Error	    from './routes/Error';
 import Home 		from './routes/Home';
 import Profile		from './routes/Profile';
 // import Journi		from './routes/projects/Journi';
 // import Unarchived	from './routes/projects/Unarchived';
 
 export default function App(){
-	const [menuOpacity, setMenuOpacity] = useState(1);
+	const [hideMenu, setHideMenu] = useState(false);
 	const [currentUrl, setCurrentUrl] = useState("/");
+	const [error, setError] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [caseStudies, setCaseStudies] = useState([]);
 	const [projects, setProjects] = useState([]);
@@ -42,6 +44,11 @@ export default function App(){
 	function handleRoute(e){
 		scrollTop(false);
 		setCurrentUrl(e.url);
+		if(e.current.props.error){
+			setError(true)
+		}else{
+			setError(false)
+		}
 		// setIsLoading(true);
 		// setTimeout(() => {
 		// 	setIsLoading(false);
@@ -55,7 +62,7 @@ export default function App(){
 			:
 			window.scrollTo({ top: 0 })
 		}
-		setMenuOpacity(1)
+		setHideMenu(false)
 	}
 
 	return(
@@ -63,15 +70,16 @@ export default function App(){
 			{/* {
 				isLoading && <LoadScreen/>
 			} */}
-			<Menu currentUrl={currentUrl} menuOpacity={menuOpacity} setMenuOpacity={setMenuOpacity}/>
+			<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error}/>
 			<Router onChange={handleRoute}>
-				<Home path="/" setMenuOpacity={setMenuOpacity} caseStudies={caseStudies} projects={projects}/>
+				<Home path="/" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
 				<Profile path="/profile"/>
+				<Error type="404" default error/>
 				{/* <Journi path="/projects/journi"/>
 				<Unarchived path="/projects/unarchived"/> */}
 			</Router>
 			{
-				currentUrl !== '/profile' &&
+				(currentUrl !== '/profile' && !error) &&
 				<Footer scrollTop={scrollTop}/>
 			}
 		</div>
