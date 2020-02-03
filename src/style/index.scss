@@ -6,7 +6,7 @@ $textDark: #11102B;
 @import "./mixins.scss";
 @import "./landing.scss";
 @import "./menu.scss";
-@import "./about.scss";
+@import "./profile.scss";
 @import "./footer.scss";
 @import "./proj.scss";
 @import "./work.scss";
@@ -48,6 +48,10 @@ a{
 }
 a.underline{
 	line-height: 140%;
+	*{
+		font-weight: 400;
+		font-size: 100%;
+	}
 	&::after{
 		content: '';
 		height: 24%;
@@ -81,7 +85,7 @@ a.link-bg{
 	}
 }
 
-p, a, span{
+p, a, span, li{
 	font-size: 0.96rem;
 	line-height: 1.8;
 	letter-spacing: 0.4px;
@@ -97,12 +101,14 @@ p, a, span{
 		margin: 0%;
 	}
 }
-
+b, strong{
+	font-weight: 500;
+}
 p, span{
 	color: $textLight;
 }
 
-h1,h2,h3,h4{
+h1,h2,h3,h4,h5,h6{
 	margin: 0%;
 	color: $textDark;
 	font-weight: 500;

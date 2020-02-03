@@ -7,28 +7,28 @@ export default function CaseStudies(props) {
         <div className='work-container'>
             <div className='left'>
             {
-                Object.keys(caseStudies).map((proj, key) =>
+                caseStudies.map((cs, key) =>
                     key % 2 == 0 &&
-                    <Link key={proj} className='work-item' href={`/projects/${proj}`}>
+                    <Link key={cs.uid} className='work-item' href={`/case-studies/${cs.uid}`}>
                         <div className='work-cover'>
-                            <div style={{backgroundImage: `url(${caseStudies[proj].cover})`}}/>
+                            <div style={{backgroundImage: `url(${cs.cover.url})`}}/>
                         </div>
-                        <h1 className='textBg'>{caseStudies[proj].name}</h1>
-                        <h2>{caseStudies[proj].context}</h2>
+                        <h1 className='textBg'>{cs.name}</h1>
+                        <h2>{cs.context}</h2>
                     </Link>
                 )
             }
             </div>
             <div className='right'>
             {
-                Object.keys(caseStudies).map((proj, key) => 
+                caseStudies.map((cs, key) => 
                     key % 2 !== 0 &&
-                    <Link key={proj} className='work-item' href={`/projects/${proj}`}>
+                    <Link key={cs.uid} className='work-item' href={`/case-studies/${cs.uid}`}>
                         <div className='work-cover'>
-                            <div style={{backgroundImage: `url(${caseStudies[proj].cover_v || caseStudies[proj].cover})`}}/>
+                            <div style={{backgroundImage: `url(${cs.cover_vertical.url || cs.cover.url})`}}/>
                         </div>
-                        <h1 className='textBg'>{caseStudies[proj].name}</h1>
-                        <h2>{caseStudies[proj].context}</h2>
+                        <h1 className='textBg'>{cs.name}</h1>
+                        <h2>{cs.context}</h2>
                     </Link>
                 )
             }

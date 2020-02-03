@@ -1,17 +1,18 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
-import { fetchData } from './utils/ctf';
+// import { fetchData, fetchPage } from './utils/ctf';
+import {fetchData} from './utils/prismic';
+import {processPage, processData} from './utils/formatData';
 
 import Menu 		from './components/Menu';
-import LoadScreen	from './components/LoadScreen';
+// import LoadScreen	from './components/LoadScreen';
 import Footer 		from './components/Footer';
 
 import Error	    from './routes/Error';
 import Home 		from './routes/Home';
 import Profile		from './routes/Profile';
-// import Journi		from './routes/projects/Journi';
-// import Unarchived	from './routes/projects/Unarchived';
+// import CSView		from './routes/CSView';
 
 export default function App(){
 	const [hideMenu, setHideMenu] = useState(false);
@@ -19,25 +20,33 @@ export default function App(){
 	const [error, setError] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	const [caseStudies, setCaseStudies] = useState([]);
+	const [profile, setProfile] = useState({});
 	const [projects, setProjects] = useState([]);
 
 	useEffect(() => {
 		setCurrentUrl(window.location.pathname);
-		initData();
+		initData().then(()=>{
+			setIsLoading(false);
+		})
 		// setIsLoading(false);
 	}, [])
 	
 	async function initData(){
-		const caseStudies = await fetchData('caseStudies');
-		setCaseStudies(caseStudies);
-		const projects = await fetchData('projects');
-		projects.sort(sortByNum)
+		const profile = await fetchData('profile');
+		setProfile(processPage(profile))
+		const caseStudies = await fetchData('case_study');
+		setCaseStudies(processData(caseStudies))
+		let projects = await fetchData('project');
+		projects = processData(projects);
+		projects.sort(sortByNum);
 		setProjects(projects);
+		// const profile = await fetchPage('profile');
+		// setProfile(profile);
 	}
 
 	function sortByNum(itemA, itemB) {
-		let a = itemA.orderId || 100;
-		let b = itemB.orderId || 100;
+		let a = itemA.order_id || 100;
+		let b = itemB.order_id || 100;
 		return a > b ? 1 : b > a ? -1 : 0;
 	}
 
@@ -49,10 +58,7 @@ export default function App(){
 		}else{
 			setError(false)
 		}
-		// setIsLoading(true);
-		// setTimeout(() => {
-		// 	setIsLoading(false);
-		// }, 1000)
+
 	}
 	function scrollTop(smooth = true){
 		if (typeof window !== 'undefined'){
@@ -71,13 +77,15 @@ export default function App(){
 				isLoading && <LoadScreen/>
 			} */}
 			<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error}/>
-			<Router onChange={handleRoute}>
-				<Home path="/" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
-				<Profile path="/profile"/>
-				<Error type="404" default error/>
-				{/* <Journi path="/projects/journi"/>
-				<Unarchived path="/projects/unarchived"/> */}
-			</Router>
+			{
+				!isLoading &&
+				<Router onChange={handleRoute}>
+					<Home path="/" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
+					<Profile path="/profile" profile={profile}/>
+					{/* <CSView path="/case-studies/:id" caseStudies={caseStudies}/> */}
+					<Error type="404" default error/>
+				</Router>
+			}
 			{
 				(currentUrl !== '/profile' && !error) &&
 				<Footer scrollTop={scrollTop}/>

@@ -7,21 +7,21 @@ export default function MoreProjects(props) {
     return (
         <div className="work-more-projects">
             {
-                projects.map((proj, key) => 
-                    <div className="more-proj-item" key={key}>
-                        <div className="background" style={{backgroundImage: `url(${proj.cover})`}}/>
+                projects.map(proj => 
+                    <div className="more-proj-item" key={proj.uid}>
+                        <div className="background" style={{backgroundImage: `url(${proj.cover.url})`}}/>
                         <div className="title-row">
                             <h1 className="serifFont">{proj.name}</h1>
-                            <a href={proj.website} target="_blank"><img src={webIcon}/></a>
+                            <a href={proj.link.url} target="_blank"><img src={webIcon}/></a>
                         </div>
                         <p>
                             {proj.description}
                         </p>
                         <div className="proj-tags">
                             {
-                                JSON.parse(proj.tags).map((tag, key) =>
-                                    <span key={key}>
-                                        {tag}
+                                proj.tags.map(tag =>
+                                    <span key={tag.tag}>
+                                        {tag.tag}
                                     </span>
                                 )
                             }
