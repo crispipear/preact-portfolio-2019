@@ -1,6 +1,6 @@
 import {h} from 'preact';
 import { RichText } from 'prismic-reactjs';
-import PROFILE from '../assets/profile.png';
+import PROFILE from '../assets/profile.jpg';
 
 export default ({profile}) => {
     return (
@@ -23,7 +23,7 @@ export default ({profile}) => {
                 <RichText render={profile.body[0].primary.header}/>
                 <RichText render={profile.body[0].primary.text}/>
                     <div className='skills'>
-                    <h2>recent tech</h2>
+                    <h2>main skills</h2>
                     <div>
                         {
                             profile.tech.map((item,key) => <RichText key={'skill'+key} render={item.name}/>)

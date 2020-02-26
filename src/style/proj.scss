@@ -29,14 +29,13 @@
                 flex-direction: flex;
                 align-items: center;
                 justify-content: flex-end;
-                h1{
+                .name{
                     font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
                     font-weight: 700;
                 }
-                h2{
+                .context{
                     color: $textLight;
                     font-weight: 300;
-                    font-size: 1.1rem;
                     text-transform: lowercase;
                     margin-right: 2%;
                     margin-top: 0.5rem;  
@@ -59,16 +58,13 @@
                 grid-row-gap: 1rem;
                 margin-top: 10vh;
             }
-            h3,h2{
+            h3{
                 margin: 0%;
                 font-size: 1.1rem;
-            }
-            h3{
-                font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
                 font-weight: 700;
                 line-height: 1.7rem;
             }
-            h2{
+            .info{
                 color: $textLight;
                 font-weight: 300;
                 text-transform: lowercase;
@@ -78,123 +74,71 @@
     }
     .body{
         width: 100%;
-        padding: 16vh 0 8vh 0;
-        .right-bleed, .left-bleed, .block, .block-text, .block-right, .block-left, .block-images{
-            display: grid;
-            margin-bottom: 12vh;
-            grid-template-columns: 1fr 1fr;
-            column-gap: 8vw;
-            box-sizing: border-box;
-            div{
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-            }
-        }
+        padding: 16vh 0 4vh 0;
         a{
-            @extend .underline;
             font-size: 100%;
+            line-height: 1;
         }
-        h1{
-            font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        h2{
-            font-size: 1.1rem;
-            line-height: 2rem;
-            font-weight: 400;
-        }
-        p{
-            font-size: 0.92rem;
-            margin-top: 1rem;
-        }
-        .full-text{
-            margin: 20vh 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            box-sizing: border-box;
-            padding: 8vh 20vw;
-            h1{
-                font-size: 1.6rem;
-                line-height: 3.2rem;
+        .body-row{
+            display: inline-flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 16vh 0;
+            h5{
+                @extend .serifFont;
+                @extend .textBg;
+                display: inline-block;
+                font-weight: 700;
+                font-size: 1.2rem!important;
+                margin: 0% 2px 16px 0%!important;
             }
-        }
-        .block, .block-text, .image-full, .block-left, .block-right, .block-images{
-            padding: 0 10vw;
-        }
-        .block-text{
-            div{
-                justify-content: flex-start;
+            a{
+                @extend .underline;
             }
-        }
-        img{
-            margin-bottom: 4vh;
-            width: 100%;
-        }
-        .image-hh{
-            width: unset;
-            margin: 0%;
-            height: 60vh;
-        }
-        .image-full, .block-center{
-            margin-bottom: 12vh;
-            span{
-                color: $textLight;
-                font-size: 0.9rem;
+            @extend .container;
+            .body-row-block{
+                box-sizing: border-box;
             }
-        }
-        .block-center{
-            padding: 0 20vw;
-            display: flex;
-            div{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                &:first-of-type{
-                    align-items: flex-start;
-                    margin-right: 4%;
-                }
-                &:last-of-type{
-                    align-items: center;
-                }
-                flex: 1
-            }
-        }
-        .block-images{
-            column-gap: 2vw;
-            row-gap: 2vw;
-        }
-        .right-bleed{
-            div:first-of-type{
-                padding-left: 10vw;
-            }
-        }
-        .left-bleed{
-            div:last-of-type{
-                padding-right: 10vw;
-            }
-        }
-        .block-right{
-            grid-template-columns: 1fr 1.5fr;
-        }
-        .block-left{
-            grid-template-columns: 1.5fr 1fr;
         }
     }
-    .body-video{
-        padding-bottom: 56.25%;
-        position: relative;
-        iframe{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+    .double-text{
+        .body-row-block{
+            width: 45%;
+        }
+    }
+    .video-intro{
+        margin: 16vh 0;
+        display: flex;
+        flex-direction: row;
+        .video-intro-text, .video{
+            width: 50%;
+        }
+        .video-intro-text{
+            display: inline-flex;
+            align-items: center;
+            padding: 0 5vw 0 10vw;
+            a{
+                @extend .underline;
+            }
+            *{
+                font-weight: 300;
+                color: $textLight;
+                line-height: 1.8;
+            }
+        }
+        .video{
+            .video-wrapper{
+                width: 100%;
+                padding-bottom: 56.25%;
+                position: relative;
+                iframe{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
     }
     .proj-end{
@@ -204,29 +148,24 @@
         padding: 0 10vw;
         margin: 8vh 0;
         height: 40vh;
-        h2{
-            @extend .serifFont;
+        h3{
             color: $textLight;
-            padding: 10vh 0;
-            font-size: 1.2rem;
         }
         div{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            h3{
+            h5{
                 color: $textLight;
-                font-size: 0.9rem;
                 font-weight: 400;
                 margin-bottom: 2%;
             }
-            h1{
+            h2{
+                font-size: 2.5rem;
                 a{
                     font-size: 100%;
                     font-weight: 700!important;
                 }
-                @extend .serifFont;
-                font-size: 2.2rem;
             }
         }
         div:last-of-type{

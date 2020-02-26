@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import LinkText from '../components/content/LinkText';
 import webIcon  from '../assets/icon_web.svg';
 
 export default function MoreProjects(props) {
@@ -9,9 +7,11 @@ export default function MoreProjects(props) {
             {
                 projects.map(proj => 
                     <div className="more-proj-item" key={proj.uid}>
-                        <div className="background" style={{backgroundImage: `url(${proj.cover.url})`}}/>
+                        <div className="background">
+                            <div style={{backgroundImage: `url(${proj.cover.url})`}}/>
+                        </div>
                         <div className="title-row">
-                            <h1 className="serifFont">{proj.name}</h1>
+                            <h5 className="serifFont">{proj.name}</h5>
                             <a href={proj.link.url} target="_blank"><img src={webIcon}/></a>
                         </div>
                         <p>

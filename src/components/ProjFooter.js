@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from 'preact/hooks';
 import { Link } from 'preact-router/match';
 
 export default function ProjFooter(props) {
@@ -19,14 +19,14 @@ export default function ProjFooter(props) {
     }
     return (
         <div className='proj-end'>
-            <h2>see more</h2>
+            <h3 className='serifFont'>see more</h3>
             <div>
-                <h3>{next.context}</h3>
-                <h1>
+                <h5>{next.context}</h5>
+                <h2 className="serifFont">
                     <Link href={"/case-studies/" + next.id} className="underline">{next.name}</Link>
-                </h1>
+                </h2>
             </div>
-            <div style={{backgroundImage: `url(${next.cover})`}}/>
+            <div style={{backgroundImage: `url(${next.cover && next.cover.url})`}}/>
         </div>
     );
 }

@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from 'react';
-
 export default ({cs}) => 
     (
         <div className='header'>
             <div className='header-left'>
                 <div className='header-title'>
-                    <h2>{cs.context}</h2>
-                    <h1>{cs.name}</h1>
+                    <h6 className="context">{cs.context}</h6>
+                    <h2 className="name">{cs.name}</h2>
                 </div>
-                <div className='header-img' style={{ backgroundImage: `url(${cs.cover})` }} />
+                <div className='header-img' style={{ backgroundImage: `url(${cs.cover && cs.cover.url})` }} />
             </div>
             <div className='header-right'>
                 <div className='header-info'>
-                    <h3>year</h3><h2>{cs.year}</h2>
-                    <h3>tools</h3><h2>{cs.tools}</h2>
-                    <h3>role</h3><h2>{cs.role}</h2>
+                    <h3 className="serifFont">year</h3><h3 className='info'>{cs.year}</h3>
+                    <h3 className="serifFont">tools</h3><h3 className='info'>{cs.tools}</h3>
+                    <h3 className="serifFont">role</h3><h3 className='info'>{cs.role}</h3>
                 </div>
                 {
                     cs.website &&
-                    <a href={cs.website} target="_blank" className='underline'>visit website</a>
+                    <a href={cs.website.url} target="_blank" className='underline'>visit website</a>
                 }
             </div>
         </div>
+        
     );

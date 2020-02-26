@@ -85,6 +85,19 @@ a.link-bg{
 	}
 }
 
+h1,h2,h3,h4,h5,h6{
+	margin: 0%;
+	color: $textDark;
+	font-weight: 500;
+}
+
+h1{font-size: 3rem};
+h2{font-size: 2rem};
+h3{font-size: 1.5rem};
+h4{font-size: 1.25rem};
+h5{font-size: 1.15rem};
+h6{font-size: 1rem; font-weight: 400};
+
 p, a, span, li{
 	font-size: 0.96rem;
 	line-height: 1.8;
@@ -108,12 +121,6 @@ p, span{
 	color: $textLight;
 }
 
-h1,h2,h3,h4,h5,h6{
-	margin: 0%;
-	color: $textDark;
-	font-weight: 500;
-}
-
 .container{
 	clear: both;
 	box-sizing: border-box;
@@ -135,7 +142,7 @@ h1,h2,h3,h4,h5,h6{
 	margin: 0% 2px;
 	&:after{
 		content: '';
-		height: 60%;
+		height: 50%;
 		position: absolute;
 		background: $key1;
 		transition: all 0.2s;

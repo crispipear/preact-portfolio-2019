@@ -1,7 +1,6 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
-// import { fetchData, fetchPage } from './utils/ctf';
 import {fetchData} from './utils/prismic';
 import {processPage, processData} from './utils/formatData';
 
@@ -12,7 +11,7 @@ import Footer 		from './components/Footer';
 import Error	    from './routes/Error';
 import Home 		from './routes/Home';
 import Profile		from './routes/Profile';
-// import CSView		from './routes/CSView';
+import CSView		from './routes/CSView';
 
 export default function App(){
 	const [hideMenu, setHideMenu] = useState(false);
@@ -40,8 +39,6 @@ export default function App(){
 		projects = processData(projects);
 		projects.sort(sortByNum);
 		setProjects(projects);
-		// const profile = await fetchPage('profile');
-		// setProfile(profile);
 	}
 
 	function sortByNum(itemA, itemB) {
@@ -82,7 +79,7 @@ export default function App(){
 				<Router onChange={handleRoute}>
 					<Home path="/" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
 					<Profile path="/profile" profile={profile}/>
-					{/* <CSView path="/case-studies/:id" caseStudies={caseStudies}/> */}
+					<CSView path="/case-studies/:id" caseStudies={caseStudies}/>
 					<Error type="404" default error/>
 				</Router>
 			}

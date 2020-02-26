@@ -13,8 +13,8 @@ export default function CaseStudies(props) {
                         <div className='work-cover'>
                             <div style={{backgroundImage: `url(${cs.cover.url})`}}/>
                         </div>
-                        <h1 className='textBg'>{cs.name}</h1>
-                        <h2>{cs.context}</h2>
+                        <h4><span className='textBg'>{cs.name}</span></h4>
+                        <h6>{cs.context}</h6>
                     </Link>
                 )
             }
@@ -27,8 +27,8 @@ export default function CaseStudies(props) {
                         <div className='work-cover'>
                             <div style={{backgroundImage: `url(${cs.cover_vertical.url || cs.cover.url})`}}/>
                         </div>
-                        <h1 className='textBg'>{cs.name}</h1>
-                        <h2>{cs.context}</h2>
+                        <h4><span className='textBg'>{cs.name}</span></h4>
+                        <h6>{cs.context}</h6>
                     </Link>
                 )
             }
