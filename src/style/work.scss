@@ -63,6 +63,7 @@
             }
         }
         .right{
+            margin-top: 16vh;
             .work-item{
                 .work-cover{
                     height: 72vh;
@@ -73,7 +74,7 @@
     .work-more-projects{
         margin: 5% 0%;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         column-gap: 3rem;
         row-gap: 4rem;
         .more-proj-item{
@@ -103,16 +104,16 @@
             margin: 12px 0px;
         }
         .proj-tags{
-           margin-top: 12px;
-           display: inline-block;
+           position: absolute;
+           left: 0;
+           bottom: 0;
            span{
             display: inline-block;
             margin-right: 12px;
             margin-bottom: 12px;
-            background-color: rgba($key1, 0.8);
-            padding: 4px 12px;
             font-size: 0.9rem;
-            font-weight: 400;
+            font-weight: 500;
+            color: $key2;
            }
         }
         .title-row{

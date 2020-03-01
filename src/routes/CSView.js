@@ -7,10 +7,21 @@ import Footer        from '../components/ProjFooter';
 //slices
 import VideoIntro    from '../components/content/VideoIntro';
 import DoubleText    from '../components/content/DoubleText';
+import TextRow       from '../components/content/TextRow';
+import TextImage     from '../components/content/TextImage';
+import Image         from '../components/content/Image';
+import SingleText    from '../components/content/SingleText';
+import ImagesList    from '../components/content/ImagesList';
 
 const compList = {
     video_intro: VideoIntro,
-    double_text: DoubleText
+    double_text: DoubleText,
+    text_row: TextRow,
+    image: Image,
+    text_image: TextImage,
+    image_text: TextImage,
+    single_text: SingleText,
+    images_list: ImagesList
 }
 
 export default function CSView(props) {
@@ -30,7 +41,6 @@ export default function CSView(props) {
             let csExists = props.caseStudies.find(cs => cs.uid == id)
             if(csExists){
                 setCaseStudy(csExists);
-                console.log(csExists);
                 setIndex(props.caseStudies.findIndex(cs => cs.uid == id));
             }else{
                 route('/case-studies');
@@ -53,7 +63,7 @@ export default function CSView(props) {
            {
                caseStudy.body &&
                caseStudy.body.map(slice =>
-                renderSlice(slice.slice_type, slice.primary) 
+                renderSlice(slice.slice_type, {...slice.primary, items: slice.items}) 
                )
            }
         </div>

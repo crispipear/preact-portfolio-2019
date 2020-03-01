@@ -1,6 +1,6 @@
 import { RichText } from 'prismic-reactjs';
 
-export default function Video(props) {
+export default function DoubleText(props) {
     return (
         <div className='body-row double-text'>
             <div className='body-row-block'>

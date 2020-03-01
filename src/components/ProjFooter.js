@@ -18,12 +18,12 @@ export default function ProjFooter(props) {
         setNext(nextItem);
     }
     return (
-        <div className='proj-end'>
-            <h3 className='serifFont'>see more</h3>
+        <div className='proj-footer'>
+            <h4 className='serifFont'>see more</h4>
             <div>
-                <h5>{next.context}</h5>
+                <h6>{next.context}</h6>
                 <h2 className="serifFont">
-                    <Link href={"/case-studies/" + next.id} className="underline">{next.name}</Link>
+                    <Link href={"/case-studies/" + next.uid} className="underline">{next.name}</Link>
                 </h2>
             </div>
             <div style={{backgroundImage: `url(${next.cover && next.cover.url})`}}/>

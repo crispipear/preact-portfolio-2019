@@ -15,7 +15,7 @@ export default ({cs}) =>
                     <h3 className="serifFont">role</h3><h3 className='info'>{cs.role}</h3>
                 </div>
                 {
-                    cs.website &&
+                    cs.website && cs.website.url &&
                     <a href={cs.website.url} target="_blank" className='underline'>visit website</a>
                 }
             </div>

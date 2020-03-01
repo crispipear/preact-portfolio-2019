@@ -1,6 +1,6 @@
 import {h} from 'preact';
 import { RichText } from 'prismic-reactjs';
-import PROFILE from '../assets/profile.jpg';
+import PROFILE     from '../assets/profile.jpg';
 
 export default ({profile}) => {
     return (
