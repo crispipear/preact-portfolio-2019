@@ -34,7 +34,8 @@ export default function Home(props) {
 				</div>
 			</div>
 			<div className='scroll' onClick={scrollDown}>
-				see my work
+				<div className='scroll-text'>see my work</div>
+				<div className='scroll-line'/>
 			</div>
 			<div className='home-work container' ref={worksRef}>
 				<h3><span className='textBg'>case studies</span></h3>

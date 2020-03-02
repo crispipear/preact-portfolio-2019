@@ -11,7 +11,7 @@ export default ({cs}) =>
             <div className='header-right'>
                 <div className='header-info'>
                     <h3 className="serifFont">year</h3><h3 className='info'>{cs.year}</h3>
-                    <h3 className="serifFont">tools</h3><h3 className='info'>{cs.tools}</h3>
+                    <h3 className="serifFont">stack</h3><h3 className='info'>{cs.tools}</h3>
                     <h3 className="serifFont">role</h3><h3 className='info'>{cs.role}</h3>
                 </div>
                 {

@@ -68,7 +68,7 @@
                 color: $textLight;
                 font-weight: 300;
                 text-transform: lowercase;
-                line-height: 1.8rem;
+                line-height: 1.9rem;
             }
         }
     }
@@ -125,6 +125,7 @@
         }
     }
     .images-list{
+        margin: 0 0 12vh 0!important;
         img{
             width: 76%!important;
             &:nth-child(even){
@@ -169,6 +170,7 @@
         }
     }
     .text-row{
+        margin: 20vh 0!important;
         h3{
             @extend .serifFont;
             font-weight: 700;
@@ -205,9 +207,9 @@
         box-sizing: border-box;
         display: grid;
         grid-template-columns: 1fr 2.5fr 3fr;
-        padding: 8vh 10vw;
-        border-top: 1px solid rgba($key2, 0.1);
-        height: 60vh;
+        padding: 12vh 10vw;
+        background-color: rgba($key2, 0.05);
+        height: 68vh;
         h4{
             color: $textLight;
         }
