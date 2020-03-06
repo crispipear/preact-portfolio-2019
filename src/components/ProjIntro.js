@@ -1,3 +1,5 @@
+import Scroll from './Scroll';
+
 export default ({cs}) => 
     (
         <div className='header'>
@@ -19,6 +21,7 @@ export default ({cs}) =>
                     <a href={cs.website.url} target="_blank" className='underline'>visit website</a>
                 }
             </div>
+            <Scroll hideText/>
         </div>
         
     );

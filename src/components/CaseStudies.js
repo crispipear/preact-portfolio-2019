@@ -1,6 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'preact-router/match';
 
+const CaseStudy = ({uid, cover, name, context}) => 
+<Link key={uid} className='work-item' href={`/case-studies/${uid}`}>
+    <div className='work-cover'>
+        <div style={{backgroundImage: `url(${cover})`}}/>
+    </div>
+    <h3><span className='textBg'>{name}</span></h3>
+    <h6>{context}</h6>
+</Link>
+
 export default function CaseStudies(props) {
     const caseStudies = props.caseStudies
     return (
@@ -9,13 +18,12 @@ export default function CaseStudies(props) {
             {
                 caseStudies.map((cs, key) =>
                     key % 2 == 0 &&
-                    <Link key={cs.uid} className='work-item' href={`/case-studies/${cs.uid}`}>
-                        <div className='work-cover'>
-                            <div style={{backgroundImage: `url(${cs.cover.url})`}}/>
-                        </div>
-                        <h4><span className='textBg'>{cs.name}</span></h4>
-                        <h6>{cs.context}</h6>
-                    </Link>
+                    <CaseStudy
+                        uid={cs.uid}
+                        name={cs.name}
+                        context={cs.context}
+                        cover={cs.cover.url}
+                    />
                 )
             }
             </div>
@@ -23,13 +31,12 @@ export default function CaseStudies(props) {
             {
                 caseStudies.map((cs, key) => 
                     key % 2 !== 0 &&
-                    <Link key={cs.uid} className='work-item' href={`/case-studies/${cs.uid}`}>
-                        <div className='work-cover'>
-                            <div style={{backgroundImage: `url(${cs.cover_vertical.url || cs.cover.url})`}}/>
-                        </div>
-                        <h4><span className='textBg'>{cs.name}</span></h4>
-                        <h6>{cs.context}</h6>
-                    </Link>
+                    <CaseStudy
+                        uid={cs.uid}
+                        name={cs.name}
+                        context={cs.context}
+                        cover={cs.cover_vertical.url || cs.cover.url}
+                    />
                 )
             }
             </div>

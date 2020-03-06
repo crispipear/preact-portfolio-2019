@@ -30,12 +30,10 @@
                 align-items: center;
                 justify-content: flex-end;
                 .name{
-                    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
-                    font-weight: 700;
+                    @extend .serifFont;
                 }
                 .context{
                     color: $textLight;
-                    font-weight: 300;
                     text-transform: lowercase;
                     margin-right: 2%;
                     margin-top: 0.5rem;  
@@ -53,20 +51,19 @@
             }
             .header-info{
                 display: grid;
-                grid-template-columns: 1fr 2fr;
-                grid-column-gap: 2.5%;
+                grid-template-columns: 1fr 4fr;
+                grid-column-gap: 1rem;
                 grid-row-gap: 1rem;
                 margin-top: 10vh;
             }
             h3{
                 margin: 0%;
                 font-size: 1.1rem;
-                font-weight: 700;
                 line-height: 1.7rem;
+                font-weight: $textReg;
             }
             .info{
                 color: $textLight;
-                font-weight: 300;
                 text-transform: lowercase;
                 line-height: 1.9rem;
             }
@@ -84,20 +81,22 @@
             flex-direction: row;
             justify-content: space-between;
             margin: 12vh 0;
-            ul{
-                list-style: none;
+            ul, ol{
+                list-style-type: none;
                 margin: 0;
                 padding: 0;
+                li{
+                    margin-bottom: 0.6rem;
+                }
             }
             p{
-                margin-bottom: 16px;
+                margin-bottom: 1.2rem;
             }
             h5{
                 @extend .serifFont;
                 display: inline-block;
-                font-weight: 700;
                 font-size: 1.2rem!important;
-                margin: 0% 2px 16px 0%!important;
+                margin: 0% 0% 1.2rem 0%!important;
             }
             a{
                 @extend .underline;
@@ -149,7 +148,6 @@
                 @extend .underline;
             }
             *{
-                font-weight: 300;
                 color: $textLight;
                 line-height: 1.8;
             }
@@ -170,12 +168,11 @@
         }
     }
     .text-row{
-        margin: 20vh 0!important;
+        margin: 16vh 0!important;
         h3{
-            @extend .serifFont;
-            font-weight: 700;
             line-height: 2;
             font-size: 1.8rem;
+            padding-right: 33%;
             color: $textLight;
         }
     }
@@ -208,7 +205,7 @@
         display: grid;
         grid-template-columns: 1fr 2.5fr 3fr;
         padding: 12vh 10vw;
-        background-color: rgba($key2, 0.05);
+        border: solid 1px rgba($textLight, 0.1);
         height: 68vh;
         h4{
             color: $textLight;
@@ -219,19 +216,20 @@
             justify-content: center;
             h6{
                 color: $textLight;
-                font-weight: 400;
                 margin-bottom: 3%;
             }
             h2{
                 a{
                     font-size: 100%;
-                    font-weight: 700!important;
+                    font-weight: $headerBold!important;
                 }
             }
         }
         div:last-of-type{
             background-position: center;
             background-size: cover;
+            position: relative;
+            @extend .backdrop;
         }
         column-gap: 2vw;
     }

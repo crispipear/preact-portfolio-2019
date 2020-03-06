@@ -44,7 +44,7 @@ export default function Menu(props) {
 		<div className='menu' style={{opacity: menuOpacity, transform: `translateY(${menuPos}px)`}}>
 			<div className='container'>
 				<div className='menu-logo'>
-					<Link href='/'><b>su li</b> | designer + engineer</Link>
+					<Link className='link-bg' href='/'><b>su li</b> | designer + engineer</Link>
 				</div>
 				<div className='menu-links'>
 					<Link className='link-bg' href='/'>work</Link>

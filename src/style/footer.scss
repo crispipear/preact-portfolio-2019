@@ -13,17 +13,10 @@
             text-align: right;
         }
     }
-    b{
-        cursor: pointer;
-        color: $key2;
-    }
     a{
         text-align: right;
     }
-    a,b{
-        transition: opacity 0.2s;
-        &:hover{
-            opacity: 0.6;
-        }
+    a, b{
+        @extend .underline;
     }
 }

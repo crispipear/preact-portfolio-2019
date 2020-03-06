@@ -1,22 +1,35 @@
-$key1: #FFFA74;
-$key2: #475ACC;
-$key3: #E5C952;
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,600,700|Playfair+Display:700,800&display=swap');
+$primary: #ffe96e;
+$secondary: #424cd6;
+$background: #FCFCFE;
 $textLight: #373744;
 $textDark: #11102B;
+$textReg: 300;
+$textMed: 600;
+$textBold: 700;
+$headerReg: 700;
+$headerBold: 800;
 @import "./mixins.scss";
 @import "./landing.scss";
 @import "./menu.scss";
 @import "./profile.scss";
-@import "./footer.scss";
 @import "./proj.scss";
 @import "./work.scss";
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,400,500&display=swap');
+@import "./footer.scss";
+@import "./scroll.scss";
 
+
+::selection {
+	background: $primary;
+}
+::-moz-selection {
+	background: $primary;
+}
 body {
-	font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+	font-family: 'Nunito', 'Segoe UI', Arial, sans-serif;
 	padding: 0;
 	margin: 0;
-	background:white;
+	background: $background;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $textDark;
@@ -39,56 +52,31 @@ a{
 	text-decoration: none;
 	display:inline-block;
 	position: relative;
-	color: $textDark;
-	font-weight: 400!important;
+	font-weight: $textReg!important;
 	transition: all 0.25s;
 	&:visited, &:active{
-		color: $textDark;
+		color: inherit;
 	}
 }
-a.underline{
-	line-height: 140%;
-	*{
-		font-weight: 400;
-		font-size: 100%;
-	}
-	&::after{
-		content: '';
-		height: 24%;
-		width: 100%;
-		position: absolute;
-		bottom: 7%;
-		left: 0%;
-		background: $key1;
-		z-index: -1;
-		transition: all 0.25s;
-	}
-	&:hover:after{
-		height: 100%;
+.underline{
+	cursor: pointer;
+	color: $secondary!important;
+	font-weight: $textMed!important;
+	text-shadow: 0.3rem 0.24rem transparent;
+	&:hover{
+		text-shadow: 0.3rem 0.24rem $primary;
 	}
 }
 
-a.link-bg{
-	&::after{
-		content: '';
-		height: 50%;
-		position: absolute;
-		background: $key1;
-		transition: all 0.2s;
-		right: -10%;
-		bottom: -2.5%;
-		z-index: -1;
-		width: 0%;
-	}
-	&:hover::after{
-		width: 100%;
-	}
+.link-bg{
+	@extend .underline;
+	color: $textDark!important;
 }
 
 h1,h2,h3,h4,h5,h6{
 	margin: 0%;
 	color: $textDark;
-	font-weight: 500;
+	font-weight: $textMed;
 }
 
 h1{font-size: 3rem};
@@ -96,26 +84,23 @@ h2{font-size: 2rem};
 h3{font-size: 1.5rem};
 h4{font-size: 1.25rem};
 h5{font-size: 1.15rem};
-h6{font-size: 1rem; font-weight: 400};
+h6{font-size: 1rem; font-weight: $textReg};
 
 p, a, span, li{
-	font-size: 0.96rem;
+	font-size: 1rem;
 	line-height: 1.8;
 	letter-spacing: 0.4px;
-	font-weight: 300;
+	font-weight: $textReg;
 	margin: 0%;
 	@include mobile{
 		margin: 0px;
-	}
-	b{
-		font-weight: 500;
 	}
 	a{
 		margin: 0%;
 	}
 }
 b, strong{
-	font-weight: 500;
+	font-weight: $textBold;
 }
 p, span{
 	color: $textLight;
@@ -131,25 +116,34 @@ p, span{
 
 .serifFont{
 	font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+	font-weight: $headerReg;
 }
 
 .textBg{
 	@extend .serifFont;
 	font-size: 100%;
-	font-weight: 700;
 	color: $textDark;
 	position: relative;
 	margin: 0% 2px;
+	text-shadow: 0.3rem 0.24rem $primary;
+}
+
+.backdrop{
 	&:after{
 		content: '';
-		height: 50%;
+		width: 100%;
+		height: 100%;
+		right: -1rem;
+		bottom: -1rem;
 		position: absolute;
-		background: $key1;
-		transition: all 0.2s;
-		right: -4px;
-		bottom: -4px;
 		z-index: -1;
-		width: 90%;
+		border: 2px $primary solid;
+		transition: all 0.2s;
+	}
+	&:hover:after{
+		border-color: $secondary;
+		right: -1.3rem;
+		bottom: -1.3rem;
 	}
 }
 
@@ -175,19 +169,6 @@ p, span{
 		}
 	}
 }
-
-.scroll{
-	cursor: pointer;
-	font-weight: 300;
-	position: absolute;
-	bottom: 0;
-	right: 10%;
-	height: 16vh;
-	letter-spacing: 0.05rem;
-	border-left: 1px $textLight solid;
-	padding-left: 12px;
-}
-
 .error{
 	.error-bg{
 		background-position: center;
@@ -206,12 +187,11 @@ p, span{
 			font-size: 20rem;
 			line-height: 1;
 			@extend .serifFont;
-			font-weight: 700;
 			position: relative;
 			&:after{
 				content: attr(data-text);
 				position: absolute;
-				color: $key1;
+				color: $primary;
 				left: 0.8rem;
 				top: 0.8rem;
 				z-index: -1;
@@ -223,7 +203,6 @@ p, span{
 		}
 	}
 	p{
-		font-weight: 700;
 		font-size: 1.6rem;
 		text-align: center;
 	}

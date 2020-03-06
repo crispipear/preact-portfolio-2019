@@ -1,11 +1,11 @@
 {
-  "name": "su li | designer + engineer",
+  "name": "su li | ux designer + front-end engineer",
   "short_name": "Su Li Portfolio",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#FFF14B",
-  "description": "Su Li is a Front-end Software Engineer based in the Greater Seattle Area specializes in Front-End Development and UI/UX design.",
+  "description": "I am Su Li, UX Designer and Front-end Engineer based in Seattle. Focused on creating problem-solving and human-centered experience.",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",

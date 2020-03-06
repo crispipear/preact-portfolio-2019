@@ -1,7 +1,7 @@
 import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
-import {fetchData} from './utils/prismic';
+import {fetchData, fetchOrderData} from './utils/prismic';
 import {processPage, processData} from './utils/formatData';
 
 import Menu 		from './components/Menu';
@@ -33,7 +33,7 @@ export default function App(){
 	async function initData(){
 		const profile = await fetchData('profile');
 		setProfile(processPage(profile))
-		const caseStudies = await fetchData('case_study');
+		const caseStudies = await fetchOrderData('case_study', '[my.case_study.order]');
 		setCaseStudies(processData(caseStudies))
 		let projects = await fetchData('project');
 		projects = processData(projects);

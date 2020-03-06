@@ -19,19 +19,19 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             .work-cover{
                 margin-bottom: 20px;
                 overflow: hidden;
                 position: relative;
                 width: 100%;
+                transition: all 0.32s;
                 div{
                     background-size: cover;
                     background-position: center;
                     width: 100%;
                     height: 100%;
                     position: absolute;
-                    transition: all 0.4s;
                 }
             }
             h4,h6{
@@ -44,14 +44,13 @@
             }
             h6{
                 margin-top: 4px;
-                font-weight: 300;
             }
             &:hover{
                 h1:after{
                     width: 100%;
                 }
-                .work-cover div{
-                    transform: scale((1.1));
+                .work-cover{
+                    transform: scale(0.96);
                 }
             }
         }
@@ -82,7 +81,7 @@
             position: relative;
             &:hover{
                 .background{
-                    transform: translateY(-8px);
+                    transform: translateY(-0.6rem);
                 }
             }
         }
@@ -102,6 +101,7 @@
         }
         p{
             margin: 12px 0px;
+            font-size: 0.96rem;
         }
         .proj-tags{
            position: absolute;
@@ -111,9 +111,9 @@
             display: inline-block;
             margin-right: 12px;
             margin-bottom: 12px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: $key2;
+            font-size: 0.92rem;
+            font-weight: $textMed;
+            color: $secondary;
            }
         }
         .title-row{
@@ -125,9 +125,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: flex-end; 
-            }
-            h5{
-                font-weight: 700;
             }
             img{
                 width: 24px;
