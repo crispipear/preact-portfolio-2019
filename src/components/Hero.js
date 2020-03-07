@@ -56,11 +56,15 @@ export default function Hero(){
     }, [dims])
 
     return(
-        <div className='hero-image'>
-            <img 
-                ref={imageRef}
-                src={HeroImage} alt="hero image"
-                 style={transform}/>
+        <div className='hero-background'>
+            <div className='hero-image-wrapper' style={transform}>
+                <div
+                    className='hero-image'
+                    ref={imageRef}
+                    style={{backgroundImage: `url(${HeroImage})`}}
+                />
+                <div className='block-reveal'/>
+            </div>
         </div>
     )
 }

@@ -31,7 +31,9 @@ export default function ProjFooter(props) {
                     </h2>
                 </Fade>
             </div>
-            <div style={{backgroundImage: `url(${next.cover && next.cover.url})`}}/>
+            <Fade delay={500}>
+                 <div style={{backgroundImage: `url(${next.cover && next.cover.url})`}}/>
+            </Fade>
         </div>
     );
 }

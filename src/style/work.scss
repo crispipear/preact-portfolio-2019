@@ -21,12 +21,12 @@
             justify-content: center;
             align-items: flex-start;
             .work-cover{
-                margin-bottom: 20px;
+                margin-bottom: 32px;
                 overflow: hidden;
                 position: relative;
                 width: 100%;
-                transition: all 0.32s;
                 div{
+                    transition: all 0.4s;
                     background-size: cover;
                     background-position: center;
                     width: 100%;
@@ -50,7 +50,9 @@
                     width: 100%;
                 }
                 .work-cover{
-                    transform: scale(0.96);
+                    div{
+                        transform: scale(1.1);
+                    }
                 }
             }
         }

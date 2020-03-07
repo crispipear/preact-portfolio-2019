@@ -75,16 +75,17 @@ export default function App(){
 			} */}
 			<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error}/>
 			{
-				!isLoading &&
+				!isLoading ?
 				<Router onChange={handleRoute}>
 					<Home path="/" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
 					<Profile path="/profile" profile={profile}/>
 					<CSView path="/case-studies/:id" caseStudies={caseStudies}/>
 					<Error type="404" default error/>
 				</Router>
+				:<div style={{width: "100%", height: "100vh"}}/>
 			}
 			{
-				(currentUrl !== '/profile' && !error) &&
+				(currentUrl !== '/profile' && !error && !isLoading) &&
 				<Footer scrollTop={scrollTop}/>
 			}
 		</div>

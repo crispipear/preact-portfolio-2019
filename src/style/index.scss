@@ -41,6 +41,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	overflow-x: hidden;
 }
 
 * {
@@ -203,6 +204,43 @@ p, span{
 	p{
 		font-size: 1.6rem;
 		text-align: center;
+	}
+}
+
+.block-reveal{
+	position: relative;
+	&:after{
+		content: '';
+		position: absolute;
+		width: 0%;
+		height: 100%;
+		top: 0;
+		background: $primary;
+		animation: block-reveal 1s ease-in 0.2s forwards;
+	}
+}
+
+@keyframes block-reveal{
+	0%{
+		width: 0%;
+		left: 0;
+	}
+	30%{
+		left: 0;
+		width: 100%;
+	}
+	31%{
+		right: 0;
+		width: 100%;
+		left: unset;
+	}
+	60%{
+		width: 100%;
+		right: 0;
+	}
+	100%{
+		width: 0%;
+		right: 0;
 	}
 }
 

@@ -6,8 +6,8 @@ export default function MoreProjects(props) {
     return (
         <div className="work-more-projects">
             {
-                projects.map(proj => 
-                    <Fade>
+                projects.map((proj, key) => 
+                    <Fade delay={key*100}>
                         <div className="more-proj-item" key={proj.uid}>
                             <div className="background">
                                 <div style={{backgroundImage: `url(${proj.cover.url})`}}/>

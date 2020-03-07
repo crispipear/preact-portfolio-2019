@@ -4,70 +4,97 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    .hero-image{
+    position: relative;
+    .hero-background{
         position: absolute;
         width: 100%;
         height: 100vh;
         z-index: -2;
         top: 0;
-        left: 16%;
+        left: 0%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        opacity: 0.28;
-        img{
-            width: 44%;
-            height: auto;
-            filter: contrast(110%) brightness(1.2);
+        padding-left: 16%;
+        .hero-image-wrapper{
+            width: 48%;
+            height: 60vh;
             transition: all 0.6s;
+            .hero-image, .block-reveal{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .hero-image{
+                background-size: cover;
+                background-position: center;
+                opacity: 0;
+                filter: contrast(110%) brightness(1.2) opacity(0.28);
+                animation: fadeIn 0.1s ease-in 0.5s forwards;
+            }
+        }
+    }
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
         }
     }
     .home-landing{
         box-sizing: border-box;
         height: 100vh;
-        padding: 24vh 10vw 20vh 10vw;
-        position: relative;
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        div{
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .container{
             display: flex;
-            height: 50vh;
-            h4, h2{
-                font-weight: $textReg;
-            }
-            &:first-of-type{
-                flex: 1;
-                position: relative;
-                justify-content: flex-start;
-                align-items: center;
-                padding-bottom: 20vh;
-                h1{
-                    @extend .serifFont;
-                    margin: 0%;
-                    letter-spacing: 0.1rem;
-                    line-height: 0%;
-                    span{
-                        font-weight: $headerBold;
+            flex-direction: row;
+            div{
+                display: flex;
+                height: 50vh;
+                h4, h2{
+                    font-weight: $textReg;
+                }
+                &:first-of-type{
+                    flex: 1;
+                    position: relative;
+                    justify-content: flex-start;
+                    align-items: center;
+                    padding-bottom: 20vh;
+                    h1{
+                        @extend .serifFont;
+                        margin: 0%;
+                        letter-spacing: 0.1rem;
+                        line-height: 0%;
+                        span{
+                            font-weight: $headerBold;
+                        }
+                    }
+                    h1,h2{
+                        line-height: 1;
+                    }
+                    h2{
+                        margin-top: 0.6rem;
+                        margin-left: 1rem;
+                        span{
+                            margin-left: 0.6rem;
+                        }
                     }
                 }
-                h1,h2{
-                    line-height: 1;
-                }
-                h2{
-                    margin-top: 0.6rem;
-                    margin-left: 1rem;
-                    span{
-                        margin-left: 0.6rem;
+                &:nth-of-type(2){
+                    flex: 1.2;
+                    padding-top: 24vh;
+                    h4{
+                        margin-bottom: 1rem;
                     }
+                    flex-direction: column;
                 }
-            }
-            &:nth-of-type(2){
-                flex: 1.2;
-                padding-top: 24vh;
-                h4{
-                    margin-bottom: 1rem;
-                }
-                flex-direction: column;
             }
         }
     }

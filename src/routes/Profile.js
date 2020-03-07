@@ -30,7 +30,7 @@ export default ({profile}) => {
                 <Fade><RichText render={profile.body[0].primary.header}/></Fade>
                 <Fade delay={400}><RichText render={profile.body[0].primary.text}/></Fade>
                 <div className='skills'>
-                    <Fade><h2>main stack</h2></Fade>
+                    <Fade><h2>some tech skills</h2></Fade>
                     <div>
                         {
                             profile.tech.map((item,key) => <Fade delay={key*60}><RichText key={'skill'+key} render={item.name}/></Fade>)
