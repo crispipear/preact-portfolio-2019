@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,600,700|Playfair+Display:700,800&display=swap');
 $primary: #ffe96e;
-$secondary: #424cd6;
+$secondary: #4245d6;
 $background: #FCFCFE;
 $textLight: #373744;
 $textDark: #11102B;
@@ -34,7 +34,6 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	color: $textDark;
 }
-
 #app{
 	min-height: 100vh;
 	width: 100%;
@@ -53,21 +52,20 @@ a{
 	display:inline-block;
 	position: relative;
 	font-weight: $textReg!important;
-	transition: all 0.25s;
 	&:visited, &:active{
 		color: inherit;
 	}
 }
 .underline{
+	transition: all 0.25s;
 	cursor: pointer;
 	color: $secondary!important;
 	font-weight: $textMed!important;
-	text-shadow: 0.3rem 0.24rem transparent;
+	text-shadow: 0.6rem 0.6rem transparent;
 	&:hover{
 		text-shadow: 0.3rem 0.24rem $primary;
 	}
 }
-
 .link-bg{
 	@extend .underline;
 	color: $textDark!important;

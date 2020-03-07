@@ -1,9 +1,12 @@
 import { RichText } from 'prismic-reactjs';
+import Fade from '../Fade';
 
 export default function TextRow(props) {
     return (
-        <div className='body-row text-row'>
-            <RichText render={props.text}/>
-        </div>
+        <Fade>
+            <div className='body-row text-row'>
+                <RichText render={props.text}/>
+            </div>
+        </Fade>
     );
 }

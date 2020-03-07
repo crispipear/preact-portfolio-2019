@@ -1,16 +1,22 @@
 import { RichText } from 'prismic-reactjs';
+import Fade from 'react-reveal/Fade';
 
 export default function DoubleText(props) {
     return (
         <div className='body-row double-text'>
-            <div className='body-row-block'>
-                <RichText render={props.header_left}/>
-                <RichText render={props.text_left}/>
-            </div>
+            <Fade duration={1200} delay={100}>
+                <div className='body-row-block'>
+                    <RichText render={props.header_left}/>
+                    <RichText render={props.text_left}/>
+                </div>    
+            </Fade>
+            <Fade duration={1200} delay={400}>
             <div className='body-row-block'>
                 <RichText render={props.header_right}/>
                 <RichText render={props.text_right}/>
             </div>
+            </Fade>
+
         </div>
     );
 }

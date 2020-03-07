@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { Link } from 'preact-router/match';
+import Fade from 'react-reveal/Fade';
 
 export default function ProjFooter(props) {
     const [next, setNext] = useState({});
@@ -19,12 +20,16 @@ export default function ProjFooter(props) {
     }
     return (
         <div className='proj-footer'>
-            <h4 className='serifFont'>see more</h4>
+            <Fade duration={1200}>
+               <h4 className='serifFont'>see more</h4>
+            </Fade>
             <div>
-                <h6>{next.context}</h6>
-                <h2 className="serifFont">
-                    <Link href={"/case-studies/" + next.uid} className="underline">{next.name}</Link>
-                </h2>
+                <Fade cascade delay={200}>
+                    <h6>{next.context}</h6>
+                    <h2 className="serifFont">
+                        <Link href={"/case-studies/" + next.uid} className="underline">{next.name}</Link>
+                    </h2>
+                </Fade>
             </div>
             <div style={{backgroundImage: `url(${next.cover && next.cover.url})`}}/>
         </div>

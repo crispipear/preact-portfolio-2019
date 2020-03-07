@@ -20,6 +20,7 @@
     "build/*"
   ],
   "devDependencies": {
+    "babel-plugin-module-resolver": "^4.0.0",
     "dotenv": "^8.2.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-preact-pure": "^2.0.0",
@@ -39,10 +40,13 @@
   },
   "dependencies": {
     "preact": "^10.0.1",
+    "preact-compat": "^3.19.0",
+    "preact-helmet": "^4.0.0-alpha-3",
     "preact-render-to-string": "^5.1.0",
     "preact-router": "^3.0.0",
     "prismic-javascript": "^2.1.5",
-    "prismic-reactjs": "^1.2.0"
+    "prismic-reactjs": "^1.2.0",
+    "react-reveal": "^1.2.2"
   },
   "jest": {
     "preset": "jest-preset-preact",

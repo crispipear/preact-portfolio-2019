@@ -1,9 +1,11 @@
 import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 import { route } from 'preact-router';
+
 //layout
 import Intro         from '../components/ProjIntro';
 import Footer        from '../components/ProjFooter';
+import Fade          from '../components/Fade';
 //slices
 import VideoIntro    from '../components/content/VideoIntro';
 import DoubleText    from '../components/content/DoubleText';
