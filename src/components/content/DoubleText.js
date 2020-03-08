@@ -1,5 +1,5 @@
 import { RichText } from 'prismic-reactjs';
-import Fade from 'react-reveal/Fade';
+import Fade			from '../Fade';
 
 export default function DoubleText(props) {
     return (

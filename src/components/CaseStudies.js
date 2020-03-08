@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'preact-router/match';
 import Fade from './Fade';
+import Reveal from './Reveal';
 
 const CaseStudy = ({uid, cover, name, context}) => 
-<Fade>
-    <Link key={uid} className='work-item' href={`/case-studies/${uid}`}>
+<Link key={uid} className='work-item' href={`/case-studies/${uid}`}>
+    <Reveal>
         <div className='work-cover'>
             <div style={{backgroundImage: `url(${cover})`}}/>
         </div>
-        <h3><span className='textBg'>{name}</span></h3>
-        <h6>{context}</h6>
-    </Link>
-</Fade>
+    </Reveal>
+    <Fade delay={100}><h3><span className='textBg'>{name}</span></h3></Fade>
+    <Fade delay={150}><h6>{context}</h6></Fade>
+</Link>
 
 export default function CaseStudies(props) {
     const caseStudies = props.caseStudies

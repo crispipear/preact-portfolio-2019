@@ -13,22 +13,33 @@ export default function Home(props) {
 	const [movement2, setMovement2] = useState(0);
 
 	useEffect(() => {
-		window.addEventListener('wheel', handleScroll);
-		setPos(
-			worksRef.current.getBoundingClientRect().y
-		)
+		setPos(worksRef.current.getBoundingClientRect().y);
+		window.addEventListener('scroll', handleScroll);
 		return () => {
-			window.addEventListener('wheel', handleScroll);
+			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [])
-	function handleScroll(e){
+
+	useEffect(() => {
+		if(props.matches.scroll == 'work'){
+			scrollDown(false);
+		}
+	}, [pos])
+
+	function handleScroll(){
 		let value = -(window.pageYOffset * 0.02);
 		let value2 = window.pageYOffset * 0.04;
 		setMovement(value);
 		setMovement2(value2);
 	}
-	function scrollDown(){
-		typeof window !== 'undefined' && window.scrollTo({ top: pos, behavior: 'smooth' })
+	function scrollDown(smooth = true){
+		if (typeof window !== 'undefined'){
+			smooth
+			?
+			window.scrollTo({ top: pos, behavior: 'smooth' })
+			:
+			window.scrollTo({ top: pos })
+		}
 		props.setHideMenu(true);
 	}
 	return(
@@ -37,15 +48,15 @@ export default function Home(props) {
 			<div className='home-landing'>
 				<div className='container'>
 					<div style={{transform: `translateY(${movement}%)`}}>
-						<Fade bottom duration={1200} delay={1250}><h1><span className='textBg'>Hello, </span></h1></Fade>
-						<Fade bottom duration={1200} delay={1750}><h2>my name is<span className='textBg'>Su Li</span></h2></Fade>
+						<Fade bottom duration={1000} delay={1250}><h1><span className='textBg'>Hello, </span></h1></Fade>
+						<Fade bottom duration={1000} delay={1750}><h2>my name is<span className='textBg'>Su Li</span></h2></Fade>
 					</div>
 					<div style={{transform: `translateY(${movement2}%)`}}>
-						<Fade duration={1200} delay={2250}><h4>
+						<Fade duration={1000} delay={2250}><h4>
 							<span className='textBg'>ux designer</span><span> + </span>
 							<span className='textBg'>front-end developer</span> based in Seattle.
 						</h4></Fade>
-						<Fade duration={1200} delay={2750}><h4>I design and build things like websites and apps</h4></Fade>
+						<Fade duration={1000} delay={2750}><h4>I design and build things like websites and apps</h4></Fade>
 					</div>
 				</div>
 				<Scroll action={scrollDown}/>

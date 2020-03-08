@@ -216,10 +216,30 @@ p, span{
 		height: 100%;
 		top: 0;
 		background: $primary;
-		animation: block-reveal 1s ease-in 0.2s forwards;
+	}
+	.reveal-content{
+		position: relative;
+		width: inherit;
+		height: auto;
+		opacity: 0;
 	}
 }
-
+.block-reveal-anim{
+	.reveal-content{
+		animation: fadeIn 0.1s ease-in 0.5s forwards;
+	}
+	&:after{
+		animation: block-reveal 0.8s ease-in 0.2s forwards;
+	}
+}
+@keyframes fadeIn {
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
 @keyframes block-reveal{
 	0%{
 		width: 0%;

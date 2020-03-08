@@ -1,5 +1,5 @@
 import { h } from 'preact';
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useState, useCallback } from 'preact/hooks';
 import { route } from 'preact-router';
 
 //layout
@@ -29,13 +29,10 @@ const compList = {
 export default function CSView(props) {
     const [caseStudy, setCaseStudy] = useState({});
     const [index, setIndex] = useState(0);
-
+    
     useEffect(() => {
         init();
     }, []);
-    useEffect(() => {
-        init();
-    }, [props.matches.id])
 
     function init(){
         let id = props.matches.id;

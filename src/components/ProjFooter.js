@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { Link } from 'preact-router/match';
-import Fade from 'react-reveal/Fade';
+import Fade from './Fade';
 
 export default function ProjFooter(props) {
     const [next, setNext] = useState({});

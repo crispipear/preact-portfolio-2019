@@ -14,7 +14,7 @@ import Profile		from './routes/Profile';
 import CSView		from './routes/CSView';
 
 export default function App(){
-	const [hideMenu, setHideMenu] = useState(false);
+	const [hideMenu, setHideMenu] = useState(true);
 	const [currentUrl, setCurrentUrl] = useState("/");
 	const [error, setError] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +24,7 @@ export default function App(){
 
 	useEffect(() => {
 		setCurrentUrl(window.location.pathname);
+		setTimeout(() => setHideMenu(false),4000)
 		initData().then(()=>{
 			setIsLoading(false);
 		})
@@ -48,8 +49,10 @@ export default function App(){
 	}
 
 	function handleRoute(e){
-		scrollTop(false);
 		setCurrentUrl(e.url);
+		if(e.url !== '/'){
+			scrollTop(false);
+		}
 		if(e.current.props.error){
 			setError(true)
 		}else{
@@ -75,14 +78,13 @@ export default function App(){
 			} */}
 			<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error}/>
 			{
-				!isLoading ?
+				!isLoading &&
 				<Router onChange={handleRoute}>
-					<Home path="/" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
+					<Home path="/:scroll?" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
 					<Profile path="/profile" profile={profile}/>
-					<CSView path="/case-studies/:id" caseStudies={caseStudies}/>
+					<CSView exact path="/case-studies/:id" caseStudies={caseStudies} key={currentUrl}/>
 					<Error type="404" default error/>
 				</Router>
-				:<div style={{width: "100%", height: "100vh"}}/>
 			}
 			{
 				(currentUrl !== '/profile' && !error && !isLoading) &&

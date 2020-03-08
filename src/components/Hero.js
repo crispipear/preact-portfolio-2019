@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'preact/hooks';
 import HeroImage	from '../assets/hero.jpg';
+import Reveal       from '../components/Reveal';
 
 export default function Hero(){
     const imageRef = useRef(null);
@@ -15,6 +16,7 @@ export default function Hero(){
         window.addEventListener('resize', resize, true);
         return () => {
             window.removeEventListener('resize', resize);
+            window.removeEventListener('mousemove', handleMouseMove);
         }
     }, [])
 
@@ -23,8 +25,9 @@ export default function Hero(){
         setDims({
             minX: Math.floor(boundingRect.x),
             maxX: Math.floor(boundingRect.width + boundingRect.x),
-            minY: Math.floor(boundingRect.y),
-            maxY: Math.floor(boundingRect.height + boundingRect.y)
+            //add y to current scroll position, just in case not scrolled to the top
+            minY: Math.floor(boundingRect.y + window.pageYOffset), 
+            maxY: Math.floor(boundingRect.height + (boundingRect.y + window.pageYOffset))
         })
     }
 
@@ -49,22 +52,23 @@ export default function Hero(){
     }
 
     useEffect(() => {
-        window.addEventListener('mousemove', handleMouseMove);
+        setTimeout(() => {
+            window.addEventListener('mousemove', handleMouseMove);
+        }, 1000)
         return () => {
             window.removeEventListener('mousemove', handleMouseMove);
         }
     }, [dims])
 
     return(
-        <div className='hero-background'>
-            <div className='hero-image-wrapper' style={transform}>
-                <div
-                    className='hero-image'
-                    ref={imageRef}
-                    style={{backgroundImage: `url(${HeroImage})`}}
-                />
-                <div className='block-reveal'/>
-            </div>
-        </div>
+    <div className='hero-background'>
+        <Reveal>
+            <div
+                className='hero-image'
+                ref={imageRef}
+                style={{...transform, backgroundImage: `url(${HeroImage})`}}
+            />
+        </Reveal>
+    </div>
     )
 }
