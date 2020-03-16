@@ -58,7 +58,7 @@ a{
 	}
 }
 .underline{
-	transition: all 0.25s;
+	transition: all 0.2s;
 	cursor: pointer;
 	color: $secondary!important;
 	font-weight: $textMed!important;
@@ -66,6 +66,7 @@ a{
 	&:hover{
 		text-shadow: 0.3rem 0.24rem $primary;
 	}
+	font-size: 100%;
 }
 .link-bg{
 	@extend .underline;
@@ -86,7 +87,7 @@ h5{font-size: 1.15rem};
 h6{font-size: 1rem; font-weight: $textReg};
 
 p, a, span, li{
-	font-size: 1rem;
+	font-size: 0.96rem;
 	line-height: 1.8;
 	letter-spacing: 0.4px;
 	font-weight: $textReg;
@@ -150,8 +151,14 @@ p, span{
 	width: 100%;
 	height: 100vh;
 	z-index: 100;
+	position: fixed;
+	top: 0;
+	left: 0;
+	pointer-events: none;
 	background: white;
+	transition: all 0.2s;
 	span{
+		transition: all 0.2s;
 		position: absolute;
 		top: 50%;
 		right: 10vw;

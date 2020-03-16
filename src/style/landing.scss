@@ -79,4 +79,17 @@
             }
         }
     }
+    .home-collab{
+        margin: 20vh 0;
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        column-gap: 8%;
+        img{
+            width: 100%;
+        }
+        p{
+            font-size: 1.2rem;
+            margin: 0.75rem 0% 0.5rem 0%;
+        }
+    }
 }

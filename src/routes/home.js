@@ -5,6 +5,7 @@ import MoreProjects from '../components/MoreProjects';
 import Scroll		from '../components/Scroll'
 import Hero			from '../components/Hero';
 import Fade			from '../components/Fade';
+import COLLAB		from '../assets/collab.svg';
 
 export default function Home(props) {
 	const worksRef = useRef(null)
@@ -13,8 +14,8 @@ export default function Home(props) {
 	const [movement2, setMovement2] = useState(0);
 
 	useEffect(() => {
-		setPos(worksRef.current.getBoundingClientRect().y);
 		window.addEventListener('scroll', handleScroll);
+		setPos(worksRef.current.getBoundingClientRect().y)
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
@@ -22,7 +23,7 @@ export default function Home(props) {
 
 	useEffect(() => {
 		if(props.matches.scroll == 'work'){
-			scrollDown(false);
+			scrollDown();
 		}
 	}, [pos])
 
@@ -32,14 +33,8 @@ export default function Home(props) {
 		setMovement(value);
 		setMovement2(value2);
 	}
-	function scrollDown(smooth = true){
-		if (typeof window !== 'undefined'){
-			smooth
-			?
-			window.scrollTo({ top: pos, behavior: 'smooth' })
-			:
-			window.scrollTo({ top: pos })
-		}
+	function scrollDown(){
+		typeof window !== 'undefined' && window.scrollTo({ top: pos, behavior: 'smooth' })
 		props.setHideMenu(true);
 	}
 	return(
@@ -48,15 +43,15 @@ export default function Home(props) {
 			<div className='home-landing'>
 				<div className='container'>
 					<div style={{transform: `translateY(${movement}%)`}}>
-						<Fade bottom duration={1000} delay={1250}><h1><span className='textBg'>Hello, </span></h1></Fade>
-						<Fade bottom duration={1000} delay={1750}><h2>my name is<span className='textBg'>Su Li</span></h2></Fade>
+						<Fade delay={1000}><h1><span className='textBg'>Hello, </span></h1></Fade>
+						<Fade delay={1250}><h2>my name is<span className='textBg'>Su Li</span></h2></Fade>
 					</div>
 					<div style={{transform: `translateY(${movement2}%)`}}>
-						<Fade duration={1000} delay={2250}><h4>
+						<Fade duration={1000} delay={1750}><h4>
 							<span className='textBg'>ux designer</span><span> + </span>
 							<span className='textBg'>front-end developer</span> based in Seattle.
 						</h4></Fade>
-						<Fade duration={1000} delay={2750}><h4>I design and build things like websites and apps</h4></Fade>
+						<Fade duration={1000} delay={2000}><h4>I design and build things like websites and apps</h4></Fade>
 					</div>
 				</div>
 				<Scroll action={scrollDown}/>
@@ -69,6 +64,20 @@ export default function Home(props) {
 				<h3><span className='textBg'>more projects</span></h3>
 				<MoreProjects projects={props.projects}/>
 		    </div>
+			<div className='home-collab container'>
+				<Fade bottom>
+					<div>
+						<img src={COLLAB} alt="collab image"/>
+					</div>
+				</Fade>
+				<Fade delay={200}>
+					<div>
+						<h2><span className='textBg'>collaboration can make things better</span></h2>
+						<p>My inbox is always opened. Feel free to reach out to me if you have a potential project in mind or need some consultation in my area of expertise!</p>
+						<h4><a href='mailto:lisuy97@gmail.com' className='underline'>say hello</a></h4>
+					</div>
+				</Fade>
+			</div>
 		</section>
 );
 }

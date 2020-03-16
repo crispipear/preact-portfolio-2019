@@ -5,7 +5,7 @@ import {fetchData, fetchOrderData} from './utils/prismic';
 import {processPage, processData} from './utils/formatData';
 
 import Menu 		from './components/Menu';
-// import LoadScreen	from './components/LoadScreen';
+import LoadScreen	from './components/LoadScreen';
 import Footer 		from './components/Footer';
 
 import Error	    from './routes/Error';
@@ -24,11 +24,12 @@ export default function App(){
 
 	useEffect(() => {
 		setCurrentUrl(window.location.pathname);
-		setTimeout(() => setHideMenu(false),4000)
 		initData().then(()=>{
-			setIsLoading(false);
+			setTimeout(() => {
+				setIsLoading(false);
+				setTimeout(() => setHideMenu(false),3000);
+			}, 1250)
 		})
-		// setIsLoading(false);
 	}, [])
 	
 	async function initData(){
@@ -73,10 +74,11 @@ export default function App(){
 
 	return(
 		<div id="app">
-			{/* {
-				isLoading && <LoadScreen/>
-			} */}
-			<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error}/>
+			<LoadScreen isLoading={isLoading}/>
+			{
+				!isLoading && 
+				<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error}/>
+			}
 			{
 				!isLoading &&
 				<Router onChange={handleRoute}>

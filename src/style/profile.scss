@@ -36,8 +36,8 @@
         position: absolute;
         right: 0;
         width: 62%;
-        padding-top: 28vh;
-        padding-right: 22vw;
+        padding-top: 32vh;
+        padding-right: 20vw;
         padding-bottom: 15vh;
         h1, h2{
             @extend .serifFont;
@@ -63,7 +63,7 @@
             }
         }
         p{
-            margin-bottom: 16px;
+            margin-bottom: 1.6rem;
         }
         ul {
             margin: 0;
@@ -73,11 +73,19 @@
                 margin-bottom: 8px;
             }
         }
-        h1{
-            color: $textDark;
-            font-size: 24px;
-            margin-top: 40px;
-            margin-bottom: 16px;
+        #block-one{
+            h1{
+                @extend .textBg;
+                font-size: 3rem!important;
+                margin-bottom: 2rem!important;
+            }
+        }
+        #block-two{
+            h1{
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                font-size: 1.4rem;
+            }
         }
     }
 }

@@ -18,18 +18,18 @@
             width: 100%;
         }
         .work-item{
-            margin-bottom: 8vw;
+            margin-bottom: 4vw;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: flex-start;
             .work-cover{
-                margin-bottom: 32px;
+                margin-bottom: 20px;
                 overflow: hidden;
                 position: relative;
                 width: 100%;
+                transition: all 0.24s;
                 div{
-                    transition: all 0.4s;
                     background-size: cover;
                     background-position: center;
                     width: 100%;
@@ -53,9 +53,7 @@
                     width: 100%;
                 }
                 .work-cover{
-                    div{
-                        transform: scale(1.1);
-                    }
+                    transform: scale(0.96);
                 }
             }
         }

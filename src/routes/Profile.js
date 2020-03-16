@@ -27,18 +27,22 @@ export default ({profile}) => {
                 </Fade>
             </div>
             <div className='about-right'>
-                <Fade delay={1000}><RichText render={profile.body[0].primary.header}/></Fade>
-                <Fade delay={1250}><RichText render={profile.body[0].primary.text}/></Fade>
+                <div id="block-one">
+                    <Fade delay={1000}><RichText render={profile.body[0].primary.header}/></Fade>
+                    <Fade delay={1250}><RichText render={profile.body[0].primary.text}/></Fade>
+                </div>
                 <div className='skills'>
-                    <Fade delay={1500}><h2>some tech skills</h2></Fade>
+                    <Fade><h2>some tech skills</h2></Fade>
                     <div>
                         {
                             profile.tech.map((item,key) => <Fade delay={key*60}><RichText key={'skill'+key} render={item.name}/></Fade>)
                         }
                      </div>
                 </div>
-                <Fade><RichText render={profile.body[1].primary.header}/></Fade>
-                <Fade><RichText render={profile.body[1].primary.text}/></Fade>
+                <div id="block-two">
+                    <Fade><RichText render={profile.body[1].primary.header}/></Fade>
+                    <Fade><RichText render={profile.body[1].primary.text}/></Fade>
+                </div>
             </div>
         </section>
     )

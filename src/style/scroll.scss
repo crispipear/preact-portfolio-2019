@@ -31,6 +31,10 @@ $line-height-abs: -16vh;
       left: -3.5rem;
       top: -0.1rem;
       letter-spacing: 1px;
+      transition: all 0.3s;
+      &:hover{
+        transform: translateY(-4px);
+      }
     }
 }
   

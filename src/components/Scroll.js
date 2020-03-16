@@ -5,7 +5,7 @@ export default function Scroll(props){
     useEffect(() => {
         setTimeout(() => {
             setOpacity(1);
-        }, 3500)
+        }, 3000)
     }, [])
     return (
         <div class="scroll-indicator" onClick={props.action || function(){}} style={{opacity}}>

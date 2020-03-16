@@ -15,9 +15,6 @@ export default function Footer(props){
             <div>
                 <b onClick={props.scrollTop}>back to top</b>
             </div>
-            <div>
-                <a href="mailto:lisuy97@gmail.com">lisuy97@gmail.com</a>
-            </div>
         </div>
     )
 } 
