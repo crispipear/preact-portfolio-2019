@@ -5,7 +5,7 @@ export default function SingleText(props) {
     return (
         <div className='body-row single-text'>
             <Fade>
-                <div style={props.style == 'full' ? {width: "100%"} : {width: "60%"}}>
+                <div style={props.style == 'full' ? {width: "100%"} :  window.innerWidth >= 1023 ? {width: "60%"} : {width: '100%'}}>
                     <RichText render={props.header}/>
                     <RichText render={props.text}/>
                 </div>

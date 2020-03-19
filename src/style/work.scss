@@ -37,9 +37,6 @@
                     position: absolute;
                 }
             }
-            h4,h6{
-                text-align: center;
-            }
             h4{
                 &:after{
                     width: 0%;
@@ -137,6 +134,34 @@
                 &:hover{
                     opacity: 0.4;
                 }
+            }
+        }
+    }
+    @include mobile{
+        .work-container{
+            display: grid;
+            grid-column-gap: 0;
+            grid-template-columns: 1fr;
+            margin-top: 32px;
+            .left{
+                .work-item{
+                    margin-bottom: 32px;
+                    .work-cover{
+                        height: 32vh!important;
+                        margin-bottom: 8px!important;
+                    }
+                }
+            }
+        }
+        .work-more-projects{
+            margin-top: 32px;
+            grid-template-columns: 1fr;
+            row-gap: 32px;
+            .more-proj-item{
+                height: 64vh;
+            }
+            .title-row{
+                margin-top: 12px;
             }
         }
     }

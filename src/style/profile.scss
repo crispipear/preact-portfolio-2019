@@ -88,4 +88,26 @@
             }
         }
     }
+    @include mobile{
+        .about-left, .about-right{
+            width: 100%;
+            padding: 10vw;
+        }
+        .about-left{
+            position: unset;
+            padding-top: 16vh;
+            .pic{
+                width: 90%;
+                height: 40vh;
+            }
+        }
+        .about-right{
+            .skills{
+                h2{
+                    margin-bottom: 24px;
+                }
+                flex-direction: column;
+            }
+        }
+    }
 }

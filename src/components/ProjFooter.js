@@ -24,7 +24,7 @@ export default function ProjFooter(props) {
                <h4 className='serifFont'>see more</h4>
             </Fade>
             <div>
-                <Fade cascade delay={200}>
+                <Fade delay={200}>
                     <h6>{next.context}</h6>
                     <h2 className="serifFont">
                         <Link href={"/case-studies/" + next.uid} className="underline">{next.name}</Link>

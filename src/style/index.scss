@@ -67,6 +67,11 @@ a{
 		text-shadow: 0.3rem 0.24rem $primary;
 	}
 	font-size: 100%;
+	@include mobile{
+		&:hover{
+			text-shadow: none;
+		}
+	}
 }
 .link-bg{
 	@extend .underline;
@@ -86,6 +91,15 @@ h4{font-size: 1.25rem};
 h5{font-size: 1.15rem};
 h6{font-size: 1rem; font-weight: $textReg};
 
+@include mobile{
+	h1{font-size: 1.8rem};
+	h2{font-size: 1.4rem};
+	h3{font-size: 1.2rem};
+	h4{font-size: 1.15rem};
+	h5{font-size: 1rem};
+	h6{font-size: 0.95rem; font-weight: $textReg};
+}
+
 p, a, span, li{
 	font-size: 0.96rem;
 	line-height: 1.8;
@@ -93,7 +107,7 @@ p, a, span, li{
 	font-weight: $textReg;
 	margin: 0%;
 	@include mobile{
-		margin: 0px;
+		line-height: 1.6;
 	}
 	a{
 		margin: 0%;
@@ -172,6 +186,15 @@ p, span{
 			position: absolute;
 			top: 50%;
 			right: -10vw;
+		}
+	}
+	@include mobile{
+		span{
+			right: 22vw;
+			&:after{
+				width: 20vw;
+				right: -22vw;
+			}
 		}
 	}
 }

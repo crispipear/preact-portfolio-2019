@@ -17,6 +17,7 @@ const CaseStudy = ({uid, cover, name, context}) =>
 export default function CaseStudies(props) {
     const caseStudies = props.caseStudies
     return (
+        window.innerWidth >= 1023 ?
         <div className='work-container'>
             <div className='left'>
             {
@@ -44,6 +45,22 @@ export default function CaseStudies(props) {
                 )
             }
             </div>
+        </div>
+        :
+        <div className='work-container'>
+            <div className='left'>
+                {
+                    caseStudies.map(cs =>
+                        <CaseStudy
+                            uid={cs.uid}
+                            name={cs.name}
+                            context={cs.context}
+                            cover={cs.cover.url}
+                        />
+                    )
+                }
+            </div>
+
         </div>
     );
 }

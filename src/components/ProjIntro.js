@@ -29,7 +29,9 @@ export default ({cs}) =>
                     </Fade>
                 }
             </div>
-            <Scroll hideText/>
+            {
+                window.innerWidth >= 1023 && <Scroll hideText/>
+            }
         </div>
         
     );

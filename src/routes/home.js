@@ -11,7 +11,6 @@ export default function Home(props) {
 	const worksRef = useRef(null)
 	const [pos, setPos] = useState(0);
 	const [movement, setMovement] = useState(0);
-	const [movement2, setMovement2] = useState(0);
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
@@ -28,10 +27,8 @@ export default function Home(props) {
 	}, [pos])
 
 	function handleScroll(){
-		let value = -(window.pageYOffset * 0.02);
-		let value2 = window.pageYOffset * 0.04;
+		let value = window.pageYOffset * 0.06;
 		setMovement(value);
-		setMovement2(value2);
 	}
 	function scrollDown(){
 		typeof window !== 'undefined' && window.scrollTo({ top: pos, behavior: 'smooth' })
@@ -41,18 +38,18 @@ export default function Home(props) {
 		<section className='home'>
 			<Hero/>
 			<div className='home-landing'>
-				<div className='container'>
-					<div style={{transform: `translateY(${movement}%)`}}>
-						<Fade delay={1000}><h1><span className='textBg'>Hello, </span></h1></Fade>
-						<Fade delay={1250}><h2>my name is<span className='textBg'>Su Li</span></h2></Fade>
-					</div>
-					<div style={{transform: `translateY(${movement2}%)`}}>
-						<Fade duration={1000} delay={1750}><h4>
-							<span className='textBg'>ux designer</span><span> + </span>
-							<span className='textBg'>front-end developer</span> based in Seattle.
-						</h4></Fade>
+				<div className='container' style={{transform: `translateY(${movement}%)`}}>
+						<div>
+							<Fade delay={1000}><h1><span className='textBg'>Hello, </span></h1></Fade>
+							<Fade delay={1250}><h2>my name is<span className='textBg'>Su Li</span></h2></Fade>
+						</div>
+						<Fade duration={1000} delay={1750}>
+							<h4>
+								<span className='textBg'>ux designer</span><span> + </span>
+								<span className='textBg'>front-end developer</span> based in Seattle.
+							</h4>
+						</Fade>
 						<Fade duration={1000} delay={2000}><h4>I design and build things like websites and apps</h4></Fade>
-					</div>
 				</div>
 				<Scroll action={scrollDown}/>
 			</div>
