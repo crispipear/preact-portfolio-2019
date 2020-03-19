@@ -4,5 +4,6 @@ export default {
     siteKeywords:
         'Su Li, Su, Li, ux designer, ui/ux designer, imd, uwb imd, interactive media design, uw bothell, university of washington, web designer, software engineer, front-end engineer, front-end developer, web developer, javascript',
     siteUrl: 'https://lisuying.com',
-    siteLanguage: 'en_US'
+    siteLanguage: 'en_US',
+    siteImage: "https://lisuying.com/assets/meta_image.jpg",
 }

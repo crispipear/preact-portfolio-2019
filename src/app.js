@@ -4,12 +4,13 @@ import { Router } from 'preact-router';
 import {fetchData, fetchOrderData} from './utils/prismic';
 import {processPage, processData} from './utils/formatData';
 
+import Helmet		from './helmet';
 import Menu 		from './components/Menu';
 import LoadScreen	from './components/LoadScreen';
 import Footer 		from './components/Footer';
 
 import Error	    from './routes/Error';
-import Home 		from './routes/Home';
+import Home 		from './routes/Main';
 import Profile		from './routes/Profile';
 import CSView		from './routes/CSView';
 
@@ -74,6 +75,7 @@ export default function App(){
 
 	return(
 		<div id="app">
+			<Helmet/>
 			<LoadScreen isLoading={isLoading}/>
 			{
 				!isLoading && 
