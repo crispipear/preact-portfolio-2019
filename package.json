@@ -7,7 +7,7 @@
     "start": "per-env",
     "start:production": "npm run -s serve",
     "start:development": "npm run -s dev",
-    "build": "preact build --no-prerender",
+    "build": "preact build --template src/index.html --no-prerender",
     "serve": "preact build && serve build --single",
     "dev": "preact watch",
     "lint": "eslint src",
@@ -41,7 +41,6 @@
   "dependencies": {
     "preact": "^10.0.1",
     "preact-compat": "^3.19.0",
-    "preact-helmet": "^4.0.0-alpha-3",
     "preact-render-to-string": "^5.1.0",
     "preact-router": "^3.0.0",
     "prismic-javascript": "^2.1.5",

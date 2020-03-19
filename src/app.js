@@ -4,7 +4,6 @@ import { Router } from 'preact-router';
 import {fetchData, fetchOrderData} from './utils/prismic';
 import {processPage, processData} from './utils/formatData';
 
-import Helmet		from './helmet';
 import Menu 		from './components/Menu';
 import LoadScreen	from './components/LoadScreen';
 import Footer 		from './components/Footer';
@@ -75,7 +74,6 @@ export default function App(){
 
 	return(
 		<div id="app">
-			<Helmet/>
 			<LoadScreen isLoading={isLoading}/>
 			{
 				!isLoading && 
