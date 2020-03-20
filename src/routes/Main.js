@@ -9,30 +9,19 @@ import COLLAB		from '../assets/collab.svg';
 
 export default function Home(props) {
 	const worksRef = useRef(null)
-	const [pos, setPos] = useState(0);
 	const [movement, setMovement] = useState(0);
 
 	useEffect(() => {
 		window.addEventListener('scroll', handleScroll);
-		setPos(worksRef.current.getBoundingClientRect().y)
+		props.setWorkPos(worksRef.current.getBoundingClientRect().y)
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, [])
 
-	useEffect(() => {
-		if(props.matches.scroll == 'work'){
-			scrollDown();
-		}
-	}, [pos])
-
 	function handleScroll(){
 		let value = window.pageYOffset * 0.06;
 		setMovement(value);
-	}
-	function scrollDown(){
-		typeof window !== 'undefined' && window.scrollTo({ top: pos, behavior: 'smooth' })
-		props.setHideMenu(true);
 	}
 	return(
 		<section className='home'>
@@ -51,7 +40,7 @@ export default function Home(props) {
 						</Fade>
 						<Fade duration={1000} delay={2000}><h4>I design and build things like websites and apps</h4></Fade>
 				</div>
-				<Scroll action={scrollDown}/>
+				<Scroll action={props.scrollToWork}/>
 			</div>
 			<div className='home-work container' ref={worksRef}>
 				<h3><span className='textBg'>case studies</span></h3>

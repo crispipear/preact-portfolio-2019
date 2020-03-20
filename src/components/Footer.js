@@ -5,7 +5,7 @@ export default function Footer(props){
     useEffect(() => {
         setTimeout(() => {
             setOpacity(1);
-        }, 1000)
+        }, 2000)
     }, [])
     return (
         <div className="footer container" style={{opacity}}>

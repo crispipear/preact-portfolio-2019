@@ -21,6 +21,7 @@ export default function App(){
 	const [caseStudies, setCaseStudies] = useState([]);
 	const [profile, setProfile] = useState({});
 	const [projects, setProjects] = useState([]);
+	const [workPos, setWorkPos] = useState(0);
 
 	useEffect(() => {
 		setCurrentUrl(window.location.pathname);
@@ -72,20 +73,25 @@ export default function App(){
 		setHideMenu(false)
 	}
 
+	function scrollToWork(){
+		typeof window !== 'undefined' && window.scrollTo({ top: workPos, behavior: 'smooth' })
+		setHideMenu(true);
+	}
+
 	return(
 		<div id="app">
-			<LoadScreen isLoading={isLoading}/>
+			{/* <LoadScreen isLoading={isLoading}/> */}
 			{
 				!isLoading && 
-				<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error}/>
+				<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error} scrollToWork={scrollToWork}/>
 			}
 			{
 				!isLoading &&
 				<Router onChange={handleRoute}>
-					<Home path="/:scroll?" setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects}/>
+					<Error type="404" default />
+					<Home path="/" setWorkPos={setWorkPos} setHideMenu={setHideMenu} caseStudies={caseStudies} projects={projects} scrollToWork={scrollToWork}/>
 					<Profile path="/profile" profile={profile}/>
-					<CSView exact path="/case-studies/:id" caseStudies={caseStudies} key={currentUrl}/>
-					<Error type="404" default error/>
+					<CSView path="/case-studies/:id" caseStudies={caseStudies} key={currentUrl}/>
 				</Router>
 			}
 			{

@@ -65,6 +65,14 @@ export default function Menu(props) {
 		}
 	}, [props.hideMenu])
 
+	function scroll(){
+		if(props.currentUrl !== '/'){
+			setTimeout(props.scrollToWork, 500);
+		}else{
+			props.scrollToWork();
+		}
+	}
+
 	return (
 		<div className={menuClass} style={{opacity: menuOpacity, transform: `translateY(${menuPos}px)`}}>
 			<div className='container'>
@@ -74,7 +82,7 @@ export default function Menu(props) {
 				{
 					window.innerWidth >= 1023 ?
 					<div className='menu-links'>
-						<Link className='link-bg' href='/work'>work</Link>
+						<Link className='link-bg' href='/' onClick={scroll}>work</Link>
 						<Link className='link-bg' href='/profile'>profile</Link>
 					</div>
 					:
@@ -89,7 +97,7 @@ export default function Menu(props) {
 					<div id="mobile-menu-close" onClick={() => setMobileMenu(false)}>
 						<img src={CLOSE_ICON}/>
 					</div>
-					<Link href='/work'>work</Link>
+					<Link href='/' onClick={props.scrollToWork}>work</Link>
 					<Link href='/profile'>profile</Link>
 				</div>
 			}
