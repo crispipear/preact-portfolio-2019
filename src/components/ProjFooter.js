@@ -32,7 +32,7 @@ export default function ProjFooter(props) {
                 </Fade>
             </div>
             <Fade delay={500}>
-                 <div style={{backgroundImage: `url(${next.cover && next.cover.url})`}}/>
+                <Link href={"/case-studies/" + next.uid}  style={{backgroundImage: `url(${next.cover && next.cover.url})`}}/>
             </Fade>
         </div>
     );

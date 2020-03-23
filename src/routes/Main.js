@@ -29,8 +29,8 @@ export default function Home(props) {
 			<div className='home-landing'>
 				<div className='container' style={{transform: `translateY(${movement}%)`}}>
 						<div>
-							<Fade delay={1000}><h1><span className='textBg'>Hello, </span></h1></Fade>
-							<Fade delay={1250}><h2>my name is<span className='textBg'>Su Li</span></h2></Fade>
+							<Fade delay={1000}><h2>Hello,</h2></Fade>
+							<Fade delay={1250}><h2 style={{marginLeft: "0.5rem"}}> my name is Su Li</h2></Fade>
 						</div>
 						<Fade duration={1000} delay={1750}>
 							<h4>

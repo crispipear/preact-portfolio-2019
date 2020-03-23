@@ -15,10 +15,10 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        padding-right: 24%;
+        padding-right: 20%;
         .hero-image{
-            width: 44vw;
-            height: 60vh;
+            width: 40vw;
+            height: 56vh;
             transition: all 0.6s;
             background-size: cover;
             background-position: center;
@@ -39,32 +39,16 @@
             padding-top: 20vh;
             div{
                 flex-direction: row;
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.6rem;
             }
             h4, h2{
                 font-weight: $textReg;
             }
-            h1{
-                margin: 0%;
-                letter-spacing: 0.1rem;
-                @extend .serifFont;
-                span{
-                    font-weight: $headerBold;
-                }
-            }
             h4{
                 line-height: 2;
             }
-            h1,h2{
-                line-height: 1;
-                display: inline-block;
-            }
             h2{
-                margin-top: 0.6rem;
-                margin-left: 1rem;
-                span{
-                    margin-left: 0.6rem;
-                }
+                display: inline-block;
             }
         }
     }
@@ -89,8 +73,8 @@
                     padding-top: 8vh;
                 }
                 padding-top: 12vh;
-                h1, h2{
-                    margin: 0%;
+                h2{
+                    margin-left: 0%!important;
                     display: block;
                 }
             }

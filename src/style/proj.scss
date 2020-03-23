@@ -93,7 +93,7 @@
     }
     .body{
         width: 100%;
-        padding: 12vh 0 4vh 0;
+        padding: 32vh 0 20vh 0;
         a{
             font-size: 100%;
             line-height: 1;
@@ -157,26 +157,30 @@
             &:nth-child(even){
                 margin-left: 24%;
             }
-            margin-bottom: 5%;
+            margin-bottom: 5rem;
         }
     }
     .video-intro{
-        margin: 16vh 0;
+        margin-bottom: 16vh;
+        padding: 0 20vw;
         display: flex;
-        flex-direction: row;
+        align-items: center;
+        flex-direction: column!important;
         .video-intro-text, .video{
-            width: 50%;
+            width: 100%;
         }
         .video-intro-text{
             display: inline-flex;
             align-items: center;
-            padding: 0 5vw 0 10vw;
+            margin-bottom: 4rem;
             a{
                 @extend .underline;
             }
             *{
                 color: $textLight;
+            	font-family: 'Nunito', 'Segoe UI', Arial, sans-serif!important;
                 line-height: 1.8;
+                font-weight: $textMed!important;
             }
         }
         .video{
@@ -204,17 +208,9 @@
         }
     }
     .text-image{
-        div:nth-of-type(1){
-            margin-right: 8%;
-            flex: 1;
-            @include mobile{
-                margin-right: 0%!important;
-            }
-        }
-        div:nth-of-type(2){
-            flex: 1.2;
-        }
         align-items: center;
+        .text{width: 42%};
+        .image{width: 52%};
     }
     .text-image-half{
         div:nth-of-type(1){
@@ -262,9 +258,10 @@
                 }
             }
         }
-        div:last-of-type{
+        div:last-of-type a{
             background-position: center;
             background-size: cover;
+            height: 100%;
             position: relative;
             @extend .backdrop;
         }
@@ -278,7 +275,10 @@
     }
 }
 @include mobile{
-    .double-text, .video-intro, .text-image{
+    .body{
+        padding: 12vh 0!important;
+    }
+    .double-text, .text-image{
         flex-direction: column!important;
         div{
             width: 100%!important;
@@ -287,8 +287,12 @@
             }
         }
     }
-    .video-intro-text{
-        padding: 0 10vw;
+    .video-intro{
+        margin-bottom: 16vh!important;
+        padding: 0!important;
+        .video-intro-text{
+            width: 80%!important;
+        }
     }
     .text-row{
         h3{
