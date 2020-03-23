@@ -80,7 +80,7 @@ export default function App(){
 
 	return(
 		<div id="app">
-			{/* <LoadScreen isLoading={isLoading}/> */}
+			<LoadScreen isLoading={isLoading}/>
 			{
 				!isLoading && 
 				<Menu currentUrl={currentUrl} hideMenu={hideMenu} setHideMenu={setHideMenu} error={error} scrollToWork={scrollToWork}/>
