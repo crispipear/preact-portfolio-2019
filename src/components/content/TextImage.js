@@ -6,13 +6,13 @@ export default function TextImage(props) {
         <div className={'body-row text-image' + (props.style == 'half' ? ' text-image-half' : "")}
              style={{flexDirection: props.order == 'natural' ? 'row': 'row-reverse'}}
         >
-            <Fade duration={1200} delay={100}>
+            <Fade>
                 <div className='text'>
                     <RichText render={props.header}/>
                     <RichText render={props.text}/>
                 </div>
             </Fade>
-            <Fade duration={1200} delay={400}>
+            <Fade delay={100}>
                 <div className='image'>
                     <img src={props.image.url}/>
                 </div>

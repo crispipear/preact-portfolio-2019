@@ -39,16 +39,16 @@
             padding-top: 20vh;
             div{
                 flex-direction: row;
-                margin-bottom: 0.6rem;
-            }
-            h4, h2{
-                font-weight: $textReg;
+                margin-bottom: 1rem;
             }
             h4{
+                font-weight: $textReg;
+                color: $textLight;
                 line-height: 2;
             }
             h2{
                 display: inline-block;
+                @extend .serifFont;
             }
         }
     }
@@ -61,7 +61,7 @@
             width: 100%;
         }
         p{
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin: 0.75rem 0% 0.5rem 0%;
         }
     }

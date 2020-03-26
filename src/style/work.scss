@@ -77,7 +77,6 @@
         column-gap: 3rem;
         row-gap: 4rem;
         .more-proj-item{
-            height: 72vh;
             position: relative;
             &:hover{
                 .background{
@@ -99,14 +98,14 @@
                 background-size: cover;
             }
         }
-        p{
-            margin: 12px 0px;
-            font-size: 0.96rem;
+        .proj-desc{
+            margin: 1rem 0;
+            min-height: 22vh;
+            p{
+                font-size: 0.92rem;
+            }
         }
         .proj-tags{
-           position: absolute;
-           left: 0;
-           bottom: 0;
            span{
             display: inline-block;
             margin-right: 12px;
@@ -157,9 +156,6 @@
             margin-top: 32px;
             grid-template-columns: 1fr;
             row-gap: 32px;
-            .more-proj-item{
-                height: 64vh;
-            }
             .title-row{
                 margin-top: 12px;
             }

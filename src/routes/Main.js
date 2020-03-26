@@ -30,12 +30,12 @@ export default function Home(props) {
 				<div className='container' style={{transform: `translateY(${movement}%)`}}>
 						<div>
 							<Fade delay={1000}><h2>Hello,</h2></Fade>
-							<Fade delay={1250}><h2 style={{marginLeft: "0.5rem"}}> my name is Su Li</h2></Fade>
+							<Fade delay={1250}><h2 style={{marginLeft: "0.5rem"}}> my name is Su Li<div className='circle'/></h2></Fade>
 						</div>
 						<Fade duration={1000} delay={1750}>
 							<h4>
 								<span className='textBg'>ux designer</span><span> + </span>
-								<span className='textBg'>front-end developer</span> based in Seattle.
+								<span className='textBg'>front-end developer</span> based in Seattle
 							</h4>
 						</Fade>
 						<Fade duration={1000} delay={2000}><h4>I design and build things like websites and apps</h4></Fade>
@@ -58,7 +58,7 @@ export default function Home(props) {
 				</Fade>
 				<Fade delay={200}>
 					<div>
-						<h2><span className='textBg'>collaboration can make things better</span></h2>
+						<h3><span className='textBg'>collaboration can make things better</span></h3>
 						<p>My inbox is always opened. Feel free to reach out to me if you have a potential project in mind or need some consultation in my area of expertise!</p>
 						<h4><a href='mailto:lisuy97@gmail.com' className='underline'>say hello</a></h4>
 					</div>

@@ -2,8 +2,19 @@ import {h} from 'preact';
 import { RichText } from 'prismic-reactjs';
 import PROFILE     from '../assets/profile.jpg';
 import Fade        from '../components/Fade';
+import { useEffect, useState} from 'preact/hooks';
+
 
 export default ({profile}) => {
+    const [style, setStyle] = useState({opacity: 0, transform: 'translateY(1rem)'})
+    useEffect(() => {
+        setTimeout(() => {
+            setStyle({
+                opacity: 1,
+                transfrom: 'translateY(0)'
+            })
+        }, 1250)
+    }, [])
     return (
         <section className='about'>
             <div className='about-left'>
@@ -26,26 +37,24 @@ export default ({profile}) => {
                     <span><a className='underline' href='mailto:lisuy97@gmail.com'>lisuy97@gmail.com</a>(ENG/中文)</span>
                 </Fade>
             </div>
-            <div className='about-right'>
+            <div className='about-right' style={style}>
                 <div id="block-one">
-                    <Fade delay={1000}><RichText render={profile.body[0].primary.header}/></Fade>
-                    <Fade delay={1250}><RichText render={profile.body[0].primary.text}/></Fade>
+                    <RichText render={profile.body[0].primary.header}/>
+                    <RichText render={profile.body[0].primary.text}/>
                 </div>
                 <div className='skills'>
                     <h2>some tech skills</h2>
                     <div>
                         {                                
                             profile.tech.map((item,key) => 
-                                <Fade delay={80}>
                                     <RichText key={'skill'+key} render={item.name}/>
-                                </Fade>
                             )
                         }
                     </div>
                 </div>
                 <div id="block-two">
-                    <Fade><RichText render={profile.body[1].primary.header}/></Fade>
-                    <Fade><RichText render={profile.body[1].primary.text}/></Fade>
+                    <RichText render={profile.body[1].primary.header}/>
+                    <RichText render={profile.body[1].primary.text}/>
                 </div>
             </div>
         </section>

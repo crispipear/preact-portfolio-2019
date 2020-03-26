@@ -23,9 +23,9 @@ export default function MoreProjects(props) {
                                 </Fade>
                             </div>
                             <Fade delay={250}>
-                                <p>
-                                    {proj.description}
-                                </p>
+                                <div className="proj-desc">
+                                   <p>{proj.description}</p>
+                                </div>
                             </Fade>
                             <Fade delay={300}>
                             <div className="proj-tags">
