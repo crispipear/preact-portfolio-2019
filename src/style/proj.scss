@@ -233,6 +233,27 @@
             margin-top: 12px;
         }
     }
+    .grid{
+        flex-direction: column!important;
+        .grid-container{
+            display: grid;
+            margin-top: 1rem;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 4rem;
+            row-gap: 3rem;
+            h6{
+                font-weight: $textMed;
+                margin-bottom: 0.5rem;
+            }
+            p{
+                font-size: 0.92rem;
+            }
+            img{
+                max-width: 100%;
+                margin-bottom: 1rem;
+            }
+        }
+    }
     .proj-footer{
         box-sizing: border-box;
         display: grid;
@@ -286,6 +307,9 @@
                 margin: 0 0 24px 0;
             }
         }
+    }
+    .grid-container{
+        grid-template-columns: 1fr!important;
     }
     .video-intro{
         margin-bottom: 16vh!important;

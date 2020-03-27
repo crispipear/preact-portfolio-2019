@@ -14,6 +14,7 @@ import TextImage     from '../components/content/TextImage';
 import Image         from '../components/content/Image';
 import SingleText    from '../components/content/SingleText';
 import ImagesList    from '../components/content/ImagesList';
+import Grid          from '../components/content/Grid';
 
 const compList = {
     video_intro: VideoIntro,
@@ -23,7 +24,8 @@ const compList = {
     text_image: TextImage,
     image_text: TextImage,
     single_text: SingleText,
-    images_list: ImagesList
+    images_list: ImagesList,
+    grid: Grid
 }
 
 export default function CSView(props) {
