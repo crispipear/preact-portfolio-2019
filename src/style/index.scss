@@ -44,6 +44,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	overflow-x: hidden;
+
 }
 
 * {
@@ -61,7 +62,6 @@ a{
 }
 .underline{
 	transition: all 0.2s;
-	cursor: pointer;
 	color: $secondary!important;
 	font-weight: $textMed!important;
 	text-shadow: 0.6rem 0.6rem transparent;
@@ -212,7 +212,6 @@ p, span{
 		align-items: center;
 		margin: 24px 0px;
 		h1{
-			cursor: default;
 			margin: 0%;
 			margin-top: -5rem;
 			font-size: 20rem;
@@ -311,14 +310,4 @@ p, span{
 	100%{
 		transform: translateX(2rem);
 	}
-}
-
-.circle{
-	background-color: $primary;
-	width: 10px;
-	height: 10px;
-	box-sizing: content-box;
-	border-radius: 50%;
-	margin: 0 0 0 0.5rem;
-	display: inline-block;
 }
