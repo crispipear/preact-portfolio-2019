@@ -52,7 +52,7 @@
             }
             h3{
                 margin: 0%;
-                font-size: 1.1rem;
+                font-size: 1rem;
                 line-height: 1.7rem;
                 font-weight: $textReg;
             }
@@ -178,9 +178,9 @@
             }
             *{
                 color: $textLight;
-            	font-family: 'Nunito', 'Segoe UI', Arial, sans-serif!important;
+            	font-family: $primaryFont!important;
                 line-height: 1.8;
-                font-weight: $textMed!important;
+                font-weight: $textReg!important;
             }
         }
         .video{
@@ -204,7 +204,6 @@
             line-height: 2;
             font-size: 1.8rem;
             padding-right: 33%;
-            color: $textLight;
             @extend .serifFont;
         }
     }
@@ -247,7 +246,7 @@
                 margin-bottom: 0.5rem;
             }
             p{
-                font-size: 0.92rem;
+                font-size: 0.96rem;
             }
             img{
                 max-width: 100%;

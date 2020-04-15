@@ -44,6 +44,7 @@
             }
             h6{
                 margin-top: 4px;
+                color: $textLight;
             }
             &:hover{
                 h1:after{
@@ -100,7 +101,7 @@
         }
         .proj-desc{
             margin: 1rem 0;
-            min-height: 22vh;
+            min-height: 9rem;
             p{
                 font-size: 0.92rem;
             }

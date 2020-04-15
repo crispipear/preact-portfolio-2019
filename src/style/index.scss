@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Muli:300,500,700|Playfair+Display:700,800&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,500,700|Playfair+Display:700,800&display=swap');
 $primary: #ffe96e;
-$secondary: #4245d6;
+$secondary: #435bc4;
 $background: #FCFCFE;
-$textLight: #373744;
-$textDark: #11102B;
-$textReg: 300;
+$textLight: #767680;
+$textDark: #23223f;
+$textReg: 400;
 $textMed: 500;
 $textBold: 700;
 $headerReg: 700;
 $headerBold: 800;
+$primaryFont: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$serifFont: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+
 @import "./mixins.scss";
 @import "./landing.scss";
 @import "./menu.scss";
@@ -26,9 +30,7 @@ $headerBold: 800;
 	background: $primary;
 }
 body {
-	font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+	font-family: $primaryFont;
 	padding: 0;
 	margin: 0;
 	background: $background;
@@ -116,9 +118,10 @@ p, a, span, li{
 	}
 }
 b, strong{
-	font-weight: $textBold;
+	font-weight: $textMed;
+	color: $textDark;
 }
-p, span{
+p, span, li{
 	color: $textLight;
 }
 
@@ -131,7 +134,7 @@ p, span{
 }
 
 .serifFont{
-	font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+	font-family: $serifFont;
 	font-weight: $headerReg;
 }
 

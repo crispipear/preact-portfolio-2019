@@ -39,15 +39,14 @@
             padding-top: 16vh;
             div{
                 flex-direction: column;
-                margin-bottom: 2rem;
+                margin-bottom: 1rem;
             }
-            h4{
+            h5{
                 font-weight: $textReg;
                 color: $textLight;
                 line-height: 2;
             }
             h1{
-                font-size: 4rem;
                 line-height: 1.2;
                 @extend .serifFont;
             }

@@ -33,12 +33,12 @@ export default function Home(props) {
 							<Fade delay={1250}><h1> my name is Su Li</h1></Fade>
 						</div>
 						<Fade duration={1000} delay={1750}>
-							<h4>
+							<h5>
 								<span className='textBg'>ux designer</span><span> + </span>
 								<span className='textBg'>front-end developer</span> based in Seattle
-							</h4>
+							</h5>
 						</Fade>
-						<Fade duration={1000} delay={2000}><h4>I design and build things like websites and apps</h4></Fade>
+						<Fade duration={1000} delay={2000}><h5>I design and build things like websites and apps</h5></Fade>
 				</div>
 				<Scroll action={props.scrollToWork}/>
 			</div>
