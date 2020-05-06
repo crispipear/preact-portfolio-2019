@@ -16,6 +16,9 @@
     a{
         text-align: right;
     }
+    b{
+        cursor: pointer;
+    }
     a, b{
         @extend .underline;
     }
