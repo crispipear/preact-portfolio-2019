@@ -259,8 +259,7 @@
         display: grid;
         grid-template-columns: 1fr 2.5fr 3fr;
         padding: 12vh 10vw;
-        background-color: $backgroundAlt;
-        // border: solid 1px rgba($textLight, 0.1);
+        border: solid 1px darken($backgroundAlt, 8%);
         height: 68vh;
         div{
             display: flex;

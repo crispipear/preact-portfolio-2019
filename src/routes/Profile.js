@@ -43,19 +43,24 @@ export default ({profile}) => {
                     <RichText render={profile.body[0].primary.text}/>
                 </div>
                 <div className='skills'>
-                    <h2>some tech skills</h2>
+                    <h5>Technologies that I work with the most:</h5>
                     <div>
                         {                                
                             profile.tech.map((item,key) => 
-                                    <RichText key={'skill'+key} render={item.name}/>
+                                <RichText key={'skill'+key} render={item.name}/>
                             )
                         }
                     </div>
                 </div>
-                <div id="block-two">
-                    <RichText render={profile.body[1].primary.header}/>
-                    <RichText render={profile.body[1].primary.text}/>
-                </div>
+                {
+                    profile.body.map((item, key) => 
+                        key!==0&&
+                        <div className="about-block">
+                            <RichText render={item.primary.header}/>
+                            <RichText render={item.primary.text}/>
+                        </div>
+                    )
+                }
             </div>
         </section>
     )
