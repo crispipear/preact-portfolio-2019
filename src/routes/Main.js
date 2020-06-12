@@ -34,7 +34,7 @@ export default function Home(props) {
 						</div>
 						<Fade duration={1000} delay={1750}>
 							<h5>
-								<span className='textBg'>developer</span><span> + </span>
+								<span className='textBg'>front-end developer</span><span> + </span>
 								<span className='textBg'>designer</span> based in Seattle
 							</h5>
 						</Fade>

@@ -29,11 +29,8 @@
         }
         .menu-logo{
             a{
-                font-weight: $textReg!important;
-                b{
-                    letter-spacing: 0.075rem;
-                    font-weight: $textMed!important;
-                }
+                font-size: 1.2rem;
+                @extend .serifFont;
             }
         }
     }

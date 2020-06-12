@@ -1,4 +1,3 @@
-import { h } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { Router } from 'preact-router';
 import {fetchData, fetchOrderData} from './utils/prismic';

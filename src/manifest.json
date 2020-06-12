@@ -1,11 +1,11 @@
 {
-  "name": "su li | developer + designer",
+  "name": "su li",
   "short_name": "Su Li Portfolio",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#FFF14B",
-  "description": "I am Su Li, ux designer and front-end developer based in Seattle. Focused on creating problem-solving and human-centered experience.",
+  "description": "I am Su Li, front-end developer and ux designer based in Seattle. Focused on creating problem-solving and human-centered experience.",
   "icons": [
     {
       "src": "/assets/icons/android-chrome-192x192.png",

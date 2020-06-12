@@ -77,7 +77,7 @@ export default function Menu(props) {
 		<div className={menuClass} style={{opacity: menuOpacity, transform: `translateY(${menuPos}px)`}}>
 			<div className='container'>
 				<div className='menu-logo'>
-					<Link className='link-bg' href='/'><b>su li</b> | developer + designer</Link>
+					<Link className='link-bg' href='/'>su li</Link>
 				</div>
 				{
 					window.innerWidth >= 1023 ?
