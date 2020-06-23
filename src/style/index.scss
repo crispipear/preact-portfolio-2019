@@ -1,27 +1,29 @@
-$key1: #FFFA74;
-$key2: #4D35D3;
-$key3: #E5C952;
+$primary: #ffe96e;
+$secondary: #435bc4;
 $textLight: #373744;
 $textDark: #11102B;
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Roboto:300,400,500&display=swap');
 
 body {
 	font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
 	padding: 0;
 	margin: 0;
-	background: #fdfdfd;
+	background-image: url(http://api.thumbr.it/whitenoise-361x370.png?background=fdfdfdff&noise=626262&density=60&opacity=5);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: $textDark;
 }
 
 #app{
+	text-align: center;
 	min-height: 100vh;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	box-sizing: border-box;
+	padding: 8%;
 }
 
 * {
@@ -40,28 +42,21 @@ a{
 	}
 }
 a.underline{
-	line-height: 140%;
-	&::after{
-		content: '';
-		height: 24%;
-		width: 100%;
-		position: absolute;
-		bottom: 5%;
-		left: 0%;
-		background: $key1;
-		opacity: 0.6;
-		z-index: -1;
-		transition: all 0.25s;
-	}
-	&:hover:after{
-		height: 100%;
-		opacity: 1;
+	transition: all 0.2s;
+	color: $secondary;
+	font-weight: 600;
+	text-shadow: 0.6rem 0.6rem transparent;
+	&:hover{
+		text-shadow: 0.3rem 0.24rem $primary;
 	}
 }
 
-h1{
+span{
 	font-size: 6rem;
-	margin: 0% 0% 20px 0%;
+}
+h1{
+	font-size: 1.6rem;
+	font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
 }
 p{
 	font-size: 1rem;
